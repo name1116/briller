@@ -1,0 +1,254 @@
+/*FONT_HOUSE*/
+@font-face {
+  font-family: S-CoreDream3;
+  src: url(../fonts/SCDream3.otf);
+}
+
+@font-face {
+  font-family: S-CoreDream4;
+  src: url(../fonts/SCDream4.otf);
+}
+
+@font-face {
+  font-family: S-CoreDream5;
+  src: url(../fonts/SCDream5.otf);
+}
+
+@font-face {
+  font-family: S-CoreDream6;
+  src: url(../fonts/SCDream6.otf);
+}
+
+@font-face {
+  font-family: S-CoreDream7;
+  src: url(../fonts/SCDream7.otf);
+}
+
+/* fonts */
+.font3{
+  font-family: S-CoreDream3;
+}
+.font4{
+  font-family: S-CoreDream4;
+}
+.font5{
+  font-family: S-CoreDream5;
+}
+.font6{
+  font-family: S-CoreDream6;
+}
+.font7{
+  font-family: S-CoreDream7;
+}
+
+/* 메인 CSS*/
+.bg-video > .brain-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  z-index: -1500;
+}
+
+#header {
+  position: absolute;
+  width: 100%;
+
+  z-index: 100;
+}
+#gnb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#gnb > .logo {
+  width: 160px;
+  height: 20px;
+
+  margin-top: 30px;
+  margin-left: 80px;
+}
+
+#gnb > .section {
+  margin-top: 27px;
+  margin-right: 136px;
+
+  display: flex;
+  gap: 130px;
+}
+
+#gnb > .section > a {
+  font-family: S-CoreDream5;
+  font-size: 17px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.brain-main-texts {
+  position: absolute;
+  z-index: 100;
+  top: 30%;
+  left: 240px;
+}
+
+.brain-main-texts > .big-text {
+  font-family: S-CoreDream6;
+  font-size: 56px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+.brain-main-texts > .small-text {
+  margin-top: 32px;
+
+  font-family: S-CoreDream4;
+  font-size: 24px;
+  font-weight: 200;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+
+.mySwiper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-wrap {
+  position: absolute;
+  bottom: 240px;
+  left: 240px;
+  display: flex;
+}
+
+
+.mySwiper .swiper-button-next, 
+.mySwiper .swiper-button-prev{
+  position: static; 
+}
+
+.mySwiper .control-wrap .swiper-button-next, 
+.mySwiper .control-wrap .swiper-button-prev {
+  height: 24px;
+  width: 24px;
+}
+
+.mySwiper .swiper-button-prev:after,
+.mySwiper .swiper-button-next:after{
+  font-size: 24px;
+  color: #fff;
+  
+}
+.mySwiper .swiper-pagination{
+  position: static;
+}
+.mySwiper .swiper-pagination
+
+.mySwiper .swiper-pagination-bullet{
+  opacity: 1;
+  background-color: rgba(255,255,255, 0.15);
+}
+.mySwiper .swiper-pagination-bullet-active{
+  background-color: #fff;
+}
+.mySwiper .swiper-button-prev.swiper-button-disabled{
+  opacity: 1;
+}
+
+.top_button {
+  position: fixed;
+  bottom: 80px;
+  right: 240px;
+
+  width: 64px;
+  height: 64px;
+  z-index: 100;
+  background: #fff;
+}
+
+
+/* 쉽고 재미있는 심리측정 */
+.background {
+  background-color: #202020;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/* 
+.brain-main-texts > .slider {
+  width: 216px;
+  height: 49px;
+
+  margin-top: 88px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.brain-main-texts > .slider > i {
+  opacity: 0.5;
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.52;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.brain-main-texts > .slider > .controls {
+  width: 100%;
+  height: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.brain-main-texts > .slider > .controls > .progress-bar {
+  position: relative;
+  width: 80%;
+  height: 6px;
+  background-color: #707070;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.brain-main-texts > .slider > .controls > .progress-bar > .progress {
+  height: 100%;
+  background-color: #fff;
+  width: 20%;
+}
+
+.brain-main-texts > .slider > .controls > .progress-bar > .progress-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #707070;
+  border-radius: 50%;
+  left: 0;
+  transform: translateX(-50%);
+  transition: left 0.1s;
+} */
