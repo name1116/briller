@@ -193,27 +193,11 @@
   }
 }
 
-@font-face {
-  font-family: S-CoreDream3;
-  src: url(/0-기본폼/Project/fonts/SCDream3.otf);
+.test-black-bg {
+  max-width: 1920px;
+  height: 980px;
+  width: 100%;
+  background-color: #3c3c3c;
 }
 
-@font-face {
-  font-family: S-CoreDream4;
-  src: url(/0-기본폼/Project/fonts/SCDream4.otf);
-}
 
-@font-face {
-  font-family: S-CoreDream5;
-  src: url(/0-기본폼/Project/fonts/SCDream5.otf);
-}
-
-@font-face {
-  font-family: S-CoreDream6;
-  src: url(/0-기본폼/Project/fonts/SCDream6.otf);
-}
-
-@font-face {
-  font-family: S-CoreDream7;
-  src: url(/0-기본폼/Project/fonts/SCDream7.otf);
-}
