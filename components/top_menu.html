@@ -1,18 +1,23 @@
 <style>
 
-    .sns-btn-wrap {
+    .sns-open {
         position: fixed;
         bottom: 112px;
         right: 48px;
         width: 48px;
         height: 48px;
         border-radius: 100%;
-        background-color: #afa9a4;
+        background-color: #30271c;
         display: flex;
         align-items: center;
         justify-content: center;
-        opacity: 0;
+        opacity: 1;
         transition: .3s;
+        z-index: 2;
+    }
+    .sns-open i {
+        color: #FFF;
+        font-size: 24px;
     }
 
 
@@ -60,14 +65,79 @@
         transform: translate(-50%, -50%);
         width: 90%;
         height: 90%;
-        background-color: #fff;
+        background-color: #afa9a4;
         border-radius: 100%;
+    }
+
+    .sns-btn-wrap.active {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: fixed;
+        bottom: 112px;
+        right: 48px;
+        z-index: 2;
+    }
+
+    .sns-btn-wrap.active .sns-btn {
+
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        background-color: #75624d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: .3s;
+        z-index: 2;
+    }
+    .sns-btn-wrap.active .sns-btn .sns-btn-text {
+        display: none;
+    }
+
+    .sns-btn-wrap.disable {
+        display: none;
     }
 </style>
 
-<button class="sns-btn-wrap">
-    <i class="xi-close"></i>
+<button class="sns-open">
+    <i class="xi-bars"></i>
 </button>
+
+<div class="sns-btn-wrap disable">
+    <button class="sns-btn">
+        <i class="xi-kakaotalk"></i>
+        <p class="sns-btn-text">
+            카카오톡 문의
+        </p>
+    </button>
+    <button class="sns-btn">
+        <i class="xi-naver-square"></i>
+        <p class="sns-btn-text">
+            네이버 예약
+        </p>
+    </button>
+    <button class="sns-btn">
+        <i class="xi-wechat"></i>
+        <p class="sns-btn-text">
+            위챗
+        </p>
+    </button>
+    <button class="sns-btn">
+        <i class="xi-line-messenger"></i>
+        <p class="sns-btn-text">
+            라인
+        </p>
+    </button>
+    <button class="sns-btn">
+        <i class="xi-close"></i>
+        <p class="sns-btn-text">
+            네이버블로그
+        </p>
+    </button>
+</div>
+
 
 
 
@@ -75,6 +145,31 @@
     <i class="xi-arrow-up"></i>
     <div class="progress_bar"></div>
 </button>
+
+
+<script>
+    const toggleBtn = document.querySelector(".sns-open");
+    const toggleBtnIcon = document.querySelector(".sns-open i")
+    toggleBtn.addEventListener("click", () => {
+        if(toggleBtnIcon.className === "xi-bars") {
+            toggleBtn.style.bottom = "432px";
+            toggleBtnIcon.className = "xi-close";
+        } else {
+            toggleBtn.style.bottom = "112px";
+            toggleBtnIcon.className = "xi-bars";
+        }
+
+        const btns = document.querySelector(".sns-btn-wrap");
+
+        if(btns.classList.contains("disable")) {
+            btns.classList.remove("disable");
+            btns.classList.add("active");
+        } else {
+            btns.classList.remove("active");
+            btns.classList.add("disable");
+        }
+    })
+</script>
 
 <script>
 
