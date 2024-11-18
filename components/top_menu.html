@@ -1,4 +1,21 @@
 <style>
+
+    .sns-btn-wrap {
+        position: fixed;
+        bottom: 112px;
+        right: 48px;
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        background-color: #afa9a4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: .3s;
+    }
+
+
     .Top_Scroll_btn {
         position: fixed;
         bottom: 48px;
@@ -6,8 +23,8 @@
         width: 48px;
         height: 48px;
         border-radius: 100%;
-        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
-        background-color: #fff;
+        box-shadow:  0 0 6px 0 rgba(0, 0, 0, 0.1);
+        background-color: #afa9a4;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -21,7 +38,7 @@
 
     .Top_Scroll_btn i {
         font-size: 24px;
-        color: #464646;
+        color: #FFF;
         z-index: 2;
     }
 
@@ -47,6 +64,12 @@
         border-radius: 100%;
     }
 </style>
+
+<button class="sns-btn-wrap">
+    <i class="xi-close"></i>
+</button>
+
+
 
 <button class="Top_Scroll_btn">
     <i class="xi-arrow-up"></i>

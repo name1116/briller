@@ -1,30 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0"
+  />
 
-<title></title>
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-<link rel="stylesheet" type="text/css" href="./css/common.css">
-<link rel="stylesheet" type="text/css" href="./css/style.css">
+  <title></title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" type="text/css" href="./css/common.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
 
-<body>
+  <body>
     <header id="header"></header>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./images/main_01.png" />
+          <div class="text-wrap">
+            <h3 class="clinic-title font-pb">
+                BRILLER <span class="font-pl">CLINIC</span>
+            </h3>
+            <h1 class="text-wrap-title font-ir">
+                SO THAT TOUR FACE<br />
+                WILL ALWAYS 'BRILLER'
+            </h1>
+            <p class="font-pr">빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/main_02.png" />
+          <div class="text-wrap">
+            <h3 class="clinic-title font-pb">
+                BRILLER <span class="font-pl">CLINIC</span>
+            </h3>
+            <h1 class="text-wrap-title font-ir">
+                SO THAT TOUR FACE<br />
+                WILL ALWAYS 'BRILLER'
+            </h1>
+            <p class="font-pr">빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/main_03.png" />
+          <div class="text-wrap">
+            <h3 class="clinic-title font-pb">
+                BRILLER <span class="font-pl">CLINIC</span>
+            </h3>
+            <h1 class="text-wrap-title font-ir">
+                SO THAT TOUR FACE<br />
+                WILL ALWAYS 'BRILLER'
+            </h1>
+            <p class="font-pr">빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.</p>
+          </div>
+        </div>
+        <div class="swiper-slide last">
+          <img src="./images/main_04.png" />
+          <div class="text-wrap">
+            <h3 class="clinic-title font-pb">
+                BRILLER <span class="font-pl">CLINIC</span>
+            </h3>
+            <div class="wrap">
+                <h1 class="text-wrap-title font-ir">
+                    BRIGHTEN YOUR FACE,<br />
+                    YOUR MIND
+                </h1>
+            </div>
+            <p class="font-pr">빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
 
-    <!-- 헤더 테스트용 -->
-    <section class="test-black-bg"></section> 
+    
 
+    <div id="top_menu"></div>
 
-
-
-
-        <div id="top_menu"></div>
-
-        <!-- 팝업 -->
-        <!-- 
+    <!-- 팝업 -->
+    <!-- 
     <div class="pop-parent" id="popParent">
         <div class="pop">
             <div class="swiper-container">
@@ -62,30 +125,50 @@
         </div>
     </div> 
     -->
-        <!-- //팝업 -->
-</body>
+    <!-- //팝업 -->
 
-<script src="/js/jquery.js"></script>
-<script src="/js/script.js"></script>
-<script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3000,
+        },
+      });
+    </script>
+  </body>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/script.js"></script>
+  <script>
     function nonePopup() {
-        document.getElementById('popParent').style.display = "none";
+      document.getElementById("popParent").style.display = "none";
     }
 
     //popup
     var popupSwiper = new Swiper(".popupSwiper", {
-        autoplay: {
-            delay: 3000,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-        },
-        loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      loop: true,
     });
 
     $(".pop-parent .btn-toggle").click(function () {
-        $(".pop-parent").toggleClass("active");
+      $(".pop-parent").toggleClass("active");
     });
-</script>
-
+  </script>
 </html>

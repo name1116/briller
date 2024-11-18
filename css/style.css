@@ -193,11 +193,215 @@
   }
 }
 
-.test-black-bg {
-  max-width: 1920px;
-  height: 980px;
+/* FONT */
+/*FONT_HOUSE*/
+@font-face {
+  font-family: pretendard-l;
+  src: url(../fonts/Pretendard-Light.otf);
+}
+
+@font-face {
+  font-family: pretendard-m;
+  src: url(../fonts/Pretendard-Medium.otf);
+}
+
+@font-face {
+  font-family: pretendard-r;
+  src: url(../fonts/Pretendard-Regular.otf);
+}
+
+@font-face {
+  font-family: pretendard-b;
+  src: url(../fonts/Pretendard-Bold.otf);
+}
+
+@font-face {
+  font-family: ivy-r;
+  src: url(../fonts/IvyMode-Regular.ttf);
+}
+
+/* fonts */
+.font-pl {
+  font-family: pretendard-l;
+}
+.font-pm {
+  font-family: pretendard-m;
+}
+.font-pr {
+  font-family: pretendard-r;
+  font-weight: 500;
+}
+.font-pb {
+  font-family: pretendard-b;
+}
+.font-ir {
+  font-family: ivy-r;
+}
+
+/* 테스트 */
+body { 
+  height: 1920px;
+  background-color: #7a736e;
+}
+
+
+/* header */
+#header {
+  position: absolute;
+  top: 0px;
   width: 100%;
-  background-color: #3c3c3c;
+  z-index: 2;
+}
+#header .logo-img-wrap {
+  margin-top: 24px;
+  width: 148px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+#header .logo-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#header .header-main-nav {
+  position: sticky;
+  top: 20px;
+  z-index: 2;
+  width: fit-content;
+  margin-top: 16px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header .header-main-nav .main-nav-btn a {
+  padding: 24px 34px;
+  font-size: 17px;
+  color: #FFF;
+}
+
+#header .menu {
+  position: fixed;
+  top: 24px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 8px;
+}
+
+#header .menu .lang-wrap {
+  width: 32px;
+  height: 32px;
+}
+#header .menu .lang-wrap a img {
+  height: 32px;
+  border-radius: 50%;
+}
+#header .menu .ham-menu-img-wrap {
+  margin-left: 16px;
+}
+
+/* 살짝 애매함 */
+#header .menu .ham-menu-img-wrap i {
+  font-size: 35px;
+  color: #FFFFFF;
+}
+
+.swiper {
+  position: relative;
+  max-width: 1920px;
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide img {
+  object-fit: cover;
+}
+
+.swiper .swiper-wrapper .swiper-slide .text-wrap {
+  z-index: 5;
+  position: absolute;
+  left: 15%;
+  top: 45%;
+}
+
+.swiper .swiper-wrapper .swiper-slide .text-wrap .clinic-title {
+  line-height: 1.56;
+  font-size: 18px;
+  letter-spacing: 9px;
+  color: #FFF;
+}
+.swiper .swiper-wrapper .swiper-slide .text-wrap .clinic-title span {
+  font-size: 18px;
+  letter-spacing: 9px;
+  color: #FFF;
+}
+
+.swiper .swiper-wrapper .swiper-slide .text-wrap .text-wrap-title {
+  margin-top: 11px;
+  font-weight: 200;
+  font-size: 56px;
+  line-height: 1.29;
+  color: #FFF;
+}
+.swiper .swiper-wrapper .swiper-slide .text-wrap p {
+  margin-top: 37px;
+  font-size: 20px;
+  line-height: 1.9;
+  color: #fff;
+}
+
+/* 마지막 슬라이드 */
+.swiper .swiper-wrapper .swiper-slide.last .text-wrap .clinic-title {
+  line-height: 1.56;
+  font-size: 18px;
+  letter-spacing: 9px;
+  color: #7a736e;
+}
+.swiper .swiper-wrapper .swiper-slide.last .text-wrap .clinic-title span {
+  font-size: 18px;
+  letter-spacing: 9px;
+  color: #7a736e;
+}
+.swiper .swiper-wrapper .swiper-slide.last .text-wrap .wrap {
+  text-align: right;
+  margin-top: 11px;
+}
+.swiper .swiper-wrapper .swiper-slide.last .text-wrap .wrap .text-wrap-title {
+  font-weight: 200;
+  font-size: 56px;
+  line-height: 1.29;
+  color: #202020;
+}
+.swiper .swiper-wrapper .swiper-slide.last .text-wrap p {
+  margin-top: 37px;
+  font-size: 20px;
+  line-height: 1.9;
+  color: #7a736e;
+}
+
+/* 애매함 */
+.swiper .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: absolute;
+  max-width: 300px; 
+  left: 15%;
+  bottom: 120px;
+}
+.swiper-pagination-bullet {
+  max-width: 64px;
+  width: 100%;
+  height: 8px;
+  border-radius: 0%;
+  background: #FFF;
+  opacity: 0.2;
+}
+.swiper .swiper-pagination-bullet-active {
+  background: #FFF;
+  opacity: 1;
 }
 
 
