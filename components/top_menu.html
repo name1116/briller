@@ -1,105 +1,3 @@
-<style>
-
-    .sns-open {
-        position: fixed;
-        bottom: 112px;
-        right: 48px;
-        width: 48px;
-        height: 48px;
-        border-radius: 100%;
-        background-color: #30271c;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 1;
-        transition: .3s;
-        z-index: 5;
-    }
-    .sns-open i {
-        color: #FFF;
-        font-size: 24px;
-    }
-
-
-    .Top_Scroll_btn {
-        position: fixed;
-        bottom: 48px;
-        right: 48px;
-        width: 48px;
-        height: 48px;
-        border-radius: 100%;
-        box-shadow:  0 0 6px 0 rgba(0, 0, 0, 0.1);
-        background-color: #afa9a4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: .3s;
-    }
-
-    .Top_Scroll_btn.active {
-        opacity: 1;
-    }
-
-    .Top_Scroll_btn i {
-        font-size: 24px;
-        color: #FFF;
-        z-index: 2;
-    }
-
-    .Top_Scroll_btn .progress_bar {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 0;
-    }
-
-    .Top_Scroll_btn .progress_bar::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        height: 90%;
-        background-color: #afa9a4;
-        border-radius: 100%;
-    }
-
-    .sns-btn-wrap.active {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        position: fixed;
-        bottom: 112px;
-        right: 48px;
-        z-index: 2;
-    }
-
-    .sns-btn-wrap.active .sns-btn {
-
-        width: 48px;
-        height: 48px;
-        border-radius: 100%;
-        background-color: #75624d;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 1;
-        transition: .3s;
-        z-index: 2;
-    }
-    .sns-btn-wrap.active .sns-btn .sns-btn-text {
-        display: none;
-    }
-
-    .sns-btn-wrap.disable {
-        display: none;
-    }
-</style>
 
 <button class="sns-open">
     <i class="xi-bars"></i>
@@ -107,32 +5,32 @@
 
 <div class="sns-btn-wrap disable">
     <button class="sns-btn">
-        <i class="xi-kakaotalk"></i>
-        <p class="sns-btn-text">
+        <img src="../images/kakao.png" alt="카카오톡 문의">
+        <p class="sns-btn-text font-pl">
             카카오톡 문의
         </p>
     </button>
     <button class="sns-btn">
-        <i class="xi-naver-square"></i>
-        <p class="sns-btn-text">
+        <img src="../images/naver.png" alt="네이버 예약">
+        <p class="sns-btn-text font-pl">
             네이버 예약
         </p>
     </button>
     <button class="sns-btn">
-        <i class="xi-wechat"></i>
-        <p class="sns-btn-text">
+        <img src="../images/wechat.png" alt="위챗">
+        <p class="sns-btn-text font-pl">
             위챗
         </p>
     </button>
     <button class="sns-btn">
-        <i class="xi-line-messenger"></i>
-        <p class="sns-btn-text">
+        <img src="../images/line.png" alt="라인">
+        <p class="sns-btn-text font-pl">
             라인
         </p>
     </button>
     <button class="sns-btn">
-        <i class="xi-close"></i>
-        <p class="sns-btn-text">
+        <img src="../images/blog.png" alt="네이버블로그">
+        <p class="sns-btn-text font-pl">
             네이버블로그
         </p>
     </button>
