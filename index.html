@@ -94,7 +94,7 @@
           <p class="font-pm">빠른 상담 신청</p>
           <i class="xi-angle-up-thin"></i>
         </button>
-        <form action="" method="post" class="quick-form">
+        <form action="" method="post" class="quick-form disable">
           <input type="text" name="name" placeholder="성함" required />
           <input type="number" name="phone" placeholder="연락처" required />
           <input type="text" name="message" placeholder="내용" required />
@@ -111,14 +111,20 @@
               <p class="check-info font-pm">
                 [필수] 개인정보 수집 및 이용 동의
               </p>
-
             </label>
             <button class="check-info-detail font-pm">보기</button>
           </div>
-          <button type="submit" class="btn-submit font-pb">신청하기</button>
+          <div>
+            <button type="submit" class="btn-submit font-pb">신청하기</button>
+          </div>
         </form>
       </div>
     </div>
+
+
+    
+
+
 
     <div id="top_menu"></div>
 
@@ -178,12 +184,32 @@
           el: ".swiper-pagination",
           clickable: true,
         },
-        // autoplay: {
-        //   delay: 3000,
-        // },
+        autoplay: {
+          delay: 3000,
+        },
         loop: true,
       });
     </script>
+
+    <script>
+      const openBtn = document.querySelector(".quick-form-open-btn");
+      const arrow = document.querySelector(".quick-form-open-btn i")
+      const form = document.querySelector(".quick-form");
+
+      openBtn.addEventListener("click", () => {
+        if(arrow.className === "xi-angle-up-thin") {
+          arrow.className = "xi-angle-down-thin";
+
+          form.classList.remove("disable");
+
+        } else {
+          arrow.className = "xi-angle-up-thin";
+
+          form.classList.add("disable");
+        }
+      })
+    </script>
+
   </body>
 
   <script src="./js/jquery.js"></script>
