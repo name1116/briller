@@ -121,10 +121,57 @@
       </div>
     </div>
 
+    <section class="briller-info-section">
+      <div class="briller-info">
+        <div class="briller-info-img-wrap">
+          <img src="./images/briller_info_korean.png" alt="Briller" />
+        </div>
+        <div class="briller-info-text-wrap">
+          <img src="./images/briller_info_star.png" alt="Briller" />
 
-    
+          <p class="sub-title font-pr">ABOUT BRILLER</p>
 
+          <div class="title-wrap">
+            <h3 class="title font-ir">BRILLER</h3>
+            <p class="title-speak font-pl">[ bʀije ]</p>
+          </div>
 
+          <p class="text-title font-pb">빛을 발하다, 빛나다, 반짝이다</p>
+
+          <p class="text font-pl">
+            ‘Briller’는 프랑스어로 [브리에]라고 읽으며,<br class="only-pc" />
+            ‘빛나다’라는 의미입니다.<br /><br />
+            당신이 눈부시도록 본연의 아름다움과 자연스러움에 집중합니다.<br
+              class="only-pc"
+            />
+            브리에의원이 1:1 맞춤시술로 세심하게 살피겠습니다
+          </p>
+
+          <button class="briller-info-viewmore font-pl">View More</button>
+        </div>
+      </div>
+
+      <div class="briller-filler">
+        <div class="briller-filler-text-wrap">
+          <p class="signature-title font-pm">BRILLER SIGNATURE&nbsp;<span class="font-pm">01</span></p>
+          <h3 class="title font-pb">BRILLER FILLER</h3>
+          <h4 class="sub-title font-pm">1:1 맞춤 필러</h4>
+          <p class="text font-pl">
+            브리에의원에서는 대표원장과의 충분한 상담을 통해 개인의<br
+              class="only-pc"
+            />
+            얼굴형태와 고민을 분석합니다. 심미안을 바탕으로 섬세한<br
+              class="only-pc"
+            />
+            1:1 맞춤 필러 솔루션으로 당신만의 아름다움을 완성시켜 드립니다
+          </p>
+          <button class="briller-filler-viewmore font-pl">View More</button>
+        </div>
+        <div class="briller-filler-img-wrap">
+          <img src="./images/briller_filler.png" alt="filler" />
+        </div>
+      </div>
+    </section>
 
     <div id="top_menu"></div>
 
@@ -193,23 +240,21 @@
 
     <script>
       const openBtn = document.querySelector(".quick-form-open-btn");
-      const arrow = document.querySelector(".quick-form-open-btn i")
+      const arrow = document.querySelector(".quick-form-open-btn i");
       const form = document.querySelector(".quick-form");
 
       openBtn.addEventListener("click", () => {
-        if(arrow.className === "xi-angle-up-thin") {
+        if (arrow.className === "xi-angle-up-thin") {
           arrow.className = "xi-angle-down-thin";
 
           form.classList.remove("disable");
-
         } else {
           arrow.className = "xi-angle-up-thin";
 
           form.classList.add("disable");
         }
-      })
+      });
     </script>
-
   </body>
 
   <script src="./js/jquery.js"></script>
