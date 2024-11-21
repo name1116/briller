@@ -360,18 +360,25 @@
   background-color: #7a736e;
 } */
 
-*{
+* {
   word-break: keep-all;
+}
+
+body {
+  position: relative;
 }
 
 /* header */
 #header {
   position: absolute;
+  pointer-events: none;
   top: 0px;
   width: 100%;
+  height: 100%;
   z-index: 2;
 }
 #header .logo-img-wrap {
+  pointer-events: auto;
   margin-top: 24px;
   width: 148px;
   height: auto;
@@ -383,8 +390,31 @@
   height: 100%;
   object-fit: cover;
 }
-#header .header-main-nav {
+
+#header .follow-header {
+  display: none;
+  background-color: #bfbfbf;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.follow-header:hover {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: #fff;
+}
+
+#header .sub-logo-img-wrap {
+  margin-left: 32px;
+  width: 118px;
+  height: 64px;
+}
+
+#header  .header-main-nav {
   position: sticky;
+  pointer-events: auto;
   top: 20px;
   z-index: 2;
   width: fit-content;
@@ -403,12 +433,14 @@
 
 #header .menu {
   position: fixed;
+  pointer-events: auto;
   top: 24px;
   right: 16px;
   display: flex;
   align-items: center;
   width: fit-content;
   gap: 8px;
+  z-index: 2;
 }
 
 #header .menu .lang-wrap {
@@ -635,18 +667,17 @@
   color: #fff;
 }
 
-
 /* index -> briller 소개 */
 
 .briller-info-section {
   width: 100%;
   height: auto;
-  background-color:#fcf9f6;
+  background-color: #fcf9f6;
   margin-left: auto;
   margin-right: auto;
 }
 .briller-info-section .briller-info {
-  max-width: 1500px; 
+  max-width: 1500px;
   /*width 관련 질문*/
   display: flex;
   gap: 120px;
@@ -667,9 +698,9 @@
 }
 .briller-info-section .briller-info .briller-info-text-wrap {
   margin-top: 15%;
-    /*마진 관련 질문*/
+  /*마진 관련 질문*/
 }
-.briller-info-section .briller-info .briller-info-text-wrap img{
+.briller-info-section .briller-info .briller-info-text-wrap img {
   width: 80px;
   height: 80px;
 }
@@ -678,7 +709,7 @@
   font-size: 24px;
   line-height: 1.33;
   color: #cac2b9;
-} 
+}
 .briller-info-section .briller-info .briller-info-text-wrap .title-wrap {
   margin-top: 16px;
   display: flex;
@@ -691,7 +722,11 @@
   line-height: 1.43;
   color: #202020;
 }
-.briller-info-section .briller-info .briller-info-text-wrap .title-wrap .title-speak {
+.briller-info-section
+  .briller-info
+  .briller-info-text-wrap
+  .title-wrap
+  .title-speak {
   font-size: 24px;
   line-height: 1.33;
   color: #aeaeae;
@@ -711,7 +746,10 @@
   color: #707070;
 }
 
-.briller-info-section .briller-info .briller-info-text-wrap .briller-info-viewmore {
+.briller-info-section
+  .briller-info
+  .briller-info-text-wrap
+  .briller-info-viewmore {
   position: relative;
   margin-top: 84px;
 
@@ -720,7 +758,10 @@
   line-height: 2;
   color: #afa9a4;
 }
-.briller-info-section .briller-info .briller-info-text-wrap .briller-info-viewmore::after {
+.briller-info-section
+  .briller-info
+  .briller-info-text-wrap
+  .briller-info-viewmore::after {
   display: block;
   content: "";
   clear: both;
@@ -759,7 +800,10 @@
   margin-top: 10%;
 }
 
-.briller-info-section .briller-filler .briller-filler-text-wrap .signature-title {
+.briller-info-section
+  .briller-filler
+  .briller-filler-text-wrap
+  .signature-title {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -768,7 +812,11 @@
   line-height: 3.33;
   color: #cac2b9;
 }
-.briller-info-section .briller-filler .briller-filler-text-wrap .signature-title span {
+.briller-info-section
+  .briller-filler
+  .briller-filler-text-wrap
+  .signature-title
+  span {
   font-size: 30px;
   color: #cac2b9;
 }
@@ -793,7 +841,10 @@
   color: #202020;
 }
 
-.briller-info-section .briller-filler .briller-filler-text-wrap .briller-filler-viewmore {
+.briller-info-section
+  .briller-filler
+  .briller-filler-text-wrap
+  .briller-filler-viewmore {
   position: relative;
   margin-top: 74px;
   margin-right: 43px;
@@ -802,7 +853,10 @@
   line-height: 2;
   color: #afa9a4;
 }
-.briller-info-section .briller-filler .briller-filler-text-wrap .briller-filler-viewmore::after {
+.briller-info-section
+  .briller-filler
+  .briller-filler-text-wrap
+  .briller-filler-viewmore::after {
   display: block;
   content: "";
   clear: both;
@@ -840,7 +894,10 @@
   margin-top: 10%;
 }
 
-.briller-info-section .briller-museline .briller-museline-text-wrap .signature-title {
+.briller-info-section
+  .briller-museline
+  .briller-museline-text-wrap
+  .signature-title {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -849,7 +906,11 @@
   line-height: 3.33;
   color: #cac2b9;
 }
-.briller-info-section .briller-museline .briller-museline-text-wrap .signature-title span {
+.briller-info-section
+  .briller-museline
+  .briller-museline-text-wrap
+  .signature-title
+  span {
   font-size: 30px;
   color: #cac2b9;
 }
@@ -874,7 +935,10 @@
   color: #202020;
 }
 
-.briller-info-section .briller-museline .briller-museline-text-wrap .briller-museline-viewmore {
+.briller-info-section
+  .briller-museline
+  .briller-museline-text-wrap
+  .briller-museline-viewmore {
   position: relative;
   margin-top: 74px;
   font-size: 16px;
@@ -882,7 +946,10 @@
   line-height: 2;
   color: #afa9a4;
 }
-.briller-info-section .briller-museline .briller-museline-text-wrap .briller-museline-viewmore::after {
+.briller-info-section
+  .briller-museline
+  .briller-museline-text-wrap
+  .briller-museline-viewmore::after {
   display: block;
   content: "";
   clear: both;
@@ -921,7 +988,10 @@
   margin-top: 10%;
 }
 
-.briller-info-section .briller-ulthera .briller-ulthera-text-wrap .signature-title {
+.briller-info-section
+  .briller-ulthera
+  .briller-ulthera-text-wrap
+  .signature-title {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -930,7 +1000,11 @@
   line-height: 3.33;
   color: #cac2b9;
 }
-.briller-info-section .briller-ulthera .briller-ulthera-text-wrap .signature-title span {
+.briller-info-section
+  .briller-ulthera
+  .briller-ulthera-text-wrap
+  .signature-title
+  span {
   font-size: 30px;
   color: #cac2b9;
 }
@@ -955,7 +1029,10 @@
   color: #202020;
 }
 
-.briller-info-section .briller-ulthera .briller-ulthera-text-wrap .briller-ulthera-viewmore {
+.briller-info-section
+  .briller-ulthera
+  .briller-ulthera-text-wrap
+  .briller-ulthera-viewmore {
   position: relative;
   margin-top: 74px;
   margin-right: 43px;
@@ -964,7 +1041,10 @@
   line-height: 2;
   color: #afa9a4;
 }
-.briller-info-section .briller-ulthera .briller-ulthera-text-wrap .briller-ulthera-viewmore::after {
+.briller-info-section
+  .briller-ulthera
+  .briller-ulthera-text-wrap
+  .briller-ulthera-viewmore::after {
   display: block;
   content: "";
   clear: both;
@@ -1027,6 +1107,7 @@
 
 .briller-info-section .directions {
   margin-top: 120px;
+  margin-bottom: 120px;
   width: 100%;
   height: auto;
   display: flex;
@@ -1059,21 +1140,35 @@
   display: flex;
   align-items: center;
 }
-.briller-info-section .directions .directions-text-wrap .direction-wrap .wrap .location.two {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .direction-wrap
+  .wrap
+  .location.two {
   letter-spacing: 17px;
 }
-.briller-info-section .directions .directions-text-wrap .direction-wrap .wrap .location {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .direction-wrap
+  .wrap
+  .location {
   width: 101px;
   line-height: 1.95;
 
   font-size: 20px;
   color: #7a736e;
 }
-.briller-info-section .directions .directions-text-wrap .direction-wrap .wrap .location-detail {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .direction-wrap
+  .wrap
+  .location-detail {
   font-size: 20px;
   color: #202020;
 }
-
 
 .briller-info-section .directions .directions-text-wrap .title02 {
   margin-top: 49px;
@@ -1101,7 +1196,12 @@
   display: flex;
   align-items: center;
 }
-.briller-info-section .directions .directions-text-wrap .time-wrap .wrap .time.two {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .time-wrap
+  .wrap
+  .time.two {
   letter-spacing: 17px;
 }
 .briller-info-section .directions .directions-text-wrap .time-wrap .wrap .time {
@@ -1111,7 +1211,12 @@
   font-size: 20px;
   color: #7a736e;
 }
-.briller-info-section .directions .directions-text-wrap .time-wrap .wrap .time-detail {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .time-wrap
+  .wrap
+  .time-detail {
   font-size: 20px;
   color: #202020;
 }
@@ -1133,34 +1238,71 @@
   width: 48px;
   height: 48px;
 }
-.briller-info-section .directions .directions-text-wrap .telephone-wrap .number {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .telephone-wrap
+  .number {
   font-size: 48px;
   line-height: 0.81;
   color: #75624d;
 }
-.briller-info-section .directions .directions-text-wrap .sns-btn-wrap {
+.briller-info-section .directions .directions-text-wrap .contact-btn-wrap {
   margin-top: 40px;
   display: flex;
   gap: 8px;
 }
-.briller-info-section .directions .directions-text-wrap .sns-btn-wrap .sns-btn {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .contact-btn-wrap
+  .contact-btn {
   width: 168px;
   padding: 12px 12px;
   border-radius: 4px;
   background-color: #75624d;
 }
-.briller-info-section .directions .directions-text-wrap .sns-btn-wrap .sns-btn a {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .contact-btn-wrap
+  .contact-btn
+  a {
   display: flex;
   justify-content: center;
   gap: 16px;
   align-items: center;
 }
-.briller-info-section .directions .directions-text-wrap .sns-btn-wrap .sns-btn a img {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .contact-btn-wrap
+  .contact-btn
+  a
+  img {
   width: 32px;
   height: 32px;
 }
-.briller-info-section .directions .directions-text-wrap .sns-btn-wrap .sns-btn a .btn-text {
+.briller-info-section
+  .directions
+  .directions-text-wrap
+  .contact-btn-wrap
+  .contact-btn
+  a
+  .btn-text {
   font-size: 20px;
   line-height: 1.95;
-  color: #FFF;
-} 
+  color: #fff;
+}
+
+.briller-info-section .directions .directions-map-wrap {
+  margin-top: 30px;
+  width: 720px;
+  height: 661px;
+}
+.root_daum_roughmap .wrap_controllers {
+  display: none;
+}
+.root_daum_roughmap .wrap_btn_zoom {
+  display: none !important;
+}

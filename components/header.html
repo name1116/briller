@@ -29,26 +29,46 @@
   </button>
 </div>
 
+<div class="follow-header">
+  <div class="sub-logo-img-wrap">
+    <img src="../images/logo.png" alt="브리에 로고" />
+  </div>
+</div>
+
 <nav class="header-main-nav">
-    <button class="main-nav-btn font-pm">
-      <a href="http://"> BRILLER </a>
-    </button>
-    <button class="main-nav-btn font-pm">
-      <a href="http://"> SIGNATURE </a>
-    </button>
-    <button class="main-nav-btn font-pm">
-      <a href="http://"> LIFTING </a>
-    </button>
-    <button class="main-nav-btn font-pm">
-      <a href="http://"> FACE/BODY </a>
-    </button>
-    <button class="main-nav-btn font-pm">
-      <a href="http://"> SKIN </a>
-    </button>
-    <button class="main-nav-btn font-pm">
-      <a href="http://"> PIGMENTATION </a>
-    </button>
-    <button class="main-nav-btn font-pm">
-      <a href="http://"> PROMOTION </a>
-    </button>
-  </nav>
+  <button class="main-nav-btn font-pm">
+    <a href="http://"> BRILLER </a>
+  </button>
+  <button class="main-nav-btn font-pm">
+    <a href="http://"> SIGNATURE </a>
+  </button>
+  <button class="main-nav-btn font-pm">
+    <a href="http://"> LIFTING </a>
+  </button>
+  <button class="main-nav-btn font-pm">
+    <a href="http://"> FACE/BODY </a>
+  </button>
+  <button class="main-nav-btn font-pm">
+    <a href="http://"> SKIN </a>
+  </button>
+  <button class="main-nav-btn font-pm">
+    <a href="http://"> PIGMENTATION </a>
+  </button>
+  <button class="main-nav-btn font-pm">
+    <a href="http://"> PROMOTION </a>
+  </button>
+</nav>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const followHeader = document.querySelector(".follow-header");
+    const scrollPosition = window.scrollY; // 스크롤 위치 확인
+
+    // 예시로 200px 이상 스크롤 되었을 때 follow-header를 보이게 설정
+    if (scrollPosition > 200) {
+      followHeader.style.display = "block"; // 200px 이상 스크롤시 보이게
+    } else {
+      followHeader.style.display = "none"; // 그 외에는 숨김
+    }
+  });
+</script>
