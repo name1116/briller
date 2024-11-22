@@ -406,6 +406,7 @@ body {
 }
 #header .follow-header.hovered {
   background-color: #d4d4d5;
+
 }
 
 #header .sub-logo-img-wrap {
@@ -435,6 +436,7 @@ body {
   text-align: center;
   width: 160px;
   padding: 24px 10px;
+  padding-bottom: 34px;
   font-size: 17px;
   color: #fff;
   transition: color 0.3s;
@@ -453,7 +455,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: auto;
-  top: calc(100% + 10px);
+  top: 100%;
   left: 0;
   background-color: #fff;
   border-radius: 18px;
@@ -462,7 +464,7 @@ body {
 #header .header-main-nav .main-nav-btn .main-nav-detail-wrap {
   display: none;
 }
-#header .header-main-nav .main-nav-btn:hover .main-nav-detail-wrap button .main-nav-detail{
+#header .header-main-nav .main-nav-btn .main-nav-detail-wrap button .main-nav-detail{
   padding: 15px 10px;
   font-size: 16px;
   font-weight: 300;
@@ -470,7 +472,7 @@ body {
 
   position: relative;
 }
-#header .header-main-nav .main-nav-btn:hover .main-nav-detail-wrap button .main-nav-detail::after {
+#header .header-main-nav .main-nav-btn .main-nav-detail-wrap button .main-nav-detail::after {
   display: block;
   content: "";
   clear: both;
@@ -498,7 +500,7 @@ body {
   align-items: center;
   width: fit-content;
   gap: 8px;
-  z-index: 2;
+  z-index: 100;
 }
 
 #header .menu .lang-wrap {
@@ -519,6 +521,47 @@ body {
   color: #ffffff;
 }
 
+#header .ham-menu-wrap {
+  pointer-events: auto;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: #75624d;
+}
+#header .ham-menu-wrap .wrap {
+  margin-top: 20%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  gap: 88px;
+}
+#header .ham-menu-wrap .wrap .ham-menu .title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #fff;
+}
+
+#header .ham-menu-wrap .wrap .ham-menu .btn-wrap {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+#header .ham-menu-wrap .wrap .ham-menu .btn-wrap button a {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 2.22;
+  color: #FFF;
+  text-align: left;
+}
+
 .swiper {
   position: relative;
   /* max-width: 1920px; */
@@ -536,7 +579,7 @@ body {
 }
 
 .swiper .swiper-wrapper .swiper-slide .text-wrap {
-  z-index: 5;
+  /* z-index: 5; */
   position: absolute;
   left: 15%;
   top: 45%;
