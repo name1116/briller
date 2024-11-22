@@ -36,39 +36,233 @@
 </div>
 
 <nav class="header-main-nav">
-  <button class="main-nav-btn font-pm">
-    <a href="http://"> BRILLER </a>
-  </button>
-  <button class="main-nav-btn font-pm">
-    <a href="http://"> SIGNATURE </a>
-  </button>
-  <button class="main-nav-btn font-pm">
-    <a href="http://"> LIFTING </a>
-  </button>
-  <button class="main-nav-btn font-pm">
-    <a href="http://"> FACE/BODY </a>
-  </button>
-  <button class="main-nav-btn font-pm">
-    <a href="http://"> SKIN </a>
-  </button>
-  <button class="main-nav-btn font-pm">
-    <a href="http://"> PIGMENTATION </a>
-  </button>
-  <button class="main-nav-btn font-pm">
-    <a href="http://"> PROMOTION </a>
-  </button>
+  <div class="main-nav-btn">
+    <a
+      href="http://"
+      class="font-pm"
+      onmouseover="this.innerHTML = '브리에의원'"
+      onmouseout="this.innerHTML = 'BRILLER'"
+    >
+      BRILLER
+    </a>
+    <div class="main-nav-detail-wrap">
+      <button><a href="" class="main-nav-detail font-pl">브리에의원 소개</a></button>
+      <button><a href="" class="main-nav-detail font-pl">의료진 소개</a></button>
+      <button><a href="" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+    </div>
+  </div>
+  <div class="main-nav-btn">
+    <a
+      href="http://"
+      class="font-pm"
+      onmouseover="this.innerHTML = '대표시술'"
+      onmouseout="this.innerHTML = 'SIGNATURE'"
+    >
+      SIGNATURE
+    </a>
+    <div class="main-nav-detail-wrap">
+      <button><a href="" class="main-nav-detail font-pl">브리에의원 소개</a></button>
+      <button><a href="" class="main-nav-detail font-pl">의료진 소개</a></button>
+      <button><a href="" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+    </div>
+  </div>
+  <div class="main-nav-btn">
+    <a
+      href="http://"
+      class="font-pm"
+      onmouseover="this.innerHTML = '리프팅'"
+      onmouseout="this.innerHTML = 'LIFTING'"
+    >
+      LIFTING
+    </a>
+    <div class="main-nav-detail-wrap">
+      <button><a href="" class="main-nav-detail font-pl">브리에의원 소개</a></button>
+      <button><a href="" class="main-nav-detail font-pl">의료진 소개</a></button>
+      <button><a href="" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+    </div>
+  </div>
+  <div class="main-nav-btn">
+    <a
+      href="http://"
+      class="font-pm"
+      onmouseover="this.innerHTML = '주사시술'"
+      onmouseout="this.innerHTML = 'FACE/BODY'"
+    >
+      FACE/BODY
+    </a>
+    <div class="main-nav-detail-wrap">
+      <button><a href="" class="main-nav-detail font-pl">브리에의원 소개</a></button>
+      <button><a href="" class="main-nav-detail font-pl">의료진 소개</a></button>
+      <button><a href="" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+    </div>
+  </div>
+  <div class="main-nav-btn">
+    <a
+      href="http://"
+      class="font-pm"
+      onmouseover="this.innerHTML = '피부'"
+      onmouseout="this.innerHTML = 'SKIN'"
+    >
+      SKIN
+    </a>
+    <div class="main-nav-detail-wrap">
+      <button><a href="" class="main-nav-detail font-pl">브리에의원 소개</a></button>
+      <button><a href="" class="main-nav-detail font-pl">의료진 소개</a></button>
+      <button><a href="" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+    </div>
+  </div>
+  <div class="main-nav-btn">
+    <a
+      href="http://"
+      class="font-pm"
+      onmouseover="this.innerHTML = '색소/모공'"
+      onmouseout="this.innerHTML = 'PIGMENTATION'"
+    >
+      PIGMENTATION
+    </a>
+    <div class="main-nav-detail-wrap">
+      <button><a href="" class="main-nav-detail font-pl">브리에의원 소개</a></button>
+      <button><a href="" class="main-nav-detail font-pl">의료진 소개</a></button>
+      <button><a href="" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+    </div>
+  </div>
+  <div class="main-nav-btn">
+    <a
+      href="http://"
+      class="font-pm"
+      onmouseover="this.innerHTML = '이벤트'"
+      onmouseout="this.innerHTML = 'PROMOTION'"
+    >
+      PROMOTION
+    </a>
+    <div class="main-nav-detail-wrap">
+      <button><a href="" class="main-nav-detail font-pl">브리에의원 소개</a></button>
+      <button><a href="" class="main-nav-detail font-pl">의료진 소개</a></button>
+      <button><a href="" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+    </div>
+  </div>
 </nav>
+
 
 <script>
   window.addEventListener("scroll", function () {
     const followHeader = document.querySelector(".follow-header");
     const scrollPosition = window.scrollY; // 스크롤 위치 확인
 
-    // 예시로 200px 이상 스크롤 되었을 때 follow-header를 보이게 설정
+    // 200px 이상 스크롤 시 follow-header 표시
     if (scrollPosition > 200) {
-      followHeader.style.display = "block"; // 200px 이상 스크롤시 보이게
+      followHeader.style.display = "block";
     } else {
-      followHeader.style.display = "none"; // 그 외에는 숨김
+      followHeader.style.display = "none";
     }
   });
+
+  const followHeader = document.querySelector(".follow-header");
+  const navLinks = document.querySelectorAll(
+    ".header-main-nav .main-nav-btn a"
+  );
+
+  // followHeader에 마우스 올리면 스타일 변경
+  followHeader.addEventListener("mouseover", () => {
+    followHeader.classList.add("hovered");
+  });
+
+  followHeader.addEventListener("mouseout", () => {
+    followHeader.classList.remove("hovered");
+  });
+
+  // nav 링크에 마우스 올릴 때 스타일 유지
+  navLinks.forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      followHeader.classList.add("hovered");
+    });
+
+    link.addEventListener("mouseout", () => {
+      // followHeader의 전체 hover 상태와 분리
+      if (!followHeader.matches(":hover")) {
+        followHeader.classList.remove("hovered");
+      }
+    });
+  });
+
+  // 모든 navLinks에 클래스 추가/제거 함수
+  function addHoverClass() {
+    navLinks.forEach((link) => {
+      link.classList.add("hovered");
+    });
+  }
+
+  function removeHoverClass() {
+    navLinks.forEach((link) => {
+      link.classList.remove("hovered");
+    });
+  }
+
+  // followHeader에 마우스 올리면 모든 nav 색상 변경
+  followHeader.addEventListener("mouseover", addHoverClass);
+  followHeader.addEventListener("mouseout", removeHoverClass);
+
+  // 각 nav 버튼에 마우스 올리면 나머지 버튼들도 동일하게 스타일 변경
+  navLinks.forEach((link) => {
+    link.addEventListener("mouseover", addHoverClass);
+    link.addEventListener("mouseout", () => {
+      // followHeader가 호버 중이지 않을 때만 클래스 제거
+      if (!followHeader.matches(":hover")) {
+        removeHoverClass();
+      }
+    });
+  });
+
+  // follow-header가 표시 상태인지 확인하는 함수
+  function isFollowHeaderVisible() {
+    return window.getComputedStyle(followHeader).display !== "none";
+  }
+
+  // 모든 navLinks에 클래스 추가/제거 함수
+  function addHoverClass() {
+    if (isFollowHeaderVisible()) {
+      navLinks.forEach((link) => {
+        link.classList.add("hovered");
+      });
+    }
+  }
+
+  function removeHoverClass() {
+    navLinks.forEach((link) => {
+      link.classList.remove("hovered");
+    });
+  }
+
+  // followHeader에 마우스 올리면 모든 nav 색상 변경
+  followHeader.addEventListener("mouseover", () => {
+    if (isFollowHeaderVisible()) {
+      followHeader.classList.add("hovered");
+      addHoverClass();
+    }
+  });
+
+  followHeader.addEventListener("mouseout", () => {
+    followHeader.classList.remove("hovered");
+    removeHoverClass();
+  });
+
+  // 각 nav 버튼에 마우스 올리면 나머지 버튼들도 동일하게 스타일 변경
+  navLinks.forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      if (isFollowHeaderVisible()) {
+        addHoverClass();
+      }
+    });
+
+    link.addEventListener("mouseout", () => {
+      if (isFollowHeaderVisible() && !followHeader.matches(":hover")) {
+        removeHoverClass();
+      }
+    });
+  });
+</script>
+
+
+<script>
+
 </script>
