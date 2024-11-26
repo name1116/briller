@@ -284,16 +284,17 @@
   justify-content: center;
   opacity: 0;
   transition: 0.3s;
+  z-index: 100;
 }
 
 .Top_Scroll_btn.active {
-  opacity: 1;
+  opacity: 150;
 }
 
 .Top_Scroll_btn i {
   font-size: 24px;
   color: #fff;
-  z-index: 2;
+  z-index: 200;
 }
 
 .Top_Scroll_btn .progress_bar {
@@ -303,7 +304,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 0;
+  z-index: 100;
 }
 
 .Top_Scroll_btn .progress_bar::before {
@@ -386,7 +387,7 @@ body {
   top: 0px;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 #header .logo-img-wrap {
   pointer-events: auto;
