@@ -224,6 +224,10 @@
   src: url(../fonts/IvyMode-Regular.ttf);
 }
 @font-face {
+  font-family: ivy-sb;
+  src: url(../fonts/IvyMode-SemiBold.ttf);
+}
+@font-face {
   font-family: noto-b;
   src: url(../fonts/NotoSansKR-Bold.ttf);
 }
@@ -244,6 +248,9 @@
 }
 .font-ir {
   font-family: ivy-r;
+}
+.font-isb {
+  font-family: ivy-sb;
 }
 .font-nb {
   font-family: noto-b;
@@ -381,33 +388,28 @@ body {
 }
 
 /* header */
-#header {
+
+/* #header {
   position: absolute;
   pointer-events: none;
   top: 0px;
   width: 100%;
   height: 100%;
   z-index: 3;
-}
+} */
 #header .logo-img-wrap {
-  pointer-events: auto;
-  margin-top: 24px;
-  width: 148px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  display: none;
+
 }
 #header .logo-img-wrap img {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 16px;
-  object-fit: cover;
+  display: none;
+
 }
 
 #header .follow-header {
-  display: none;
+  z-index: 50;
   pointer-events: auto;
-  background-color: #bfbfbf;
+  /* background-color: #bfbfbf; */
   opacity: 1;
   transition: background-color 0.3s;
   position: fixed;
@@ -431,11 +433,14 @@ body {
 }
 
 #header .header-main-nav {
-  position: sticky;
+  position: fixed;
   pointer-events: auto;
-  top: 20px;
-  z-index: 2;
-  width: fit-content;
+  top: 12px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 50;
+  max-width: 1120px;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -445,9 +450,9 @@ body {
 
 #header .header-main-nav .main-nav-btn .font-pm {
   text-align: center;
-  width: 160px;
+
   padding: 24px 10px;
-  padding-bottom: 34px;
+  padding-bottom: 44px;
   font-size: 17px;
   color: #fff;
   transition: color 0.3s;
@@ -456,6 +461,8 @@ body {
   color: #000;
 }
 #header .header-main-nav .main-nav-btn {
+  max-width: 160px;
+  width: 100%;
   position: relative;
 }
 
@@ -9686,5 +9693,35 @@ td {
   margin-top: 10px;
   font-size: 16px;
   line-height: 1.63;
+  color: #202020;
+}
+
+
+
+.promotion-wrap {
+  width: 100%;
+  background-color: #fcf9f6;
+  padding-top: 240px;
+}
+.promotion-wrap .text-wrap {
+  text-align: center;
+}
+.promotion-wrap .text-wrap .sub-title {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 9px;
+  color: #202020;
+}
+.promotion-wrap .text-wrap .title {
+  margin-top: 11px;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.29;
+  color: #202020;
+}
+.promotion-wrap .text-wrap .text {
+  margin-top: 37px;
+  font-size: 20px;
+  line-height: 1.9;
   color: #202020;
 }

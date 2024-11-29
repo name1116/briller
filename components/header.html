@@ -287,17 +287,20 @@
 </nav>
 
 <script>
-  window.addEventListener("scroll", function () {
+  if(location.pathname.endsWith("index.html")) {
+  function toggleFollowHeader () {
     const followHeader = document.querySelector(".follow-header");
     const scrollPosition = window.scrollY; // 스크롤 위치 확인
 
     // 200px 이상 스크롤 시 follow-header 표시
-    if (scrollPosition > 200) {
+    if (scrollPosition != 0) {
       followHeader.style.display = "block";
     } else {
       followHeader.style.display = "none";
     }
-  });
+  }};
+
+
 
   const followHeader = document.querySelector(".follow-header");
   const navLinks = document.querySelectorAll(
@@ -402,6 +405,10 @@
       }
     });
   });
+
+
+  window.addEventListener("scroll", toggleFollowHeader);
+  window.addEventListener("load", toggleFollowHeader);
 </script>
 
 <script>
