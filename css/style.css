@@ -8027,6 +8027,8 @@ td {
   border-spacing: 0px;
   border-collapse: collapse;
   text-align: center;
+
+  vertical-align: top;
 }
 .picore-wrap .picore-table .table-head {
   background-color: #75624d;
