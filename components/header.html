@@ -287,7 +287,7 @@
 </nav>
 
 <script>
-  if(location.pathname.endsWith("index.html")) {
+  if(location.pathname.endsWith("index.html") || location.pathname === "/") {
   function toggleFollowHeader () {
     const followHeader = document.querySelector(".follow-header");
     const scrollPosition = window.scrollY; // 스크롤 위치 확인
