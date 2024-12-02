@@ -411,7 +411,7 @@ body {
 #header .follow-header {
   z-index: 50;
   pointer-events: auto;
-  background-color: #bfbfbf;
+  /* background-color: #bfbfbf; */
   opacity: 1;
   transition: background-color 0.3s;
   position: fixed;
@@ -576,6 +576,11 @@ body {
   gap: 88px;
 }
 #header .ham-menu-wrap .wrap .ham-menu .title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #fff;
+}
+#header .ham-menu-wrap .wrap .ham-menu .title a{
   font-size: 32px;
   font-weight: normal;
   color: #fff;

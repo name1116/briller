@@ -1,107 +1,112 @@
-
 <button class="sns-open">
-    <i class="xi-bars"></i>
+  <i class="xi-bars"></i>
 </button>
 
 <div class="sns-btn-wrap disable">
+  <a href="https://pf.kakao.com/_SxoqXG">
     <button class="sns-btn">
-        <img src="../images/kakao.png" alt="카카오톡 문의">
-        <p class="sns-btn-text font-pl">
-            카카오톡 문의
-        </p>
+      <img src="../images/kakao.png" alt="카카오톡 문의" />
+      <p class="sns-btn-text font-pl">카카오톡 문의</p>
     </button>
+  </a>
+  <a href="https://booking.naver.com/booking/13/bizes/1063020">
     <button class="sns-btn">
-        <img src="../images/naver.png" alt="네이버 예약">
-        <p class="sns-btn-text font-pl">
-            네이버 예약
-        </p>
+      <img src="../images/naver.png" alt="네이버 예약" />
+      <p class="sns-btn-text font-pl">네이버 예약</p>
     </button>
+  </a>
+
     <button class="sns-btn">
-        <img src="../images/wechat.png" alt="위챗">
-        <p class="sns-btn-text font-pl">
-            위챗
-        </p>
+      <img src="../images/wechat.png" alt="위챗" />
+      <p class="sns-btn-text font-pl">위챗</p>
     </button>
+
     <button class="sns-btn">
-        <img src="../images/line.png" alt="라인">
-        <p class="sns-btn-text font-pl">
-            라인
-        </p>
+      <img src="../images/line.png" alt="라인" />
+      <p class="sns-btn-text font-pl">라인</p>
     </button>
+
+  <a href="https://blog.naver.com/brillerclinic3">
     <button class="sns-btn">
-        <img src="../images/blog.png" alt="네이버블로그">
-        <p class="sns-btn-text font-pl">
-            네이버블로그
-        </p>
+      <img src="../images/blog.png" alt="네이버블로그" />
+      <p class="sns-btn-text font-pl">네이버블로그</p>
     </button>
+  </a>
 </div>
 
-
-
-
 <button class="Top_Scroll_btn">
-    <i class="xi-arrow-up"></i>
-    <div class="progress_bar"></div>
+  <i class="xi-arrow-up"></i>
+  <div class="progress_bar"></div>
 </button>
 
-
 <script>
-    const toggleBtn = document.querySelector(".sns-open");
-    const toggleBtnIcon = document.querySelector(".sns-open i")
-    toggleBtn.addEventListener("click", () => {
-        if(toggleBtnIcon.className === "xi-bars") {
-            toggleBtn.style.bottom = "432px";
-            toggleBtnIcon.className = "xi-close";
-        } else {
-            toggleBtn.style.bottom = "112px";
-            toggleBtnIcon.className = "xi-bars";
-        }
+  const toggleBtn = document.querySelector(".sns-open");
+  const toggleBtnIcon = document.querySelector(".sns-open i");
+  toggleBtn.addEventListener("click", () => {
+    if (toggleBtnIcon.className === "xi-bars") {
+      toggleBtn.style.bottom = "432px";
+      toggleBtnIcon.className = "xi-close";
+    } else {
+      toggleBtn.style.bottom = "112px";
+      toggleBtnIcon.className = "xi-bars";
+    }
 
-        const btns = document.querySelector(".sns-btn-wrap");
+    const btns = document.querySelector(".sns-btn-wrap");
 
-        if(btns.classList.contains("disable")) {
-            btns.classList.remove("disable");
-            btns.classList.add("active");
-        } else {
-            btns.classList.remove("active");
-            btns.classList.add("disable");
-        }
-    })
+    if (btns.classList.contains("disable")) {
+      btns.classList.remove("disable");
+      btns.classList.add("active");
+    } else {
+      btns.classList.remove("active");
+      btns.classList.add("disable");
+    }
+  });
 </script>
 
 <script>
+  $(".Top_Scroll_btn").click(function () {
+    $("html").scrollTop(0);
+  });
 
-    $('.Top_Scroll_btn').click(function () {
-        $('html').scrollTop(0);
+  $(document).scroll(function () {
+    if ($(document).scrollTop() > 88) {
+      $(".Top_Scroll_btn").addClass("active");
+    } else {
+      $(".Top_Scroll_btn").removeClass("active");
+    }
+  });
+
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      var scrollPercent =
+        ($(window).scrollTop() / ($(document).height() - $(window).height())) *
+        100;
+      var color = getColorFromPercentage(scrollPercent);
+
+      $(".Top_Scroll_btn .progress_bar").css(
+        "background",
+        "conic-gradient(" +
+          color +
+          " 0% " +
+          scrollPercent +
+          "%, #fff " +
+          scrollPercent +
+          "% 100%)"
+      );
     });
 
-    $(document).scroll(function () {
-        if ($(document).scrollTop() > 88) {
-            $('.Top_Scroll_btn').addClass('active');
-        } else {
-            $('.Top_Scroll_btn').removeClass('active');
-        }
-    });
+    function getColorFromPercentage(percentage) {
+      var startColor = [256, 256, 256]; // RGB 값으로 작성해야함!
+      var endColor = [174, 174, 174];
 
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            var scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
-            var color = getColorFromPercentage(scrollPercent);
+      var color = [];
+      for (var i = 0; i < 3; i++) {
+        color[i] = Math.round(
+          startColor[i] + (endColor[i] - startColor[i]) * (percentage / 100)
+        );
+      }
 
-            $('.Top_Scroll_btn .progress_bar').css('background', 'conic-gradient(' + color + ' 0% ' + scrollPercent + '%, #fff ' + scrollPercent + '% 100%)');
-        });
-
-        function getColorFromPercentage(percentage) {
-
-            var startColor = [256, 256, 256]; // RGB 값으로 작성해야함!
-            var endColor = [174, 174, 174];
-
-            var color = [];
-            for (var i = 0; i < 3; i++) {
-                color[i] = Math.round(startColor[i] + (endColor[i] - startColor[i]) * (percentage / 100));
-            }
-
-            return 'rgb(' + color.join(',') + ')';
-        }
-    });
+      return "rgb(" + color.join(",") + ")";
+    }
+  });
 </script>
