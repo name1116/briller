@@ -103,7 +103,7 @@
 
         <div class="anti-aging-option-container">
 
-          <div class="option-wrap open">
+          <div class="option-wrap">
             <label for="option-btn" class="option">
               <div class="option-title">
                 <img src="./images/small_star.png" alt="option" />
@@ -111,7 +111,7 @@
               </div>
 
               <button class="option-btn">
-                <i class="xi-angle-up"></i>
+                <i class="xi-angle-down"></i>
               </button>
             </label>
 
@@ -621,14 +621,14 @@
 
         label.addEventListener("click", () => {
             // 다른 모든 .option-wrap에서 open 제거
-            optionWraps.forEach((wrap) => {
-                if (wrap !== optionWrap) {
-                    wrap.classList.remove("open");
-                    const otherToggleButton = wrap.querySelector(".option-btn i");
-                    otherToggleButton.classList.remove("xi-angle-up");
-                    otherToggleButton.classList.add("xi-angle-down");
-                }
-            });
+            // optionWraps.forEach((wrap) => {
+            //     if (wrap !== optionWrap) {
+            //         wrap.classList.remove("open");
+            //         const otherToggleButton = wrap.querySelector(".option-btn i");
+            //         otherToggleButton.classList.remove("xi-angle-up");
+            //         otherToggleButton.classList.add("xi-angle-down");
+            //     }
+            // });
 
             // 현재 클릭된 .option-wrap의 open 상태 토글
             if (toggleButton.classList.contains("xi-angle-up")) {
