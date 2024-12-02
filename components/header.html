@@ -306,6 +306,7 @@
   const navLinks = document.querySelectorAll(
     ".header-main-nav .main-nav-btn a"
   );
+  const menuBtn = document.querySelector(".menu");
 
   // followHeader에 마우스 올리면 스타일 변경
   followHeader.addEventListener("mouseover", () => {
@@ -329,6 +330,13 @@
       }
     });
   });
+
+  menuBtn.addEventListener("mouseover", () => {
+    followHeader.classList.add("hovered");
+  })
+  menuBtn.addEventListener("mouseout", () => {
+    followHeader.classList.remove("hovered");
+  })
 
   // 모든 navLinks에 클래스 추가/제거 함수
   function addHoverClass() {

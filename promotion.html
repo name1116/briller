@@ -27,8 +27,11 @@
     #header .header-main-nav .main-nav-btn .font-pm {
       color: #000;
     }
-    #header .logo-img-wrap img {
+    #header .follow-header .sub-logo-img-wrap img {
       filter: invert(100%) contrast(100%);
+    }
+    #header .follow-header.hovered .sub-logo-img-wrap img {
+      filter: none;
     }
   </style>
 
@@ -46,26 +49,87 @@
         </p>
       </div>
 
+      <ul class="promotion-index-container">
+        <li class="promotion ">
+          <a href="">
+            <div class="promotion-img-wrap">
+              <img
+                src="./images/promotion/welcome.png"
+                alt=""
+                class="promotion-img"
+              />
+            </div>
+            <h5 class="promotion-title font-pr">첫 방문 EVENT 첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT첫 방문 EVENT</h5>
+          </a>
+        </li>
 
-      
+        <li class="promotion ">
+          <a href="">
+            <div class="promotion-img-wrap">
+              <img
+                src="./images/promotion/time_event.png"
+                alt=""
+                class="promotion-img"
+              />
+            </div>
+            <h5 class="promotion-title font-pr">TIME EVENT</h5>
+          </a>
+        </li>
+
+        <!-- 끝난 이벤트는 end -->
+
+        <li class="promotion end">
+          <a href="">
+            <div class="promotion-img-wrap">
+              <img
+                src="./images/promotion/time_event.png"
+                alt=""
+                class="promotion-img"
+              />
+            </div>
+            <h5 class="promotion-title font-pr">TIME EVENT</h5>
+          </a>
+        </li>
+        
+      </ul>
+
+      <div class="pagination">
+        <button class="pagination-btn-first">
+          <img src="./images/promotion/left.png" alt="left">
+        </button>
+        <button class="pagination-btn clicked font-pr">
+          1
+        </button>
+        <button class="pagination-btn font-pr">
+          2
+        </button>
+        <button class="pagination-btn font-pr">
+          3
+        </button>
+        <button class="pagination-btn-end">
+          <img src="./images/promotion/right.png" alt="left">
+        </button>
+      </div>
+
     </section>
 
     <div id="top_menu"></div>
     <div id="footer"></div>
 
-    <script
-      charset="UTF-8"
-      class="daum_roughmap_loader_script"
-      src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"
-    ></script>
-    <script charset="UTF-8">
-      new daum.roughmap.Lander({
-        timestamp: "1732176981627",
-        key: "2maur",
-        mapWidth: "100%",
-        mapHeight: "600",
-      }).render();
+
+    <script>
+      const btn = document.querySelectorAll(".pagination-btn");
+
+      btn.forEach((detailBtn) => {
+        detailBtn.addEventListener("click", () => {
+          btn.forEach((button) => button.classList.remove("clicked"));
+          detailBtn.classList.add("clicked");
+        });
+      });
     </script>
+
+
+
   </body>
 
   <script src="./js/jquery.js"></script>

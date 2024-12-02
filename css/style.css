@@ -362,11 +362,13 @@
   padding: 15px;
   justify-content: left;
   gap: 8px;
+  overflow: hidden;
 }
 .sns-btn-wrap.active:hover .sns-btn .sns-btn-text {
   display: block;
   font-size: 15px;
   color: #fff;
+  white-space: nowrap;
 }
 
 .sns-btn-wrap.disable {
@@ -5716,6 +5718,8 @@ td {
   padding-bottom: 20px;
 }
 .botox-wrap .botox-type-wrap .botox-table .text .content-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.63;
@@ -9724,4 +9728,207 @@ td {
   font-size: 20px;
   line-height: 1.9;
   color: #202020;
+}
+
+.promotion-wrap .promotion-index-container {
+  max-width: 1440px;
+  margin-top: 56px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px 30px;
+}
+.promotion-wrap .promotion-index-container .promotion{
+  width: calc((100% - 60px) / 3);
+}
+.promotion-wrap .promotion-index-container .promotion .promotion-img-wrap {
+  /* max-width: 460px;
+  max-height: 263px; */
+  position: relative;
+  max-height: 263px;
+}
+.promotion-wrap .promotion-index-container .promotion .promotion-img-wrap .promotion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.promotion-wrap .promotion-index-container .promotion .promotion-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+  margin-top: 16px;
+  text-align: center;
+  font-size: 18px;
+  color: #202020;
+}
+
+.promotion-wrap .promotion-index-container .promotion.end .promotion-img-wrap::after {
+  position: absolute;
+  content: "종료된\A이벤트입니다.";
+  white-space: pre;
+  color: #FFF;
+  font-size: 24px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  clear: both;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #5d4b38;
+  opacity: 0.83;
+}
+
+.promotion-wrap .pagination {
+  margin-top: 80px;
+  padding-bottom: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.promotion-wrap .pagination .pagination-btn-first img,
+.promotion-wrap .pagination .pagination-btn-end img {
+  width: 40px;
+  height: 40px;
+}
+.promotion-wrap .pagination .pagination-btn {
+  width: 40px;
+  height: 40px;
+
+
+  border-radius: 50%;
+  background-color: #fcf9f6;
+  font-size: 16px;
+  color: #202020;
+}
+.promotion-wrap .pagination .pagination-btn.clicked {
+  background-color: #75624d;
+  color: #FFF;
+}
+
+
+/* 프로모션 상세페이지 */
+
+.promotion-detail-wrap {
+  padding-top: 240px;
+  padding-bottom: 160px;
+  background-color: #fcf9f6;
+
+  text-align: center;
+}
+
+.promotion-detail-wrap .text-wrap .title  {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.29;
+  color: #202020;
+}
+.promotion-detail-wrap .text-wrap .date-text {
+  margin-top: 40px;
+  font-size: 20px;
+  line-height: 1.9;
+  color: #202020;
+}
+.promotion-detail-wrap .text-wrap .text {
+  margin-top: 56px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.63;
+  color: #75624d;
+}
+.promotion-detail-wrap .img-wrap {
+  max-width: 1280px;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.promotion-detail-wrap .img-wrap img {
+  object-fit: cover;
+}
+.promotion-detail-wrap .detail-text-wrap {
+  margin-top: 24px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.promotion-detail-wrap .detail-text-wrap .detail-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.63;
+  color: #202020;
+}
+
+.promotion-detail-wrap .btn-wrap {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+}
+.promotion-detail-wrap .btn-wrap::after {
+  position: absolute;
+  display: block;
+  clear: both;
+  content: "";
+  top: -19px;
+
+  width: 100%;
+  height: 2px;
+  background-color: #707070;
+
+}
+.promotion-detail-wrap .btn-wrap .prev-btn a,
+.promotion-detail-wrap .btn-wrap .next-btn a {
+  display: flex;
+  align-items: center;
+}
+
+.promotion-detail-wrap .btn-wrap .prev-btn a i {
+  font-size: 24px;
+  color: #202020;
+
+  margin-right: 8px;
+}
+.promotion-detail-wrap .btn-wrap .prev-btn a .btn-text {
+  font-size: 16px;
+  color: #202020;
+
+  margin-right: 19px;
+}
+.promotion-detail-wrap .btn-wrap .prev-btn a .btn-title {
+  font-size: 16px;
+  color: #cac2b9;
+}
+
+.promotion-detail-wrap .btn-wrap .next-btn a i {
+  font-size: 24px;
+  color: #202020;
+
+  margin-left: 8px;
+}
+.promotion-detail-wrap .btn-wrap .next-btn a .btn-text {
+  font-size: 16px;
+  color: #202020;
+
+  margin-left: 19px;
+}
+.promotion-detail-wrap .btn-wrap .next-btn a .btn-title {
+  font-size: 16px;
+  color: #cac2b9;
+}
+.promotion-detail-wrap .btn-wrap .index-btn {
+  width: 56px;
+  height: 56px;
 }
