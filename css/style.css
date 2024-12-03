@@ -2,6 +2,17 @@
   word-break: keep-all;
 }
 
+/* Google Translate 배너 숨기기 */
+.VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate {
+  display: none !important;
+}
+
+/* 페이지 상단 여백 제거 */
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
 /* 팝업 */
 .pop-parent {
   position: fixed;
@@ -735,6 +746,7 @@ body {
   height: 100%;
 }
 .swiper .swiper-wrapper .swiper-slide img {
+  height: 100%;
   object-fit: cover;
 }
 
@@ -5713,6 +5725,7 @@ td {
 }
 .botox-wrap .botox-type-wrap .botox-table tr td.devide {
   background-color: #f2ede8;
+  vertical-align: middle;
 }
 .botox-wrap .botox-type-wrap .botox-table tr td.devide .text {
   font-size: 18px;
@@ -10052,7 +10065,7 @@ td {
   color: #FFF;
 }
 
-.sns-btn-wrap .we-qr-img {
+.we-qr-img {
   display: none;
   position: fixed;
   top: 50%;
