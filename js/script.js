@@ -6,7 +6,22 @@ $(document).ready(function(){
 
     $('#pagination').load('../components/pagination.html');
     $('#top_menu').load('../components/top_menu.html');
+    $('#repeat').load('../components/repeat.html');
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+    const weChatBtn = document.querySelector(".contact-btn.wechat");
+    const weChatPop = document.querySelector(".wechat-qr-img");
+    const weChatCloseBtn = document.querySelector(".wechat-close");
+
+    weChatBtn.addEventListener("click", () => {
+      weChatPop.style.display = "block";
+    });
+
+    weChatCloseBtn.addEventListener("click", () => {
+      weChatPop.style.display = "none";
+    });
+  });
 
 // /*smooth-scroll*/
 // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);

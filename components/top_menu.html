@@ -16,12 +16,12 @@
     </button>
   </a>
 
-    <button class="sns-btn">
+    <button class="sns-btn wechat">
       <img src="../images/wechat.png" alt="위챗" />
       <p class="sns-btn-text font-pl">위챗</p>
     </button>
 
-    <button class="sns-btn">
+    <button class="sns-btn line">
       <img src="../images/line.png" alt="라인" />
       <p class="sns-btn-text font-pl">라인</p>
     </button>
@@ -32,12 +32,55 @@
       <p class="sns-btn-text font-pl">네이버블로그</p>
     </button>
   </a>
+
+  <div class="we-qr-img">
+    <i class="xi-close we-close"></i>
+    <div class="img-wrap">
+      <img src="./images/blog.png" alt="wechat qr" />
+    </div>
+  </div>
+
+  <div class="line-qr-img">
+    <i class="xi-close line-close"></i>
+    <div class="img-wrap">
+      <img src="./images/blog.png" alt="line qr" />
+    </div>
+  </div>
 </div>
 
 <button class="Top_Scroll_btn">
   <i class="xi-arrow-up"></i>
   <div class="progress_bar"></div>
 </button>
+
+<script>
+    const weChatBtn = document.querySelector(".sns-btn.wechat");
+    const weChatPop = document.querySelector(".we-qr-img");
+    const weChatCloseBtn = document.querySelector(".we-close");
+
+    const lineBtn = document.querySelector(".sns-btn.line");
+    const linePop = document.querySelector(".line-qr-img");
+    const lineCloseBtn = document.querySelector(".line-close");
+
+    weChatBtn.addEventListener("click", () => {
+      weChatPop.style.display = "block";
+      linePop.style.display = "none";
+      console.log("we");
+    });
+
+    weChatCloseBtn.addEventListener("click", () => {
+      weChatPop.style.display = "none";
+    });
+
+    lineBtn.addEventListener("click", () => {
+      linePop.style.display = "block";
+      weChatPop.style.display = "none";
+    });
+
+    lineCloseBtn.addEventListener("click", () => {
+      linePop.style.display = "none";
+    });
+</script>
 
 <script>
   const toggleBtn = document.querySelector(".sns-open");
