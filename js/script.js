@@ -6,20 +6,23 @@ $(document).ready(function(){
 
     $('#pagination').load('../components/pagination.html');
     $('#top_menu').load('../components/top_menu.html');
-    $('#repeat').load('../components/repeat.html');
 })
 
 document.addEventListener("DOMContentLoaded", () => {
     const weChatBtn = document.querySelector(".contact-btn.wechat");
     const weChatPop = document.querySelector(".wechat-qr-img");
     const weChatCloseBtn = document.querySelector(".wechat-close");
+    const bg = document.querySelector(".qr-background");
+
 
     weChatBtn.addEventListener("click", () => {
       weChatPop.style.display = "block";
+      bg.style.display = "block";
     });
 
     weChatCloseBtn.addEventListener("click", () => {
       weChatPop.style.display = "none";
+      bg.style.display = "none";
     });
   });
 

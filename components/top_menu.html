@@ -16,15 +16,15 @@
     </button>
   </a>
 
-    <button class="sns-btn wechat">
-      <img src="../images/wechat.png" alt="위챗" />
-      <p class="sns-btn-text font-pl">위챗</p>
-    </button>
+  <button class="sns-btn wechat">
+    <img src="../images/wechat.png" alt="위챗" />
+    <p class="sns-btn-text font-pl">위챗</p>
+  </button>
 
-    <button class="sns-btn line">
-      <img src="../images/line.png" alt="라인" />
-      <p class="sns-btn-text font-pl">라인</p>
-    </button>
+  <button class="sns-btn line">
+    <img src="../images/line.png" alt="라인" />
+    <p class="sns-btn-text font-pl">라인</p>
+  </button>
 
   <a href="https://blog.naver.com/brillerclinic3">
     <button class="sns-btn">
@@ -34,19 +34,42 @@
   </a>
 
   <div class="we-qr-img">
-    <i class="xi-close we-close"></i>
+    <div class="title font-pb">WeChat 연결하기</div>
+
     <div class="img-wrap">
-      <img src="./images/blog.png" alt="wechat qr" />
+      <img src="./images/qr/wechat.png" alt="wechat qr" />
     </div>
+
+    <div class="text-wrap">
+      <h4 class="text-title font-pb">BRILLER CLINIC</h4>
+      <p class="text font-pr">
+        카메라로 QR코드를 인식하면<br />
+        위챗으로 연결 됩니다.
+      </p>
+    </div>
+
+    <button class="we-close font-pm">확인</button>
   </div>
 
   <div class="line-qr-img">
-    <i class="xi-close line-close"></i>
+    <div class="title font-pb">Line 연결하기</div>
+
     <div class="img-wrap">
-      <img src="./images/blog.png" alt="line qr" />
+      <img src="./images/qr/line.png" alt="line qr" />
     </div>
+
+    <div class="text-wrap">
+      <h4 class="text-title font-pb">BRILLER CLINIC</h4>
+      <p class="text font-pr">
+        카메라로 QR코드를 인식하면<br />
+        위챗으로 연결 됩니다.
+      </p>
+    </div>
+
+    <button class="line-close font-pm">확인</button>
   </div>
 </div>
+
 
 <button class="Top_Scroll_btn">
   <i class="xi-arrow-up"></i>
@@ -54,37 +77,41 @@
 </button>
 
 <script>
-    const weChatBtn = document.querySelector(".sns-btn.wechat");
-    const weChatPop = document.querySelector(".we-qr-img");
-    const weChatCloseBtn = document.querySelector(".we-close");
+  const weChatBtn = document.querySelector(".sns-btn.wechat");
+  const weChatPop = document.querySelector(".we-qr-img");
+  const weChatCloseBtn = document.querySelector(".we-close");
 
-    const lineBtn = document.querySelector(".sns-btn.line");
-    const linePop = document.querySelector(".line-qr-img");
-    const lineCloseBtn = document.querySelector(".line-close");
+  const lineBtn = document.querySelector(".sns-btn.line");
+  const linePop = document.querySelector(".line-qr-img");
+  const lineCloseBtn = document.querySelector(".line-close");
 
-    weChatBtn.addEventListener("click", () => {
-      weChatPop.style.display = "block";
-      linePop.style.display = "none";
-      console.log("we");
-    });
+  const bg = document.querySelector(".qr-background");
 
-    weChatCloseBtn.addEventListener("click", () => {
-      weChatPop.style.display = "none";
-    });
+  weChatBtn.addEventListener("click", () => {
+    weChatPop.style.display = "block";
+    linePop.style.display = "none";
+    bg.style.display = "block";
+  });
 
-    lineBtn.addEventListener("click", () => {
-      linePop.style.display = "block";
-      weChatPop.style.display = "none";
-    });
+  weChatCloseBtn.addEventListener("click", () => {
+    weChatPop.style.display = "none";
+    bg.style.display = "none";
+  });
 
-    lineCloseBtn.addEventListener("click", () => {
-      linePop.style.display = "none";
-    });
-</script>
+  lineBtn.addEventListener("click", () => {
+    linePop.style.display = "block";
+    weChatPop.style.display = "none";
+    bg.style.display = "block";
+  });
 
-<script>
+  lineCloseBtn.addEventListener("click", () => {
+    linePop.style.display = "none";
+    bg.style.display = "none";
+  });
+
   const toggleBtn = document.querySelector(".sns-open");
   const toggleBtnIcon = document.querySelector(".sns-open i");
+
   toggleBtn.addEventListener("click", () => {
     if (toggleBtnIcon.className === "xi-bars") {
       toggleBtn.style.bottom = "432px";
@@ -92,6 +119,10 @@
     } else {
       toggleBtn.style.bottom = "112px";
       toggleBtnIcon.className = "xi-bars";
+
+      weChatPop.style.display = "none";
+      linePop.style.display = "none";
+      bg.style.display = "none";
     }
 
     const btns = document.querySelector(".sns-btn-wrap");
