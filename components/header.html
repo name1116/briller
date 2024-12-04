@@ -123,27 +123,42 @@
   </a>
 </div>
 
-<div id="google_translate_element" style="display:none;"></div>
+<div id="google_translate_element" style="display: none"></div>
 
 <div class="menu">
   <button class="lang-wrap" id=":1.restore">
     <a href="javascript:void(0)">
-      <img src="../images/korea.png" alt="한국어" class="korean" data-lang="ko"/>
+      <img
+        src="../images/korea.png"
+        alt="한국어"
+        class="korean"
+        data-lang="ko"
+      />
     </a>
   </button>
   <button class="lang-wrap">
     <a href="javascript:void(0)">
-      <img src="../images/china.png" alt="중국어" class="china" data-lang="zh-CN"/>
+      <img
+        src="../images/china.png"
+        alt="중국어"
+        class="china"
+        data-lang="zh-CN"
+      />
     </a>
   </button>
   <button class="lang-wrap">
     <a href="javascript:void(0)">
-      <img src="../images/japan.png" alt="일본어" class="japanese" data-lang="ja"/>
+      <img
+        src="../images/japan.png"
+        alt="일본어"
+        class="japanese"
+        data-lang="ja"
+      />
     </a>
   </button>
   <button class="lang-wrap">
     <a href="javascript:void(0)">
-      <img src="../images/USA.png" alt="영어" class="english" data-lang="en"/>
+      <img src="../images/USA.png" alt="영어" class="english" data-lang="en" />
     </a>
   </button>
 
@@ -362,13 +377,20 @@
   if (location.pathname.endsWith("index.html") || location.pathname === "/") {
     function toggleFollowHeader() {
       const followHeader = document.querySelector(".follow-header");
+      const nav = document.querySelector(".header-main-nav");
       const scrollPosition = window.scrollY; // 스크롤 위치 확인
 
       // 200px 이상 스크롤 시 follow-header 표시
-      if (scrollPosition != 0) {
+      if (scrollPosition >= 120) {
         followHeader.style.display = "block";
+        nav.style.position = "fixed";
+        nav.style.left = "50%";
+        nav.style.transform = "translate(-50%)";
       } else {
         followHeader.style.display = "none";
+        nav.style.position = "relative";
+        nav.style.left = "auto";
+        nav.style.transform = "none";
       }
     }
   }
@@ -517,25 +539,47 @@
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript">
   function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: "ko", // 기본 페이지 언어 설정
-      includedLanguages: "ko,zh-CN,ja,en", // 포함할 언어 목록
-      autoDisplay: false,
-    },
-    "google_translate_element"
-  );
-}
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: "ko", // 기본 페이지 언어 설정
+        includedLanguages: "ko,zh-CN,ja,en", // 포함할 언어 목록
+        autoDisplay: false,
+      },
+      "google_translate_element"
+    );
+  }
 
-document.querySelectorAll(".lang-wrap").forEach((btn) => {
-  btn.addEventListener("click", function () {
+  window.addEventListener("load", () => {
     // 클릭된 버튼에서 언어 코드 가져오기
-    const langCode = this.querySelector("img").dataset.lang;
+    const langCode = localStorage.getItem("selectedLang");
+    console.log(langCode);
+    const timeLine = document.querySelectorAll(
+      ".directions .directions-text-wrap .time-wrap"
+    );
+    const locText = document.querySelectorAll(".wrap .location.two");
+    const timeText = document.querySelectorAll(".wrap .time.two");
+    const contactBtn = document.querySelectorAll(
+      ".contact-btn-wrap .contact-btn"
+    );
+
+    if (langCode === "en") {
+      timeLine.forEach((el) => el.classList.add("english"));
+    } else {
+      timeLine.forEach((el) => el.classList.remove("english"));
+    }
 
     if (langCode === "ko") {
       // 한국어일 경우: Google Translate 세션을 초기화하고 원본으로 복원
       resetGoogleTranslate();
+
+      contactBtn.forEach((el) => (el.style.width = "168px"));
+      locText.forEach((el) => (el.style.letterSpacing = ""));
+      timeText.forEach((el) => (el.style.letterSpacing = ""));
     } else {
+      contactBtn.forEach((el) => (el.style.width = "auto"));
+      locText.forEach((el) => (el.style.letterSpacing = "normal"));
+      timeText.forEach((el) => (el.style.letterSpacing = "normal"));
+
       // 다른 언어일 경우: Google Translate 드롭다운에서 언어 변경
       const translateSelect = document.querySelector(".goog-te-combo");
       if (translateSelect) {
@@ -546,109 +590,65 @@ document.querySelectorAll(".lang-wrap").forEach((btn) => {
       }
     }
   });
-});
 
-// Google Translate 세션 초기화 및 원본 복원 함수
-function resetGoogleTranslate() {
-  // Google Translate의 iframe을 초기화해 원본 페이지로 복구
-  const iframe = document.querySelector(".VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate");
-  if (iframe) {
-    iframe.contentWindow.document
-      .getElementById(":1.restore")
-      .click();
+  document.querySelectorAll(".lang-wrap").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // 클릭된 버튼에서 언어 코드 가져오기
+      const langCode = this.querySelector("img").dataset.lang;
+      const timeLine = document.querySelectorAll(
+        ".directions .directions-text-wrap .time-wrap"
+      );
+      const locText = document.querySelectorAll(".wrap .location.two");
+      const timeText = document.querySelectorAll(".wrap .time.two");
+      const contactBtn = document.querySelectorAll(
+        ".contact-btn-wrap .contact-btn"
+      );
+
+      localStorage.setItem("selectedLang", langCode);
+
+      if (langCode === "en") {
+        timeLine.forEach((el) => el.classList.add("english"));
+      } else {
+        timeLine.forEach((el) => el.classList.remove("english"));
+      }
+
+      if (langCode === "ko") {
+        // 한국어일 경우: Google Translate 세션을 초기화하고 원본으로 복원
+        resetGoogleTranslate();
+
+        contactBtn.forEach((el) => (el.style.width = "168px"));
+        locText.forEach((el) => (el.style.letterSpacing = ""));
+        timeText.forEach((el) => (el.style.letterSpacing = ""));
+      } else {
+        contactBtn.forEach((el) => (el.style.width = "auto"));
+        locText.forEach((el) => (el.style.letterSpacing = "normal"));
+        timeText.forEach((el) => (el.style.letterSpacing = "normal"));
+
+        // 다른 언어일 경우: Google Translate 드롭다운에서 언어 변경
+        const translateSelect = document.querySelector(".goog-te-combo");
+        if (translateSelect) {
+          translateSelect.value = langCode; // 언어 선택
+          translateSelect.dispatchEvent(new Event("change")); // 변경 이벤트 트리거
+        } else {
+          console.error("Google Translate combobox not found!");
+        }
+      }
+    });
+  });
+
+  // Google Translate 세션 초기화 및 원본 복원 함수
+  function resetGoogleTranslate() {
+    // Google Translate의 iframe을 초기화해 원본 페이지로 복구
+    const iframe = document.querySelector(
+      ".VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate"
+    );
+    if (iframe) {
+      iframe.contentWindow.document.getElementById(":1.restore").click();
+    }
+
+    // 추가적으로 URL 해시값 초기화 (Google Translate는 URL에 #googtrans를 추가)
+    if (window.location.hash.includes("#googtrans")) {
+      history.replaceState(null, "", window.location.pathname); // URL 복구
+    }
   }
-
-  // 추가적으로 URL 해시값 초기화 (Google Translate는 URL에 `#googtrans`를 추가)
-  if (window.location.hash.includes("#googtrans")) {
-    history.replaceState(null, "", window.location.pathname); // URL 복구
-  }
-}
-
-
-
-// function updateNavText(langCode) {
-//   const navLinks = document.querySelectorAll(".header-main-nav .main-nav-btn a");
-
-//   navLinks.forEach((link) => {
-//     const originalText = link.getAttribute('data-original-text') || link.innerHTML;
-
-//     // 언어 코드에 따른 텍스트 변경
-//     switch (langCode) {
-//       case "ko":
-//         if (originalText === "BRILLER") {
-//           link.innerHTML = "브리에의원";
-//         } else if (originalText === "SIGNATURE") {
-//           link.innerHTML = "대표시술";
-//         } else if (originalText === "LIFTING") {
-//           link.innerHTML = "리프팅";
-//         } else if (originalText === "FACE/BODY") {
-//           link.innerHTML = "주사시술";
-//         } else if (originalText === "SKIN") {
-//           link.innerHTML = "피부";
-//         } else if (originalText === "COLOR/PORE") {
-//           link.innerHTML = "색소/모공";
-//         } else if (originalText === "PROMOTION") {
-//           link.innerHTML = "이벤트";
-//         }
-//         break;
-//       case "zh-CN":
-//         if (originalText === "BRILLER") {
-//           link.innerHTML = "布丽尔";
-//         } else if (originalText === "SIGNATURE") {
-//           link.innerHTML = "代表治疗";
-//         } else if (originalText === "LIFTING") {
-//           link.innerHTML = "提升";
-//         } else if (originalText === "FACE/BODY") {
-//           link.innerHTML = "面部/身体";
-//         } else if (originalText === "SKIN") {
-//           link.innerHTML = "皮肤";
-//         } else if (originalText === "COLOR/PORE") {
-//           link.innerHTML = "颜色/毛孔";
-//         } else if (originalText === "PROMOTION") {
-//           link.innerHTML = "促销";
-//         }
-//         break;
-//       case "ja":
-//         if (originalText === "BRILLER") {
-//           link.innerHTML = "ブリエ";
-//         } else if (originalText === "SIGNATURE") {
-//           link.innerHTML = "代表的な施術";
-//         } else if (originalText === "LIFTING") {
-//           link.innerHTML = "リフティング";
-//         } else if (originalText === "FACE/BODY") {
-//           link.innerHTML = "顔/体";
-//         } else if (originalText === "SKIN") {
-//           link.innerHTML = "スキン";
-//         } else if (originalText === "COLOR/PORE") {
-//           link.innerHTML = "色素/毛穴";
-//         } else if (originalText === "PROMOTION") {
-//           link.innerHTML = "プロモーション";
-//         }
-//         break;
-//       case "en":
-//         if (originalText === "BRILLER") {
-//           link.innerHTML = "BRILLER";
-//         } else if (originalText === "SIGNATURE") {
-//           link.innerHTML = "SIGNATURE";
-//         } else if (originalText === "LIFTING") {
-//           link.innerHTML = "LIFTING";
-//         } else if (originalText === "FACE/BODY") {
-//           link.innerHTML = "FACE/BODY";
-//         } else if (originalText === "SKIN") {
-//           link.innerHTML = "SKIN";
-//         } else if (originalText === "COLOR/PORE") {
-//           link.innerHTML = "COLOR/PORE";
-//         } else if (originalText === "PROMOTION") {
-//           link.innerHTML = "PROMOTION";
-//         }
-//         break;
-//       default:
-//         // 언어가 없을 경우 기본값 (영어로 설정)
-//         link.innerHTML = originalText;
-//         break;
-//     }
-//   });
-// }
-
-
 </script>

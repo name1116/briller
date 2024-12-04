@@ -26,6 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
+
+
+
+
+
+
 // /*smooth-scroll*/
 // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 

@@ -1,5 +1,9 @@
 * {
   word-break: keep-all;
+  word-wrap: break-word;
+  white-space: normal; /* 줄바꿈 허용 */
+  /* overflow: hidden; 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* 말줄임 표시 추가 */
 }
 
 /* Google Translate 배너 숨기기 */
@@ -696,7 +700,7 @@ body {
   clear: both;
   content: "";
   top: 10%;
-  left: 64px;
+  right: -15px;
   width: 1px;
   height: calc(100% - 10px);
   background-color: #202020;
@@ -1529,6 +1533,7 @@ body {
   color: #75624d;
 }
 .briller-info-section .directions .directions-text-wrap .contact-btn-wrap {
+
   margin-top: 40px;
   display: flex;
   gap: 8px;
@@ -10200,4 +10205,8 @@ td {
 
   font-size: 16px;
   color: #FFF;
+}
+
+.directions .directions-text-wrap .time-wrap.english::after {
+  left: 95px;
 }
