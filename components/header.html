@@ -180,8 +180,9 @@
     <a
       href="../about_sub01.html"
       class="font-pm"
-      onmouseover="this.innerHTML = '브리에의원'"
-      onmouseout="this.innerHTML = 'BRILLER'"
+      onmouseover="changeContent(this, '브리에의원')"
+      onmouseout="changeContent(this, 'BRILLER')"
+      translate="no"
     >
       BRILLER
     </a>
@@ -207,8 +208,9 @@
     <a
       href="../signature_sub01.html"
       class="font-pm"
-      onmouseover="this.innerHTML = '대표시술'"
-      onmouseout="this.innerHTML = 'SIGNATURE'"
+      onmouseover="changeContent(this, '대표시술')"
+      onmouseout="changeContent(this, 'SIGNATURE')"
+      translate="no"
     >
       SIGNATURE
     </a>
@@ -244,8 +246,9 @@
     <a
       href="../lifting_sub01.html"
       class="font-pm"
-      onmouseover="this.innerHTML = '리프팅'"
-      onmouseout="this.innerHTML = 'LIFTING'"
+      onmouseover="changeContent(this, '리프팅')"
+      onmouseout="changeContent(this, 'LIFTING')"
+      translate="no"
     >
       LIFTING
     </a>
@@ -281,8 +284,9 @@
     <a
       href="../facebody_sub01.html"
       class="font-pm"
-      onmouseover="this.innerHTML = '주사시술'"
-      onmouseout="this.innerHTML = 'FACE/BODY'"
+      onmouseover="changeContent(this, '주사시술')"
+      onmouseout="changeContent(this, 'FACE/BODY')"
+      translate="no"
     >
       FACE/BODY
     </a>
@@ -308,8 +312,9 @@
     <a
       href="../skin_sub01.html"
       class="font-pm"
-      onmouseover="this.innerHTML = '피부'"
-      onmouseout="this.innerHTML = 'SKIN'"
+      onmouseover="changeContent(this, '피부')"
+      onmouseout="changeContent(this, 'SKIN')"
+      translate="no"
     >
       SKIN
     </a>
@@ -335,8 +340,9 @@
     <a
       href="../color_sub01.html"
       class="font-pm"
-      onmouseover="this.innerHTML = '색소/모공'"
-      onmouseout="this.innerHTML = 'COLOR/PORE'"
+      onmouseover="changeContent(this, '색소/모공')"
+      onmouseout="changeContent(this, 'COLOR/PORE')"
+      translate="no"
     >
       COLOR/PORE
     </a>
@@ -360,8 +366,9 @@
     <a
       href="../promotion.html"
       class="font-pm"
-      onmouseover="this.innerHTML = '이벤트'"
-      onmouseout="this.innerHTML = 'PROMOTION'"
+      onmouseover="changeContent(this, '이벤트')"
+      onmouseout="changeContent(this, 'PROMOTION')"
+      translate="no"
     >
       PROMOTION
     </a>
@@ -372,7 +379,6 @@
     </div> -->
   </div>
 </nav>
-
 <script>
   if (location.pathname.endsWith("index.html") || location.pathname === "/") {
     function toggleFollowHeader() {
@@ -538,6 +544,13 @@
 
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript">
+  const principles = document.querySelectorAll(
+    ".principle-wrap .principle-flex-wrap .principle"
+  );
+  const principleImg = document.querySelectorAll(
+    ".principle-wrap .principle-flex-wrap .principle .img-wrap"
+  );
+
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
       {
@@ -564,6 +577,10 @@
 
     if (langCode === "en") {
       timeLine.forEach((el) => el.classList.add("english"));
+      principles.forEach((el) => {
+        el.style.width = "400px";
+        el.style.textAlign = "center";
+      });
     } else {
       timeLine.forEach((el) => el.classList.remove("english"));
     }
@@ -604,7 +621,11 @@
         ".contact-btn-wrap .contact-btn"
       );
 
-      localStorage.setItem("selectedLang", langCode);
+      if (langCode === "zh-CN") {
+        localStorage.setItem("selectedLang", "zhCN");
+      } else {
+        localStorage.setItem("selectedLang", langCode);
+      }
 
       if (langCode === "en") {
         timeLine.forEach((el) => el.classList.add("english"));
@@ -652,3 +673,127 @@
     }
   }
 </script>
+<script>
+  function changeContent(element, newText) {
+    element.innerHTML = newText;
+    element.setAttribute('translate', 'yes');  // translate 속성을 동적으로 'yes'로 설정
+  }
+</script>
+
+<!-- 
+<script>
+  // 현재 선택된 언어를 가져오는 함수
+  function getLanguageCode() {
+    return localStorage.getItem("selectedLang") || "ko"; // 기본 언어는 한국어
+  }
+
+  // 텍스트를 변경하는 함수
+  function changeText(element) {
+    const langCode = getLanguageCode(); // 선택된 언어 코드 가져오기
+
+    const text = {
+      ko: {
+        // 한국어
+        "BRILLER": "브리에의원",
+        "SIGNATURE": "대표시술",
+        "LIFTING": "리프팅",
+        "FACE/BODY": "주사시술",
+        "SKIN": "피부",
+        "COLOR/PORE": "색소/모공",
+        "PROMOTION": "이벤트",
+      },
+      en: {
+        // 영어
+        "BRILLER": "BRILLER",
+        "SIGNATURE": "SIGNATURE",
+        "LIFTING": "LIFTING",
+        "FACE/BODY": "FACE/BODY",
+        "SKIN": "SKIN",
+        "COLOR/PORE": "COLOR/PORE",
+        "PROMOTION": "PROMOTION",
+      },
+      zhCN: {
+        // 중국어 (간체)
+        "BRILLER": "布里尔诊所",
+        "SIGNATURE": "代表手术",
+        "LIFTING": "提升",
+        "FACE/BODY": "面部/身体",
+        "SKIN": "皮肤",
+        "COLOR/PORE": "色素/毛孔",
+        "PROMOTION": "活动",
+      },
+      ja: {
+        // 일본어
+        "BRILLER": "ブリエクリニック",
+        "SIGNATURE": "代表施術",
+        "LIFTING": "リフトアップ",
+        "FACE/BODY": "顔/体",
+        "SKIN": "スキンケア",
+        "COLOR/PORE": "色素/毛穴",
+        "PROMOTION": "プロモーション",
+      },
+    };
+
+    const textContent = text[langCode];
+
+    // 해당 요소에 맞는 텍스트로 변경
+    if (textContent) {
+      element.textContent = textContent[element.textContent];
+    }
+  }
+
+  // 텍스트를 원래대로 복구하는 함수
+  function resetText(element) {
+    const langCode = getLanguageCode(); // 선택된 언어 코드 가져오기
+
+    const text = {
+      ko: {
+        // 한국어
+        "브리에의원": "BRILLER",
+        "대표시술": "SIGNATURE",
+        "리프팅": "LIFTING",
+        "주사시술": "FACE/BODY",
+        "피부": "SKIN",
+        "색소/모공": "COLOR/PORE",
+        "이벤트": "PROMOTION",
+      },
+      en: {
+        // 영어
+        "BRILLER": "BRILLER",
+        "SIGNATURE": "SIGNATURE",
+        "LIFTING": "LIFTING",
+        "FACE/BODY": "FACE/BODY",
+        "SKIN": "SKIN",
+        "COLOR/PORE": "COLOR/PORE",
+        "PROMOTION": "PROMOTION",
+      },
+      zhCN: {
+        // 중국어 (간체)
+        "布里尔诊所": "BRILLER",
+        "代表手术": "SIGNATURE",
+        "提升": "LIFTING",
+        "面部/身体": "FACE/BODY",
+        "皮肤": "SKIN",
+        "色素/毛孔": "COLOR/PORE",
+        "活动": "PROMOTION",
+      },
+      ja: {
+        // 일본어
+        "ブリエクリニック": "BRILLER",
+        "代表施術": "SIGNATURE",
+        "リフトアップ": "LIFTING",
+        "顔/体": "FACE/BODY",
+        "スキンケア": "SKIN",
+        "色素/毛穴": "COLOR/PORE",
+        "プロモーション": "PROMOTION",
+      },
+    };
+
+    const textContent = text[langCode];
+
+    // 해당 요소에 맞는 원래 텍스트로 복구
+    if (textContent) {
+      element.textContent = textContent[element.textContent];
+    }
+  }
+</script> -->
