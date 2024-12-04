@@ -181,7 +181,7 @@
       href="../about_sub01.html"
       class="font-pm"
       onmouseover="changeContent(this, '브리에의원')"
-      onmouseout="changeContent(this, 'BRILLER')"
+      onmouseout="resetContent(this, 'BRILLER')"
       translate="no"
     >
       BRILLER
@@ -209,7 +209,7 @@
       href="../signature_sub01.html"
       class="font-pm"
       onmouseover="changeContent(this, '대표시술')"
-      onmouseout="changeContent(this, 'SIGNATURE')"
+      onmouseout="resetContent(this, 'SIGNATURE')"
       translate="no"
     >
       SIGNATURE
@@ -247,7 +247,7 @@
       href="../lifting_sub01.html"
       class="font-pm"
       onmouseover="changeContent(this, '리프팅')"
-      onmouseout="changeContent(this, 'LIFTING')"
+      onmouseout="resetContent(this, 'LIFTING')"
       translate="no"
     >
       LIFTING
@@ -285,7 +285,7 @@
       href="../facebody_sub01.html"
       class="font-pm"
       onmouseover="changeContent(this, '주사시술')"
-      onmouseout="changeContent(this, 'FACE/BODY')"
+      onmouseout="resetContent(this, 'FACE/BODY')"
       translate="no"
     >
       FACE/BODY
@@ -313,7 +313,7 @@
       href="../skin_sub01.html"
       class="font-pm"
       onmouseover="changeContent(this, '피부')"
-      onmouseout="changeContent(this, 'SKIN')"
+      onmouseout="resetContent(this, 'SKIN')"
       translate="no"
     >
       SKIN
@@ -367,7 +367,7 @@
       href="../promotion.html"
       class="font-pm"
       onmouseover="changeContent(this, '이벤트')"
-      onmouseout="changeContent(this, 'PROMOTION')"
+      onmouseout="resetContent(this, 'PROMOTION')"
       translate="no"
     >
       PROMOTION
@@ -674,9 +674,17 @@
   }
 </script>
 <script>
+
+const lang = localStorage.getItem("selectedLang");
+
   function changeContent(element, newText) {
     element.innerHTML = newText;
     element.setAttribute('translate', 'yes');  // translate 속성을 동적으로 'yes'로 설정
+  }
+
+  function resetContent(element, newText) {
+    element.innerHTML = newText;
+    element.setAttribute('translate', 'no');  // translate 속성을 동적으로 'yes'로 설정
   }
 </script>
 
