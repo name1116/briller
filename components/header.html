@@ -1,7 +1,12 @@
 <div class="ham-menu-wrap">
   <div class="wrap">
     <div class="ham-menu">
-      <h3 class="title font-ir">Briller</h3>
+      <div class="title-wrap">
+        <h3 class="title font-ir" translate="no">Briller</h3>
+        <button class="option-btn">
+          <i class="xi-angle-up"></i>
+        </button>
+      </div>
 
       <div class="btn-wrap">
         <button>
@@ -16,9 +21,14 @@
       </div>
     </div>
     <div class="ham-menu">
-      <h3 class="title font-ir">Signature</h3>
+      <div class="title-wrap">
+        <h3 class="title font-ir" translate="no">Signature</h3>
+        <button class="option-btn">
+          <i class="xi-angle-down"></i>
+        </button>
+      </div>
 
-      <div class="btn-wrap">
+      <div class="btn-wrap disable">
         <button>
           <a href="../signature_sub01.html" class="font-pl"> 동안 필러 </a>
         </button>
@@ -37,9 +47,14 @@
       </div>
     </div>
     <div class="ham-menu">
-      <h3 class="title font-ir">Lifting</h3>
+      <div class="title-wrap">
+        <h3 class="title font-ir" translate="no">Lifting</h3>
+        <button class="option-btn">
+          <i class="xi-angle-down"></i>
+        </button>
+      </div>
 
-      <div class="btn-wrap">
+      <div class="btn-wrap disable">
         <button>
           <a href="../lifting_sub01.html" class="font-pl"> 실리프팅 </a>
         </button>
@@ -58,9 +73,14 @@
       </div>
     </div>
     <div class="ham-menu">
-      <h3 class="title font-ir">Face/Body</h3>
+      <div class="title-wrap">
+        <h3 class="title font-ir" translate="no">Face/Body</h3>
+        <button class="option-btn">
+          <i class="xi-angle-down"></i>
+        </button>
+      </div>
 
-      <div class="btn-wrap">
+      <div class="btn-wrap disable">
         <button>
           <a href="../facebody_sub01.html" class="font-pl"> 보톡스 </a>
         </button>
@@ -74,9 +94,14 @@
     </div>
 
     <div class="ham-menu">
-      <h3 class="title font-ir">Skin</h3>
+      <div class="title-wrap">
+        <h3 class="title font-ir" translate="no">Skin</h3>
+        <button class="option-btn">
+          <i class="xi-angle-down"></i>
+        </button>
+      </div>
 
-      <div class="btn-wrap">
+      <div class="btn-wrap disable">
         <button>
           <a href="../skin_sub01.html" class="font-pl"> 스킨부스터 </a>
         </button>
@@ -90,9 +115,14 @@
     </div>
 
     <div class="ham-menu">
-      <h3 class="title font-ir">Color/Pore</h3>
+      <div class="title-wrap">
+        <h3 class="title font-ir" translate="no">Color/Pore</h3>
+        <button class="option-btn">
+          <i class="xi-angle-down"></i>
+        </button>
+      </div>
 
-      <div class="btn-wrap">
+      <div class="btn-wrap disable">
         <button>
           <a href="../color_sub01.html" class="font-pl"> 피코어 </a>
         </button>
@@ -105,7 +135,12 @@
 
     <div class="ham-menu">
       <h3 class="title">
-        <a href="../promotion.html" class="font-ir"> Promotion </a>
+        <div class="title-wrap">
+          <h3 class="title font-ir" translate="no">Promotion</h3>
+          <button class="option-btn">
+            <i class="xi-angle-down"></i>
+          </button>
+        </div>
       </h3>
 
       <!-- <div class="btn-wrap">
@@ -126,41 +161,76 @@
 <div id="google_translate_element" style="display: none"></div>
 
 <div class="menu">
-  <button class="lang-wrap" id=":1.restore">
-    <a href="javascript:void(0)">
-      <img
-        src="../images/korea.png"
-        alt="한국어"
-        class="korean"
-        data-lang="ko"
-      />
-    </a>
-  </button>
-  <button class="lang-wrap">
-    <a href="javascript:void(0)">
-      <img
-        src="../images/china.png"
-        alt="중국어"
-        class="china"
-        data-lang="zh-CN"
-      />
-    </a>
-  </button>
-  <button class="lang-wrap">
-    <a href="javascript:void(0)">
-      <img
-        src="../images/japan.png"
-        alt="일본어"
-        class="japanese"
-        data-lang="ja"
-      />
-    </a>
-  </button>
-  <button class="lang-wrap">
-    <a href="javascript:void(0)">
-      <img src="../images/USA.png" alt="영어" class="english" data-lang="en" />
-    </a>
-  </button>
+  <div class="language-wrap">
+    <button class="lang-wrap" id=":1.restore">
+      <a href="javascript:void(0)">
+        <img
+          src="../images/korea.png"
+          alt="한국어"
+          class="korean"
+          data-lang="ko"
+        />
+      </a>
+    </button>
+    <button class="lang-wrap">
+      <a href="javascript:void(0)">
+        <img
+          src="../images/china.png"
+          alt="중국어"
+          class="china"
+          data-lang="zh-CN"
+        />
+      </a>
+    </button>
+    <button class="lang-wrap">
+      <a href="javascript:void(0)">
+        <img
+          src="../images/japan.png"
+          alt="일본어"
+          class="japanese"
+          data-lang="ja"
+        />
+      </a>
+    </button>
+    <button class="lang-wrap">
+      <a href="javascript:void(0)">
+        <img
+          src="../images/USA.png"
+          alt="영어"
+          class="english"
+          data-lang="en"
+        />
+      </a>
+    </button>
+
+    <button class="mobile-lang-btn">
+      <p class="btn-text font-pl" translate="no">KR</p>
+      <i class="xi-angle-down-thin"></i>
+    </button>
+
+    <div class="mobile-lang">
+      <button class="m-lang-wrap" onclick=closeMobileBtn()>
+        <a href="javascript:void(0)">
+          <p class="btn-text font-pl" translate="no" data-lang="ko" id=":1.restore">KR</p>
+        </a>
+      </button>
+      <button class="m-lang-wrap">
+        <a href="javascript:void(0)" onclick=closeMobileBtn()>
+          <p class="btn-text font-pl" translate="no" data-lang="zh-CN">CN</p>
+        </a>
+      </button>
+      <button class="m-lang-wrap">
+        <a href="javascript:void(0)" onclick=closeMobileBtn()>
+          <p class="btn-text font-pl" translate="no" data-lang="ja">JP</p>
+        </a>
+      </button>
+      <button class="m-lang-wrap">
+        <a href="javascript:void(0)" onclick=closeMobileBtn()>
+          <p class="btn-text font-pl" translate="no" data-lang="en">US</p>
+        </a>
+      </button>
+    </div>
+  </div>
 
   <button class="ham-menu-img-wrap">
     <i class="xi-bars"></i>
@@ -188,9 +258,21 @@
       BRILLER
     </a>
     <div class="main-nav-detail-wrap">
-      <button><a href="../about_sub01.html" class="main-nav-detail font-pl">브리에의원 소개</a></button>
-      <button><a href="../about_sub02.html" class="main-nav-detail font-pl">의료진 소개</a></button>
-      <button><a href="../about_sub03.html" class="main-nav-detail last font-pl">오시는길 소개</a></button>
+      <button>
+        <a href="../about_sub01.html" class="main-nav-detail font-pl"
+          >브리에의원 소개</a
+        >
+      </button>
+      <button>
+        <a href="../about_sub02.html" class="main-nav-detail font-pl"
+          >의료진 소개</a
+        >
+      </button>
+      <button>
+        <a href="../about_sub03.html" class="main-nav-detail last font-pl"
+          >오시는길 소개</a
+        >
+      </button>
     </div>
   </div>
 
@@ -206,11 +288,31 @@
       SIGNATURE
     </a>
     <div class="main-nav-detail-wrap">
-      <button><a href="../signature_sub01.html" class="main-nav-detail font-pl">동안 필러</a></button>
-      <button><a href="../signature_sub02.html" class="main-nav-detail font-pl">주름 필러</a></button>
-      <button><a href="../signature_sub03.html" class="main-nav-detail font-pl">흉터 필러</a></button>
-      <button><a href="../signature_sub04.html" class="main-nav-detail font-pl">눈 밑 필러</a></button>
-      <button><a href="../signature_sub05.html" class="main-nav-detail last font-pl">뮤즈라인주사</a></button>
+      <button>
+        <a href="../signature_sub01.html" class="main-nav-detail font-pl"
+          >동안 필러</a
+        >
+      </button>
+      <button>
+        <a href="../signature_sub02.html" class="main-nav-detail font-pl"
+          >주름 필러</a
+        >
+      </button>
+      <button>
+        <a href="../signature_sub03.html" class="main-nav-detail font-pl"
+          >흉터 필러</a
+        >
+      </button>
+      <button>
+        <a href="../signature_sub04.html" class="main-nav-detail font-pl"
+          >눈 밑 필러</a
+        >
+      </button>
+      <button>
+        <a href="../signature_sub05.html" class="main-nav-detail last font-pl"
+          >뮤즈라인주사</a
+        >
+      </button>
     </div>
   </div>
 
@@ -226,11 +328,31 @@
       LIFTING
     </a>
     <div class="main-nav-detail-wrap">
-      <button><a href="../lifting_sub01.html" class="main-nav-detail font-pl">실리프팅</a></button>
-      <button><a href="../lifting_sub02.html" class="main-nav-detail font-pl">울쎄라</a></button>
-      <button><a href="../lifting_sub03.html" class="main-nav-detail font-pl">텐써마</a></button>
-      <button><a href="../lifting_sub04.html" class="main-nav-detail font-pl">슈링크유니버스</a></button>
-      <button><a href="../lifting_sub05.html" class="main-nav-detail last font-pl">인모드</a></button>
+      <button>
+        <a href="../lifting_sub01.html" class="main-nav-detail font-pl"
+          >실리프팅</a
+        >
+      </button>
+      <button>
+        <a href="../lifting_sub02.html" class="main-nav-detail font-pl"
+          >울쎄라</a
+        >
+      </button>
+      <button>
+        <a href="../lifting_sub03.html" class="main-nav-detail font-pl"
+          >텐써마</a
+        >
+      </button>
+      <button>
+        <a href="../lifting_sub04.html" class="main-nav-detail font-pl"
+          >슈링크유니버스</a
+        >
+      </button>
+      <button>
+        <a href="../lifting_sub05.html" class="main-nav-detail last font-pl"
+          >인모드</a
+        >
+      </button>
     </div>
   </div>
 
@@ -246,9 +368,21 @@
       FACE/BODY
     </a>
     <div class="main-nav-detail-wrap">
-      <button><a href="../facebody_sub01.html" class="main-nav-detail font-pl">보톡스</a></button>
-      <button><a href="../facebody_sub02.html" class="main-nav-detail font-pl">울트라콜/쥬베룩</a></button>
-      <button><a href="../facebody_sub03.html" class="main-nav-detail last font-pl">얼굴윤곽/라인</a></button>
+      <button>
+        <a href="../facebody_sub01.html" class="main-nav-detail font-pl"
+          >보톡스</a
+        >
+      </button>
+      <button>
+        <a href="../facebody_sub02.html" class="main-nav-detail font-pl"
+          >울트라콜/쥬베룩</a
+        >
+      </button>
+      <button>
+        <a href="../facebody_sub03.html" class="main-nav-detail last font-pl"
+          >얼굴윤곽/라인</a
+        >
+      </button>
     </div>
   </div>
 
@@ -264,9 +398,21 @@
       SKIN
     </a>
     <div class="main-nav-detail-wrap">
-      <button><a href="../skin_sub01.html" class="main-nav-detail font-pl">스킨부스터</a></button>
-      <button><a href="../skin_sub02.html" class="main-nav-detail font-pl">피부관리</a></button>
-      <button><a href="../skin_sub03.html" class="main-nav-detail last font-pl">항노화/미용수액</a></button>
+      <button>
+        <a href="../skin_sub01.html" class="main-nav-detail font-pl"
+          >스킨부스터</a
+        >
+      </button>
+      <button>
+        <a href="../skin_sub02.html" class="main-nav-detail font-pl"
+          >피부관리</a
+        >
+      </button>
+      <button>
+        <a href="../skin_sub03.html" class="main-nav-detail last font-pl"
+          >항노화/미용수액</a
+        >
+      </button>
     </div>
   </div>
 
@@ -282,9 +428,19 @@
       COLOR/PORE
     </a>
     <div class="main-nav-detail-wrap">
-      <button><a href="../color_sub01.html" class="main-nav-detail font-pl">피코어</a></button>
-      <button><a href="../color_sub02.html" class="main-nav-detail font-pl">칼라리티프로</a></button>
-      <button><a href="../color_sub03.html" class="main-nav-detail last font-pl">CO₂</a></button>
+      <button>
+        <a href="../color_sub01.html" class="main-nav-detail font-pl">피코어</a>
+      </button>
+      <button>
+        <a href="../color_sub02.html" class="main-nav-detail font-pl"
+          >칼라리티프로</a
+        >
+      </button>
+      <button>
+        <a href="../color_sub03.html" class="main-nav-detail last font-pl"
+          >CO₂</a
+        >
+      </button>
     </div>
   </div>
 
@@ -301,6 +457,9 @@
     </a>
   </div>
 </nav>
+
+
+
 <script>
   if (location.pathname.endsWith("index.html") || location.pathname === "/") {
     function toggleFollowHeader() {
@@ -443,6 +602,7 @@
   const hamMenu = document.querySelector(".ham-menu-wrap");
   const hamBtn = document.querySelector(".ham-menu-img-wrap i");
   const langBtn = document.querySelectorAll(".lang-wrap");
+  const moLangBtn = document.querySelector(".mobile-lang-btn");
   const header = document.querySelector(".header-main-nav");
 
   hamBtn.addEventListener("click", () => {
@@ -451,6 +611,7 @@
       hamMenu.style.display = "block";
       langBtn.forEach((btn) => {
         btn.style.display = "none";
+        moLangBtn.style.display = "none";
       });
       header.style.display = "none";
     } else if (hamBtn.className === "xi-close") {
@@ -458,6 +619,7 @@
       hamMenu.style.display = "none";
       langBtn.forEach((btn) => {
         btn.style.display = "block";
+        moLangBtn.style.display = "flex";
       });
       header.style.display = "";
     }
@@ -482,14 +644,6 @@
       },
       "google_translate_element"
     );
-
-    setTimeout(() => {
-        const translatedElements = document.querySelectorAll('body');
-        translatedElements.forEach((element) => {
-            let processedText = insertLineBreaks(element.innerText, 50); // 50자를 기준으로 줄바꿈 추가
-            element.innerHTML = processedText;
-        });
-    }, 3000); // 번역 대기 시간 (조정 가능)
   }
 
   window.addEventListener("load", () => {
@@ -587,6 +741,65 @@
     });
   });
 
+  document.querySelectorAll(".m-lang-wrap").forEach((btn) => {
+    btn.addEventListener("click", function () {
+
+      // 클릭된 버튼에서 언어 코드 가져오기
+      const langSelected = document.querySelector(".mobile-lang-btn .btn-text");
+      const langCode = this.querySelector("p").dataset.lang;
+      const timeLine = document.querySelectorAll(
+        ".directions .directions-text-wrap .time-wrap"
+      );
+      const locText = document.querySelectorAll(".wrap .location.two");
+      const timeText = document.querySelectorAll(".wrap .time.two");
+      const contactBtn = document.querySelectorAll(
+        ".contact-btn-wrap .contact-btn"
+      );
+
+      if (langCode === "zh-CN") {
+        localStorage.setItem("selectedLang", "zhCN");
+        langSelected.innerHTML = "CN";
+      } else {
+        localStorage.setItem("selectedLang", langCode);
+      }
+
+      if (langCode === "en") {
+        timeLine.forEach((el) => el.classList.add("english"));
+        langSelected.innerHTML = "US";
+      } else {
+        timeLine.forEach((el) => el.classList.remove("english"));
+      }
+
+      if (langCode === "ja") {
+        langSelected.innerHTML = "JP";
+      }
+
+      if (langCode === "ko") {
+        // 한국어일 경우: Google Translate 세션을 초기화하고 원본으로 복원
+        resetGoogleTranslate();
+        langSelected.innerHTML = "KR";
+        contactBtn.forEach((el) => (el.style.width = "168px"));
+        locText.forEach((el) => (el.style.letterSpacing = ""));
+        timeText.forEach((el) => (el.style.letterSpacing = ""));
+      } else {
+        contactBtn.forEach((el) => (el.style.width = "auto"));
+        locText.forEach((el) => (el.style.letterSpacing = "normal"));
+        timeText.forEach((el) => (el.style.letterSpacing = "normal"));
+
+        // 다른 언어일 경우: Google Translate 드롭다운에서 언어 변경
+        const translateSelect = document.querySelector(".goog-te-combo");
+        if (translateSelect) {
+          translateSelect.value = langCode; // 언어 선택
+          translateSelect.dispatchEvent(new Event("change")); // 변경 이벤트 트리거
+        } else {
+          console.error("Google Translate combobox not found!");
+        }
+      }
+
+
+    });
+  });
+
   // Google Translate 세션 초기화 및 원본 복원 함수
   function resetGoogleTranslate() {
     // Google Translate의 iframe을 초기화해 원본 페이지로 복구
@@ -602,96 +815,127 @@
       history.replaceState(null, "", window.location.pathname); // URL 복구
     }
   }
-
-
 </script>
 
+<script>
+  function getLanguageCode() {
+    return localStorage.getItem("selectedLang") || "ko"; // 기본 언어는 한국어
+  }
 
+  const translations = {
+    ko: {
+      BRILLER: "브리에의원",
+      SIGNATURE: "대표시술",
+      LIFTING: "리프팅",
+      "FACE/BODY": "주사시술",
+      SKIN: "피부",
+      "COLOR/PORE": "색소/모공",
+      PROMOTION: "이벤트",
+    },
+    en: {
+      BRILLER: "BRILLER",
+      SIGNATURE: "SIGNATURE",
+      LIFTING: "LIFTING",
+      "FACE/BODY": "FACE/BODY",
+      SKIN: "SKIN",
+      "COLOR/PORE": "COLOR/PORE",
+      PROMOTION: "PROMOTION",
+    },
+    zhCN: {
+      BRILLER: "布里尔诊所",
+      SIGNATURE: "代表手术",
+      LIFTING: "提升",
+      "FACE/BODY": "面部/身体",
+      SKIN: "皮肤",
+      "COLOR/PORE": "色素/毛孔",
+      PROMOTION: "活动",
+    },
+    ja: {
+      BRILLER: "ブリエクリニック",
+      SIGNATURE: "代表施術",
+      LIFTING: "リフトアップ",
+      "FACE/BODY": "顔/体",
+      SKIN: "スキンケア",
+      "COLOR/PORE": "色素/毛穴",
+      PROMOTION: "プロモーション",
+    },
+  };
 
+  function changeText(element) {
+    const langCode = getLanguageCode(); // 선택된 언어 코드 가져오기
+    const key = element.getAttribute("data-key"); // 고유 키 가져오기
+    const text = translations[langCode]?.[key];
+    if (text) {
+      element.textContent = text;
+    }
+  }
+
+  function resetText(element) {
+    const langCode = getLanguageCode(); // 선택된 언어 코드 가져오기
+    const key = element.getAttribute("data-key"); // 고유 키 가져오기
+    const originalText = translations.en[key]; // 기본 영어 텍스트로 복구
+    if (originalText) {
+      element.textContent = originalText;
+    }
+  }
+
+  // main-nav-detail-wrap 호버 중일 때도 a 태그에 텍스트 유지
+  document.querySelectorAll(".main-nav-btn").forEach((btn) => {
+    const link = btn.querySelector("a"); // 메인 링크
+    const detailWrap = btn.querySelector(".main-nav-detail-wrap"); // 세부 링크 컨테이너
+
+    if (link && detailWrap) {
+      // detailWrap에 마우스가 들어오면 changeText 유지
+      detailWrap.addEventListener("mouseenter", () => {
+        changeText(link);
+      });
+
+      // detailWrap에서 마우스가 나가면 resetText 복원
+      detailWrap.addEventListener("mouseleave", () => {
+        resetText(link);
+      });
+    }
+  });
+</script>
 
 
 <script>
-function getLanguageCode() {
-  return localStorage.getItem("selectedLang") || "ko"; // 기본 언어는 한국어
-}
+  const mobileOpenBtn = document.querySelector(
+    "#header .menu .language-wrap .mobile-lang-btn"
+  );
+  const mobileLang = document.querySelector(
+    "#header .menu .language-wrap .mobile-lang"
+  );
+  const changeLang = document.querySelector(
+    ".m-lang-wrap"
+  );
 
-const translations = {
-  ko: {
-    BRILLER: "브리에의원",
-    SIGNATURE: "대표시술",
-    LIFTING: "리프팅",
-    "FACE/BODY": "주사시술",
-    SKIN: "피부",
-    "COLOR/PORE": "색소/모공",
-    PROMOTION: "이벤트",
-  },
-  en: {
-    BRILLER: "BRILLER",
-    SIGNATURE: "SIGNATURE",
-    LIFTING: "LIFTING",
-    "FACE/BODY": "FACE/BODY",
-    SKIN: "SKIN",
-    "COLOR/PORE": "COLOR/PORE",
-    PROMOTION: "PROMOTION",
-  },
-  zhCN: {
-    BRILLER: "布里尔诊所",
-    SIGNATURE: "代表手术",
-    LIFTING: "提升",
-    "FACE/BODY": "面部/身体",
-    SKIN: "皮肤",
-    "COLOR/PORE": "色素/毛孔",
-    PROMOTION: "活动",
-  },
-  ja: {
-    BRILLER: "ブリエクリニック",
-    SIGNATURE: "代表施術",
-    LIFTING: "リフトアップ",
-    "FACE/BODY": "顔/体",
-    SKIN: "スキンケア",
-    "COLOR/PORE": "色素/毛穴",
-    PROMOTION: "プロモーション",
-  },
-};
 
-function changeText(element) {
-  const langCode = getLanguageCode(); // 선택된 언어 코드 가져오기
-  const key = element.getAttribute("data-key"); // 고유 키 가져오기
-  const text = translations[langCode]?.[key];
-  if (text) {
-    element.textContent = text;
+  mobileOpenBtn.addEventListener("click", () => {
+    mobileLang.classList.toggle("active");
+  });
+
+  function closeMobileBtn() {
+    mobileLang.classList.remove("active");
   }
-}
-
-function resetText(element) {
-  const langCode = getLanguageCode(); // 선택된 언어 코드 가져오기
-  const key = element.getAttribute("data-key"); // 고유 키 가져오기
-  const originalText = translations.en[key]; // 기본 영어 텍스트로 복구
-  if (originalText) {
-    element.textContent = originalText;
-  }
-}
-
-
-// main-nav-detail-wrap 호버 중일 때도 a 태그에 텍스트 유지
-document.querySelectorAll(".main-nav-btn").forEach((btn) => {
-  const link = btn.querySelector("a"); // 메인 링크
-  const detailWrap = btn.querySelector(".main-nav-detail-wrap"); // 세부 링크 컨테이너
-
-  if (link && detailWrap) {
-    // detailWrap에 마우스가 들어오면 changeText 유지
-    detailWrap.addEventListener("mouseenter", () => {
-      changeText(link);
-    });
-
-    // detailWrap에서 마우스가 나가면 resetText 복원
-    detailWrap.addEventListener("mouseleave", () => {
-      resetText(link);
-    });
-  }
-});
 </script>
 
+<script>
+  const iHide = document.querySelectorAll(".ham-menu .title-wrap i");
+
+  iHide.forEach((btn) => {
+    const btnWrap = btn.parentElement.parentElement.parentElement;
+    const target = btnWrap.querySelector(".btn-wrap");
 
 
-
+    btn.addEventListener("click", () => {
+      if(btn.className === "xi-angle-down") {
+        btn.className = "xi-angle-up";
+        target.classList.remove("disable")
+      } else {
+        btn.className = "xi-angle-down";
+        target.classList.add("disable")
+      }
+    })
+  })
+</script>
