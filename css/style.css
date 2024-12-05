@@ -1,6 +1,6 @@
 * {
   word-break: keep-all;
-
+  white-space: normal;
 }
 
 /* Google Translate 배너 숨기기 */
@@ -856,7 +856,6 @@ body {
   padding: 15px auto;
 }
 .swiper .quick-form-wrap .quick-form-open-btn p {
-  width: fit-content;
   font-size: 16px;
   color: #fff;
 }
@@ -6490,6 +6489,7 @@ td {
   .face-contouring-table
   tr
   td.devide {
+    vertical-align: middle;
   background-color: #f2ede8;
 }
 .face-contouring-wrap
@@ -10035,4 +10035,19 @@ td {
 
 .directions .directions-text-wrap .time-wrap.english::after {
   left: 95px;
+}
+
+.principle-flex-wrap .principle {
+  max-width: 400px;
+}
+.principle-flex-wrap .principle .principle-title {
+  padding: 0px;
+}
+
+.not {
+  display: block;
+}
+
+.not.en {
+  display: none;
 }

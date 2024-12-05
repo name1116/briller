@@ -482,6 +482,14 @@
       },
       "google_translate_element"
     );
+
+    setTimeout(() => {
+        const translatedElements = document.querySelectorAll('body');
+        translatedElements.forEach((element) => {
+            let processedText = insertLineBreaks(element.innerText, 50); // 50자를 기준으로 줄바꿈 추가
+            element.innerHTML = processedText;
+        });
+    }, 3000); // 번역 대기 시간 (조정 가능)
   }
 
   window.addEventListener("load", () => {
@@ -594,6 +602,8 @@
       history.replaceState(null, "", window.location.pathname); // URL 복구
     }
   }
+
+
 </script>
 
 
@@ -681,6 +691,7 @@ document.querySelectorAll(".main-nav-btn").forEach((btn) => {
   }
 });
 </script>
+
 
 
 
