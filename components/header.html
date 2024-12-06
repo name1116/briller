@@ -921,21 +921,23 @@
 </script>
 
 <script>
-  const iHide = document.querySelectorAll(".ham-menu .title-wrap i");
+  const iHide = document.querySelectorAll(".ham-menu .title-wrap");
 
-  iHide.forEach((btn) => {
-    const btnWrap = btn.parentElement.parentElement.parentElement;
+  iHide.forEach((iHide) => {
+    const btnWrap = iHide.parentElement;
     const target = btnWrap.querySelector(".btn-wrap");
+    const iBtn = iHide.querySelector("i");
 
 
-    btn.addEventListener("click", () => {
-      if(btn.className === "xi-angle-down") {
-        btn.className = "xi-angle-up";
+    iHide.addEventListener("click", () => {
+      if(iBtn.className === "xi-angle-down") {
+        iBtn.className = "xi-angle-up";
         target.classList.remove("disable")
       } else {
-        btn.className = "xi-angle-down";
+        iBtn.className = "xi-angle-down";
         target.classList.add("disable")
       }
     })
   })
+
 </script>

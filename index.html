@@ -90,11 +90,11 @@
               BRILLER <span class="font-pl">CLINIC</span>
             </h3>
             <h1 class="text-wrap-title font-ir" translate="no">
-              SO THAT TOUR FACE<br />
-              WILL ALWAYS 'BRILLER'
+              BRIGHTEN<br class="only-mobile"/> YOUR FACE,<br />
+              YOUR MIND
             </h1>
             <p class="font-pr">
-              빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.
+              빛나는, 더 반짝일 수 있는<br class="only-mobile"/> 당신을 위한 브리에클리닉입니다.
             </p>
           </div>
         </div>
@@ -105,11 +105,11 @@
               BRILLER <span class="font-pl">CLINIC</span>
             </h3>
             <h1 class="text-wrap-title font-ir" translate="no">
-              SO THAT TOUR FACE<br />
-              WILL ALWAYS 'BRILLER'
+              BRIGHTEN<br class="only-mobile"/> YOUR FACE,<br />
+              YOUR MIND
             </h1>
             <p class="font-pr">
-              빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.
+              빛나는, 더 반짝일 수 있는<br class="only-mobile"/> 당신을 위한 브리에클리닉입니다.
             </p>
           </div>
         </div>
@@ -120,11 +120,11 @@
               BRILLER <span class="font-pl">CLINIC</span>
             </h3>
             <h1 class="text-wrap-title font-ir" translate="no">
-              SO THAT TOUR FACE<br />
-              WILL ALWAYS 'BRILLER'
+              BRIGHTEN<br class="only-mobile"/> YOUR FACE,<br />
+              YOUR MIND
             </h1>
             <p class="font-pr">
-              빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.
+              빛나는, 더 반짝일 수 있는<br class="only-mobile"/> 당신을 위한 브리에클리닉입니다.
             </p>
           </div>
         </div>
@@ -136,12 +136,12 @@
             </h3>
             <div class="wrap">
               <h1 class="text-wrap-title font-ir" translate="no">
-                BRIGHTEN YOUR FACE,<br />
+                BRIGHTEN<br class="only-mobile"/> YOUR FACE,<br />
                 YOUR MIND
               </h1>
             </div>
             <p class="font-pr">
-              빛나는, 더 반짝일 수 있는 당신을 위한 브리에클리닉입니다.
+              빛나는, 더 반짝일 수 있는<br class="only-mobile"/> 당신을 위한 브리에클리닉입니다.
             </p>
           </div>
         </div>
@@ -175,7 +175,7 @@
               <a href="./private_check.html"> 보기 </a>
             </span>
           </div>
-          <div>
+          <div class="btn-submit-wrap">
             <button type="submit" class="btn-submit font-pb">신청하기</button>
           </div>
         </form>
@@ -267,7 +267,7 @@
       <section class="briller-ulthera">
         <div class="briller-ulthera-text-wrap">
           <p class="signature-title font-pm" translate="no">
-            BRILLER SIGNATURE&nbsp;<span class="font-pm" >03</span>
+            BRILLER SIGNATURE&nbsp;<span class="font-pm">03</span>
           </p>
           <h3 class="title font-pb" translate="no">BRILLER ULTHERA</h3>
           <h4 class="sub-title font-pm">브리에 울쎄라</h4>
@@ -474,9 +474,9 @@
           el: ".swiper-pagination",
           clickable: true,
         },
-        autoplay: {
-          delay: 3000,
-        },
+        // autoplay: {
+        //   delay: 3000,
+        // },
         loop: true,
       });
     </script>
@@ -513,18 +513,16 @@
       }).render();
     </script>
 
-
     <script>
       const lang = localStorage.getItem("selectedLang");
       const quickConsult = document.querySelector(".quick-form-open-btn p");
 
-      if(lang === "en") {
+      if (lang === "en") {
         quickConsult.style.width = "150px";
       } else {
         quickConsult.style.width = "";
       }
     </script>
-
   </body>
 
   <script src="./js/jquery.js"></script>
