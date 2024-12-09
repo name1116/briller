@@ -313,12 +313,12 @@
             BRILLER <span class="font-pl">CLINIC</span>
           </p>
           <h3 class="title font-pb">
-            브리에의원은
-            <span class="font-pb">상담부터 시술까지 대표원장</span>이 직접
+            브리에의원은<br class="only-mobile">
+            <span class="font-pb">상담부터 시술까지 대표원장</span>이<br class="only-mobile"> 직접
             진행합니다.
           </h3>
           <p class="text font-pl">
-            진정성을 바탕으로 자연스러운 아름다움을 찾도록 도와 드리겠습니다.
+            진정성을 바탕으로 자연스러운 아름다움을<br class="only-mobile"> 찾도록 도와 드리겠습니다.
           </p>
         </div>
       </div>
@@ -423,6 +423,7 @@
           <div
             id="daumRoughmapContainer1732176981627"
             class="root_daum_roughmap root_daum_roughmap_landing"
+            style="width: 100%"
           ></div>
         </div>
       </section>
@@ -521,7 +522,7 @@
       new daum.roughmap.Lander({
         timestamp: "1732176981627",
         key: "2maur",
-        mapWidth: "720",
+       // mapWidth: "720",
         mapHeight: "661",
       }).render();
     </script>
@@ -535,6 +536,19 @@
       } else {
         quickConsult.style.width = "";
       }
+    </script>
+
+    <script>
+      window.addEventListener("resize", () => {
+        const lang = localStorage.getItem("selectedLang");
+        const jpBr = document.querySelectorAll(".only-jp");
+
+        if(lang === "ja" && window.innerWidth <= 767) {
+          jpBr.forEach((el) => {
+            el.style.display = "block";
+          })
+        }
+      })
     </script>
 
     <script>
@@ -570,6 +584,9 @@
 
       window.addEventListener("resize", imageUpdate);
     </script>
+
+
+
   </body>
 
   <script src="./js/jquery.js"></script>

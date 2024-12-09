@@ -209,23 +209,30 @@
     </button>
 
     <div class="mobile-lang">
-      <button class="m-lang-wrap" onclick=closeMobileBtn()>
+      <button class="m-lang-wrap" onclick="closeMobileBtn()">
         <a href="javascript:void(0)">
-          <p class="btn-text font-pl" translate="no" data-lang="ko" id=":1.restore">KR</p>
+          <p
+            class="btn-text font-pl"
+            translate="no"
+            data-lang="ko"
+            id=":1.restore"
+          >
+            KR
+          </p>
         </a>
       </button>
       <button class="m-lang-wrap">
-        <a href="javascript:void(0)" onclick=closeMobileBtn()>
+        <a href="javascript:void(0)" onclick="closeMobileBtn()">
           <p class="btn-text font-pl" translate="no" data-lang="zh-CN">CN</p>
         </a>
       </button>
       <button class="m-lang-wrap">
-        <a href="javascript:void(0)" onclick=closeMobileBtn()>
+        <a href="javascript:void(0)" onclick="closeMobileBtn()">
           <p class="btn-text font-pl" translate="no" data-lang="ja">JP</p>
         </a>
       </button>
       <button class="m-lang-wrap">
-        <a href="javascript:void(0)" onclick=closeMobileBtn()>
+        <a href="javascript:void(0)" onclick="closeMobileBtn()">
           <p class="btn-text font-pl" translate="no" data-lang="en">US</p>
         </a>
       </button>
@@ -457,8 +464,6 @@
     </a>
   </div>
 </nav>
-
-
 
 <script>
   if (location.pathname.endsWith("index.html") || location.pathname === "/") {
@@ -743,7 +748,6 @@
 
   document.querySelectorAll(".m-lang-wrap").forEach((btn) => {
     btn.addEventListener("click", function () {
-
       // 클릭된 버튼에서 언어 코드 가져오기
       const langSelected = document.querySelector(".mobile-lang-btn .btn-text");
       const langCode = this.querySelector("p").dataset.lang;
@@ -795,8 +799,6 @@
           console.error("Google Translate combobox not found!");
         }
       }
-
-
     });
   });
 
@@ -898,7 +900,6 @@
   });
 </script>
 
-
 <script>
   const mobileOpenBtn = document.querySelector(
     "#header .menu .language-wrap .mobile-lang-btn"
@@ -906,10 +907,7 @@
   const mobileLang = document.querySelector(
     "#header .menu .language-wrap .mobile-lang"
   );
-  const changeLang = document.querySelector(
-    ".m-lang-wrap"
-  );
-
+  const changeLang = document.querySelector(".m-lang-wrap");
 
   mobileOpenBtn.addEventListener("click", () => {
     mobileLang.classList.toggle("active");
@@ -928,16 +926,29 @@
     const target = btnWrap.querySelector(".btn-wrap");
     const iBtn = iHide.querySelector("i");
 
-
     iHide.addEventListener("click", () => {
-      if(iBtn.className === "xi-angle-down") {
+      if (iBtn.className === "xi-angle-down") {
         iBtn.className = "xi-angle-up";
-        target.classList.remove("disable")
+        target.classList.remove("disable");
       } else {
         iBtn.className = "xi-angle-down";
-        target.classList.add("disable")
+        target.classList.add("disable");
       }
-    })
-  })
+    });
+  });
+</script>
 
+<script>
+  window.addEventListener("resize", () => {
+    const langCode = localStorage.getItem("selectedLang");
+    const contactBtn = document.querySelectorAll(
+      ".contact-btn-wrap .contact-btn"
+    );
+
+    if (window.innerWidth <= 767 && langCode === "ko") {
+      contactBtn.forEach((el) => {
+        el.style.width = "109px"
+      });
+    }
+  });
 </script>
