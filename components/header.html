@@ -10,7 +10,7 @@
 
       <div class="btn-wrap">
         <button>
-          <a href="../about_sub01.html" class="font-pl"> 브리에의원 소개 </a>
+          <a href="../about_sub01.html" class="font-pl"> 브리에의원</a>
         </button>
         <button>
           <a href="../about_sub02.html" class="font-pl"> 의료진 소개 </a>
@@ -127,9 +127,9 @@
           <a href="../color_sub01.html" class="font-pl"> 피코어 </a>
         </button>
         <button>
-          <a href="../color_sub02.html" class="font-pl"> 칼라리티프로 </a>
+          <a href="../color_sub02.html" class="font-pl"> 클라리티프로 </a>
         </button>
-        <button><a href="../color_sub03.html" class="font-pl"> CO₂ </a></button>
+        <button><a href="../color_sub03.html" class="font-pl"> CO2 </a></button>
       </div>
     </div>
 
@@ -267,7 +267,7 @@
     <div class="main-nav-detail-wrap">
       <button>
         <a href="../about_sub01.html" class="main-nav-detail font-pl"
-          >브리에의원 소개</a
+          >브리에의원</a
         >
       </button>
       <button>
@@ -440,12 +440,12 @@
       </button>
       <button>
         <a href="../color_sub02.html" class="main-nav-detail font-pl"
-          >칼라리티프로</a
+          >클라리티프로</a
         >
       </button>
       <button>
         <a href="../color_sub03.html" class="main-nav-detail last font-pl"
-          >CO₂</a
+          >CO2</a
         >
       </button>
     </div>
@@ -470,6 +470,8 @@
     function toggleFollowHeader() {
       const followHeader = document.querySelector(".follow-header");
       const nav = document.querySelector(".header-main-nav");
+      const navFont = document.querySelectorAll(".header-main-nav .main-nav-btn .font-pm");
+      const menuBtn = document.querySelector(".menu .ham-menu-img-wrap i");
       const scrollPosition = window.scrollY; // 스크롤 위치 확인
 
       // 200px 이상 스크롤 시 follow-header 표시
@@ -478,11 +480,21 @@
         nav.style.position = "fixed";
         nav.style.left = "50%";
         nav.style.transform = "translate(-50%)";
+        navFont.forEach((el) => {
+          el.style.color = "#202020";
+        })
+        menuBtn.style.color = "#202020";
       } else {
         followHeader.style.display = "none";
         nav.style.position = "relative";
         nav.style.left = "auto";
         nav.style.transform = "none";
+
+        navFont.forEach((el) => {
+          el.style.color = "#FFF";
+        })
+
+        menuBtn.style.color = "#FFF";
       }
     }
   }
@@ -948,6 +960,10 @@
     if (window.innerWidth <= 767 && langCode === "ko") {
       contactBtn.forEach((el) => {
         el.style.width = "109px"
+      });
+    } else {
+      contactBtn.forEach((el) => {
+        el.style.width = "168px"
       });
     }
   });

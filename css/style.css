@@ -349,6 +349,7 @@ body {
 }
 
 .sns-btn-wrap.active .sns-btn {
+  position: relative; /* 버튼 위치 고정 */
   width: 48px;
   height: 48px;
   border-radius: 100%;
@@ -358,25 +359,28 @@ body {
   justify-content: center;
   opacity: 1;
   z-index: 500;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out; /* 부드러운 애니메이션 */
 }
+
 .sns-btn-wrap.active .sns-btn img {
   width: 27px;
   height: 27px;
 }
+
 .sns-btn-wrap.active .sns-btn .sns-btn-text {
   display: none;
 }
 
-.sns-btn-wrap.active:hover .sns-btn {
-  width: 150px;
+.sns-btn-wrap.active .sns-btn:hover {
+  width: 150px; /* 버튼 확장 크기 */
   border-radius: 30px;
-  padding: 15px;
-  justify-content: left;
+  padding-left: 15px; /* 확장을 왼쪽으로 설정 */
+  justify-content: flex-start; /* 아이콘과 텍스트가 왼쪽 정렬 */
   gap: 8px;
   overflow: hidden;
 }
-.sns-btn-wrap.active:hover .sns-btn .sns-btn-text {
+
+.sns-btn-wrap.active .sns-btn:hover .sns-btn-text {
   display: block;
   font-size: 15px;
   color: #fff;
@@ -386,6 +390,7 @@ body {
 .sns-btn-wrap.disable {
   display: none;
 }
+
 
 /* 테스트 */
 /* body { 
@@ -430,9 +435,9 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-#header .follow-header.hovered {
+/* #header .follow-header.hovered {
   background-color: #d4d4d5;
-}
+} */
 
 #header .sub-logo-img-wrap {
   margin-left: 32px;
@@ -563,7 +568,7 @@ body {
 #header .menu .language-wrap .lang-wrap a p {
   display: none;
 }
-#header .menu .language-wrap .mobile-lang-btn{
+#header .menu .language-wrap .mobile-lang-btn {
   display: none;
 }
 #header .menu .ham-menu-img-wrap {
@@ -771,6 +776,7 @@ body {
   position: absolute;
   left: 15%;
   top: 45%;
+  text-align: right;
 }
 
 .swiper .swiper-wrapper .swiper-slide .text-wrap .clinic-title {
@@ -1573,7 +1579,6 @@ body {
   color: #75624d;
 }
 .briller-info-section .directions .directions-text-wrap .contact-btn-wrap {
-
   margin-top: 40px;
   display: flex;
   gap: 8px;
@@ -2571,7 +2576,7 @@ body {
   margin-top: 56px;
   display: flex;
   justify-content: center;
-  align-items:baseline;
+  align-items: baseline;
   gap: 56px;
 }
 .babyface-filler .principle-wrap .principle-flex-wrap .principle .img-wrap {
@@ -2600,8 +2605,6 @@ body {
 .babyface-filler .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* signature_sub02 */
 
@@ -2790,7 +2793,7 @@ body {
   margin-top: 56px;
   display: flex;
   justify-content: center;
-  align-items:baseline;
+  align-items: baseline;
   gap: 56px;
 }
 .wrinkle-filler .principle-wrap .principle-flex-wrap .principle .img-wrap {
@@ -2819,8 +2822,6 @@ body {
 .wrinkle-filler .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* signature sub03 */
 
@@ -3005,7 +3006,7 @@ body {
   margin-top: 56px;
   display: flex;
   justify-content: center;
-  align-items:baseline;
+  align-items: baseline;
   gap: 56px;
 }
 .scar-filler .principle-wrap .principle-flex-wrap .principle .img-wrap {
@@ -3030,8 +3031,6 @@ body {
 .scar-filler .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* signature sub04 */
 
@@ -3241,8 +3240,6 @@ body {
 .eye-filler .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* signature sub05 */
 
@@ -3465,8 +3462,6 @@ body {
 .museline-injection .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* lifting sub01 */
 
@@ -3796,8 +3791,6 @@ body {
 .thread-lifting .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* lifting sub02 */
 
@@ -4233,8 +4226,6 @@ body {
 .ulthera-wrap .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* lifting sub03 */
 
@@ -4697,8 +4688,6 @@ body {
   object-fit: cover;
 }
 
-
-
 /* lifting sub04 */
 
 .shurink-wrap {
@@ -5090,8 +5079,6 @@ td {
 .shurink-wrap .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* lifting sub05 */
 
@@ -5502,7 +5489,6 @@ td {
   object-fit: cover;
 }
 
-
 /* facebody sub01 */
 .botox-wrap {
   width: 100%;
@@ -5897,8 +5883,6 @@ td {
 .botox-wrap .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* facebody sub02 */
 
@@ -6311,8 +6295,6 @@ td {
   object-fit: cover;
 }
 
-
-
 /* facebody sub03 */
 
 .face-contouring-wrap {
@@ -6539,7 +6521,7 @@ td {
   .face-contouring-table
   tr
   td.devide {
-    vertical-align: middle;
+  vertical-align: middle;
   background-color: #f2ede8;
 }
 .face-contouring-wrap
@@ -6786,8 +6768,6 @@ td {
 .face-contouring-wrap .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* skin sub01 */
 
@@ -7091,8 +7071,6 @@ td {
 .skin-boost .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* skin sub02 */
 
@@ -7520,8 +7498,6 @@ td {
 .skin-care .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* skin sub03 */
 
@@ -7957,8 +7933,6 @@ td {
 .anti-aging .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 /* color sub01 */
 
@@ -8440,8 +8414,6 @@ td {
 .picore-wrap .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
 }
-
-
 
 .picore-wrap .picore-process-flex-wrap {
   max-width: 1280px;
@@ -8985,8 +8957,6 @@ td {
   object-fit: cover;
 }
 
-
-
 .clarity-wrap .clarity-process-flex-wrap {
   max-width: 1280px;
   margin-right: auto;
@@ -9507,8 +9477,6 @@ td {
   object-fit: cover;
 }
 
-
-
 .co2-wrap .co2-process-flex-wrap {
   max-width: 1280px;
   margin-right: auto;
@@ -9917,7 +9885,7 @@ td {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   font-size: 20px;
-  color: #FFF;
+  color: #fff;
 }
 .contact-btn-wrap .wechat-qr-img .text-wrap {
   margin-top: 24px;
@@ -9943,7 +9911,7 @@ td {
   margin-bottom: 36px;
 
   font-size: 16px;
-  color: #FFF;
+  color: #fff;
 }
 
 .we-qr-img {
@@ -9985,7 +9953,7 @@ td {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   font-size: 20px;
-  color: #FFF;
+  color: #fff;
 }
 .sns-btn-wrap .we-qr-img .text-wrap {
   margin-top: 24px;
@@ -10011,9 +9979,8 @@ td {
   margin-bottom: 36px;
 
   font-size: 16px;
-  color: #FFF;
+  color: #fff;
 }
-
 
 .sns-btn-wrap .line-qr-img {
   display: none;
@@ -10054,7 +10021,7 @@ td {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   font-size: 20px;
-  color: #FFF;
+  color: #fff;
 }
 .sns-btn-wrap .line-qr-img .text-wrap {
   margin-top: 24px;
@@ -10080,7 +10047,7 @@ td {
   margin-bottom: 36px;
 
   font-size: 16px;
-  color: #FFF;
+  color: #fff;
 }
 
 .directions .directions-text-wrap .time-wrap.english::after {
@@ -10117,30 +10084,25 @@ span.only-pc {
   display: none;
 }
 .only-1280 {
-  display: none;
+  display: block;
 }
 .briller-info-section .briller-star {
   display: none;
 }
 
+@media screen and (max-width: 1600px) {
 
-@media screen and (max-width:1600px) {
-  section {
-    /* padding-left: 20px;
-    padding-right: 20px; */
-  }
 
   .b1600 {
     display: none;
   }
 }
 
-
 /* header footer index*/
-@media screen and (max-width:1550px) {
+@media screen and (max-width: 1550px) {
   #header .menu .language-wrap .lang-wrap {
     display: none !important;
-   }
+  }
 
   #header .menu {
     align-items: flex-start;
@@ -10151,7 +10113,7 @@ span.only-pc {
     /* align-items: center; */
     gap: 6px;
   }
-  #header .menu .language-wrap .mobile-lang-btn{
+  #header .menu .language-wrap .mobile-lang-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10159,14 +10121,14 @@ span.only-pc {
     gap: 4px;
     width: 49px;
   }
-  #header .menu .language-wrap .mobile-lang-btn p{
+  #header .menu .language-wrap .mobile-lang-btn p {
     font-size: 16px;
     line-height: 2;
-    color: #FFF;
+    color: #fff;
   }
   #header .menu .language-wrap .mobile-lang-btn i {
     font-size: 8px;
-    color: #FFF;
+    color: #fff;
   }
   #header .menu .language-wrap .mobile-lang {
     display: none;
@@ -10184,7 +10146,6 @@ span.only-pc {
   #header .menu .language-wrap .mobile-lang.active button {
     text-align: center;
     padding: 10px 15px;
-
   }
   #header .menu .language-wrap .mobile-lang.active button a p {
     font-size: 14px;
@@ -10218,10 +10179,9 @@ span.only-pc {
     align-items: center;
     gap: 40px;
   }
-
 }
 
-@media screen and (max-width:1380px) {
+@media screen and (max-width: 1380px) {
   #header .header-main-nav .main-nav-btn {
     max-width: 140px;
     width: 100%;
@@ -10231,7 +10191,7 @@ span.only-pc {
   }
 }
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width: 1280px) {
   .only-1280 {
     display: block;
   }
@@ -10239,7 +10199,7 @@ span.only-pc {
   .briller-info-section {
     padding-top: 60px;
   }
-  
+
   .briller-info-section .briller-star {
     display: block;
     width: 40px;
@@ -10279,7 +10239,7 @@ span.only-pc {
   .briller-info-section .briller-filler {
     padding-top: 16px;
     flex-direction: column-reverse;
-    
+
     text-align: left;
     gap: 40px;
   }
@@ -10295,9 +10255,11 @@ span.only-pc {
     padding-right: 20px;
     margin-top: 0px;
   }
-  .briller-info-section .briller-filler .briller-filler-text-wrap .signature-title {
+  .briller-info-section
+    .briller-filler
+    .briller-filler-text-wrap
+    .signature-title {
     justify-content: flex-start;
-
   }
   .briller-filler-main-text .title {
     font-size: 40px;
@@ -10308,17 +10270,24 @@ span.only-pc {
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .briller-info-section .briller-museline .briller-museline-text-wrap {
     padding: 0 20px;
     margin-top: 0px;
     align-self: flex-end;
     text-align: right;
   }
-  .briller-info-section .briller-museline .briller-museline-text-wrap .signature-title {
+  .briller-info-section
+    .briller-museline
+    .briller-museline-text-wrap
+    .signature-title {
     justify-content: flex-end;
   }
-  .briller-info-section .briller-museline .briller-museline-text-wrap .briller-museline-viewmore a {
+  .briller-info-section
+    .briller-museline
+    .briller-museline-text-wrap
+    .briller-museline-viewmore
+    a {
     margin-right: 53px;
   }
   .briller-info-section .briller-ulthera {
@@ -10337,12 +10306,15 @@ span.only-pc {
 
     padding: 0 20px;
   }
-  .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .signature-title {
+  .briller-info-section
+    .briller-ulthera
+    .briller-ulthera-text-wrap
+    .signature-title {
     justify-content: flex-start;
   }
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   #header .logo-img-wrap {
     display: none !important;
   }
@@ -10362,7 +10334,7 @@ span.only-pc {
   }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
   .swiper .quick-form-wrap {
     margin-left: auto;
     margin-right: auto;
@@ -10394,20 +10366,17 @@ span.only-pc {
   .swiper .quick-form-wrap .quick-form .check-wrap label {
     gap: 8px;
   }
-
-
 }
-@media screen and (max-width:390px) {
+@media screen and (max-width: 390px) {
   .swiper .quick-form-wrap .quick-form .check-wrap {
     margin-right: auto;
   }
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width: 767px) {
   /* .only-1280 {
     display: none;
   } */
-
 
   span.only-pc {
     display: none;
@@ -10418,7 +10387,6 @@ span.only-pc {
   .only-mobile {
     display: block;
   }
-
 
   #header .sub-logo-img-wrap {
     width: 83px;
@@ -10458,7 +10426,6 @@ span.only-pc {
   #header .ham-menu-wrap .wrap .ham-menu .btn-wrap button {
     padding-top: 9px;
     padding-bottom: 9px;
-
   }
   #header .ham-menu-wrap .wrap .ham-menu .btn-wrap button a {
     line-height: normal;
@@ -10481,7 +10448,7 @@ span.only-pc {
   .ham-menu .title-wrap i {
     display: block;
     font-size: 24px;
-    color: #FFF;
+    color: #fff;
   }
 
   #header .ham-menu-wrap .wrap .ham-menu .btn-wrap.disable {
@@ -10490,10 +10457,10 @@ span.only-pc {
   #header .menu {
     gap: 5px;
   }
-  #header .menu .language-wrap .mobile-lang-btn p{
+  #header .menu .language-wrap .mobile-lang-btn p {
     font-size: 16px;
     line-height: 1.7;
-    color: #FFF;
+    color: #fff;
   }
 
   #footer {
@@ -10514,7 +10481,7 @@ span.only-pc {
     gap: 40px;
     padding-bottom: 60px;
   }
-  
+
   .footer-wrap .com-info-wrap {
     flex-direction: column;
     margin-right: 0px;
@@ -10538,8 +10505,6 @@ span.only-pc {
     width: 40px;
     height: 40px;
   }
-
-
 
   /* index */
   .swiper {
@@ -10604,7 +10569,8 @@ span.only-pc {
     margin-top: 0px;
   }
 
-  .swiper .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  .swiper
+    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     left: 50%;
     transform: translate(-50%, -50%);
     bottom: 72px;
@@ -10623,11 +10589,19 @@ span.only-pc {
     margin-top: 8px;
     gap: 8px;
   }
-  .briller-info-section .briller-info .briller-info-text-wrap .title-wrap .title {
+  .briller-info-section
+    .briller-info
+    .briller-info-text-wrap
+    .title-wrap
+    .title {
     font-size: 24px;
     line-height: 2;
   }
-  .briller-info-section .briller-info .briller-info-text-wrap .title-wrap .title-speak {
+  .briller-info-section
+    .briller-info
+    .briller-info-text-wrap
+    .title-wrap
+    .title-speak {
     font-size: 14px;
     line-height: 2.29;
   }
@@ -10641,7 +10615,11 @@ span.only-pc {
     font-size: 14px;
     line-height: 1.71;
   }
-  .briller-info-section .briller-info .briller-info-text-wrap .briller-info-viewmore a {
+  .briller-info-section
+    .briller-info
+    .briller-info-text-wrap
+    .briller-info-viewmore
+    a {
     margin-top: 54px;
   }
 
@@ -10660,10 +10638,17 @@ span.only-pc {
     max-height: 260px;
     align-self: flex-start;
   }
-  .briller-info-section .briller-filler .briller-filler-text-wrap .signature-title {
+  .briller-info-section
+    .briller-filler
+    .briller-filler-text-wrap
+    .signature-title {
     font-size: 18px;
   }
-  .briller-info-section .briller-filler .briller-filler-text-wrap .signature-title span {
+  .briller-info-section
+    .briller-filler
+    .briller-filler-text-wrap
+    .signature-title
+    span {
     font-size: 24px;
   }
   .briller-info-section .briller-filler .briller-filler-text-wrap .title {
@@ -10680,17 +10665,28 @@ span.only-pc {
     font-size: 14px;
     line-height: 1.71;
   }
-  .briller-info-section .briller-filler .briller-filler-text-wrap .briller-filler-viewmore a {
+  .briller-info-section
+    .briller-filler
+    .briller-filler-text-wrap
+    .briller-filler-viewmore
+    a {
     margin-top: 46px;
   }
   .briller-info-section .briller-filler {
     padding-bottom: 69px;
   }
-  .briller-info-section .briller-museline .briller-museline-text-wrap .signature-title {
+  .briller-info-section
+    .briller-museline
+    .briller-museline-text-wrap
+    .signature-title {
     font-size: 18px;
     line-height: 4.44;
   }
-  .briller-info-section .briller-museline .briller-museline-text-wrap .signature-title span {
+  .briller-info-section
+    .briller-museline
+    .briller-museline-text-wrap
+    .signature-title
+    span {
     font-size: 24px;
     line-height: 4.44;
   }
@@ -10698,7 +10694,10 @@ span.only-pc {
     font-size: 24px;
     line-height: 3.33;
   }
-  .briller-info-section .briller-museline .briller-museline-text-wrap .sub-title {
+  .briller-info-section
+    .briller-museline
+    .briller-museline-text-wrap
+    .sub-title {
     font-size: 18px;
     line-height: 2.11;
     margin-top: 0px;
@@ -10708,35 +10707,62 @@ span.only-pc {
     font-size: 14px;
     line-height: 1.71;
   }
-  .briller-info-section .briller-museline .briller-museline-text-wrap .briller-museline-viewmore a {
+  .briller-info-section
+    .briller-museline
+    .briller-museline-text-wrap
+    .briller-museline-viewmore
+    a {
     margin-top: 46px;
     margin-right: 35px;
   }
-  .briller-info-section .briller-info .briller-info-text-wrap .briller-info-viewmore a::after {
+  .briller-info-section
+    .briller-info
+    .briller-info-text-wrap
+    .briller-info-viewmore
+    a::after {
     width: 48px;
     height: 48px;
     top: -8px;
   }
-  .briller-info-section .briller-filler .briller-filler-text-wrap .briller-filler-viewmore a::after {
+  .briller-info-section
+    .briller-filler
+    .briller-filler-text-wrap
+    .briller-filler-viewmore
+    a::after {
     width: 48px;
     height: 48px;
     top: -8px;
   }
-  .briller-info-section .briller-museline .briller-museline-text-wrap .briller-museline-viewmore a::after {
+  .briller-info-section
+    .briller-museline
+    .briller-museline-text-wrap
+    .briller-museline-viewmore
+    a::after {
     width: 48px;
     height: 48px;
     top: -8px;
   }
-  .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .briller-ulthera-viewmore a::after {
+  .briller-info-section
+    .briller-ulthera
+    .briller-ulthera-text-wrap
+    .briller-ulthera-viewmore
+    a::after {
     width: 48px;
     height: 48px;
     top: -8px;
   }
-  .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .signature-title {
+  .briller-info-section
+    .briller-ulthera
+    .briller-ulthera-text-wrap
+    .signature-title {
     font-size: 18px;
     line-height: 4.44;
   }
-  .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .signature-title span {
+  .briller-info-section
+    .briller-ulthera
+    .briller-ulthera-text-wrap
+    .signature-title
+    span {
     font-size: 24px;
     line-height: 4.44;
   }
@@ -10754,11 +10780,15 @@ span.only-pc {
     font-size: 14px;
     line-height: 1.71;
   }
-  .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .briller-ulthera-viewmore a {
+  .briller-info-section
+    .briller-ulthera
+    .briller-ulthera-text-wrap
+    .briller-ulthera-viewmore
+    a {
     margin-top: 46px;
   }
-  
-  .briller-info-section .section-devide{
+
+  .briller-info-section .section-devide {
     height: 430px;
   }
   .briller-info-section .section-devide .text-wrap {
@@ -10796,20 +10826,43 @@ span.only-pc {
   .briller-info-section .directions .directions-text-wrap .title01 {
     font-size: 16px;
   }
-  .briller-info-section .directions .directions-text-wrap .direction-wrap .wrap .location {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .direction-wrap
+    .wrap
+    .location {
     font-size: 14px;
     line-height: 2.14;
   }
-  .briller-info-section .directions .directions-text-wrap .direction-wrap .wrap .location.two {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .direction-wrap
+    .wrap
+    .location.two {
     letter-spacing: 14px;
   }
-  .briller-info-section .directions .directions-text-wrap .direction-wrap::after {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .direction-wrap::after {
     left: 55px;
   }
-  .briller-info-section .directions .directions-text-wrap .direction-wrap .wrap .location {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .direction-wrap
+    .wrap
+    .location {
     max-width: 69px;
   }
-  .briller-info-section .directions .directions-text-wrap .direction-wrap .wrap .location-detail {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .direction-wrap
+    .wrap
+    .location-detail {
     font-size: 14px;
     line-height: 2.14;
   }
@@ -10817,19 +10870,34 @@ span.only-pc {
     margin-top: 56px;
     font-size: 16px;
   }
-  .briller-info-section .directions .directions-text-wrap .time-wrap .wrap .time {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .time-wrap
+    .wrap
+    .time {
     font-size: 14px;
     line-height: 2.14;
     width: 69px;
   }
-  .briller-info-section .directions .directions-text-wrap .time-wrap .wrap .time.two {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .time-wrap
+    .wrap
+    .time.two {
     letter-spacing: 14px;
   }
   .briller-info-section .directions .directions-text-wrap .time-wrap::after {
     left: 55px;
   }
 
-  .briller-info-section .directions .directions-text-wrap .time-wrap .wrap .time-detail{
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .time-wrap
+    .wrap
+    .time-detail {
     font-size: 14px;
     line-height: 2.14;
   }
@@ -10844,7 +10912,11 @@ span.only-pc {
     width: 32px;
     height: 32px;
   }
-  .briller-info-section .directions .directions-text-wrap .telephone-wrap .number {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .telephone-wrap
+    .number {
     font-size: 32px;
     line-height: 0.94;
   }
@@ -10854,14 +10926,29 @@ span.only-pc {
     margin-top: 36px;
     gap: 4px;
   }
-  .briller-info-section .directions .directions-text-wrap .contact-btn-wrap .contact-btn {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .contact-btn-wrap
+    .contact-btn {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .briller-info-section .directions .directions-text-wrap .contact-btn-wrap .contact-btn a {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .contact-btn-wrap
+    .contact-btn
+    a {
     gap: 4px;
   }
-  .briller-info-section .directions .directions-text-wrap .contact-btn-wrap .contact-btn a img {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .contact-btn-wrap
+    .contact-btn
+    a
+    img {
     width: 22px;
     height: 22px;
   }
@@ -10869,7 +10956,13 @@ span.only-pc {
     width: 22px;
     height: 22px;
   }
-  .briller-info-section .directions .directions-text-wrap .contact-btn-wrap .contact-btn a .btn-text {
+  .briller-info-section
+    .directions
+    .directions-text-wrap
+    .contact-btn-wrap
+    .contact-btn
+    a
+    .btn-text {
     font-size: 16px;
     line-height: normal;
   }
@@ -10881,10 +10974,17 @@ span.only-pc {
     padding-left: 20px;
     padding-right: 20px;
   }
-
-
 }
 
-.only-jp {
-  display: none;
+/* about 반응형 */
+
+@media screen and (max-width: 1550px) {
+  .about-briller-clinic > .directions .directions-map-wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-briller-clinic > .directions .directions-text-wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
