@@ -51,7 +51,8 @@
         <div class="text-wrap">
           <h3 class="title font-ir" translate="no">BRILLER CLINIC</h3>
           <p class="text font-pl">
-            빛나는, 더 반짝일 수 있는 당신을 위한 브리에의원을 소개합니다.
+            빛나는, 더 반짝일 수 있는<br class="only-1100" />
+            당신을 위한 브리에의원을 소개합니다.
           </p>
         </div>
       </div>
@@ -71,8 +72,10 @@
         </div>
         <h3 class="title font-pm" translate="no">BRILLER PHILOSOPHY</h3>
         <p class="text font-pr">
-          가족과 친구에게도 권할 수 있는 시술 퀄리티를 위해 브리에의원이 3가지
-          원칙을 약속합니다.
+          가족과 친구에게도 권할 수 있는 시술 퀄리티를 위해<br
+            class="only-1100"
+          />
+          브리에의원이 3가지 원칙을 약속합니다.
         </p>
       </div>
 
@@ -124,7 +127,10 @@
       </div>
 
       <div class="briller-equipment-title-wrap">
-        <h3 class="title font-pm" translate="no">BRILLER MEDICAL EQUIPMENT</h3>
+        <div class="hidden-text font-ir">BRILLER MEDICAL</div>
+        <h3 class="title font-pm" translate="no">
+          BRILLER <br class="only-mobile" />MEDICAL EQUIPMENT
+        </h3>
         <p class="text font-pr">
           브리에의원에서 사용하는 의료기기를 소개합니다.
         </p>
@@ -262,7 +268,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
 
@@ -291,10 +297,10 @@
                 <img src="./images/interior/05.png" alt="" />
               </div>
             </div>
+            <div class="swiper-scrollbar2"></div>
           </div>
         </div>
       </div>
-
 
       <div class="directions">
         <div class="directions-text-wrap">
@@ -319,7 +325,7 @@
               </p>
             </div>
           </div>
-  
+
           <h3 class="title02 font-pb">진료시간</h3>
           <div class="time-wrap">
             <div class="wrap">
@@ -341,13 +347,13 @@
               <p class="time-detail font-pm">수/일요일, 공휴일</p>
             </div>
           </div>
-  
+
           <h3 class="title03 font-pb">진료상담 및 예약</h3>
           <div class="telephone-wrap">
             <img src="./images/phone.png" alt="대표전화" />
             <p class="number font-pb">02.2038.7387</p>
           </div>
-  
+
           <div class="contact-btn-wrap">
             <button class="contact-btn">
               <a href="https://booking.naver.com/booking/13/bizes/1063020">
@@ -390,13 +396,13 @@
           <div
             id="daumRoughmapContainer1732176981627"
             class="root_daum_roughmap root_daum_roughmap_landing"
+            style="width:100%"
           ></div>
         </div>
-    </div>
-
+      </div>
     </section>
 
-
+    <div id="quick"></div>
     <div id="top_menu"></div>
     <div id="footer"></div>
 
@@ -407,6 +413,9 @@
           delay: 1,
           stopOnLastSlide: false,
           desableOnInteraction: false,
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar",
         },
         speed: 8e3,
         loop: true,
@@ -421,6 +430,9 @@
           delay: 1,
           stopOnLastSlide: false,
           desableOnInteraction: false,
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar2",
         },
         speed: 8e3,
         loop: true,
@@ -438,7 +450,6 @@
       new daum.roughmap.Lander({
         timestamp: "1732176981627",
         key: "2maur",
-        mapWidth: "720",
         mapHeight: "661",
       }).render();
     </script>

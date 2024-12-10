@@ -7,6 +7,7 @@ $(document).ready(function(){
     $('#pagination').load('../components/pagination.html');
     $('#top_menu').load('../components/top_menu.html');
     $('#repeat').load('../components/repeat.html');
+    $('#quick').load('../components/quick.html');
 })
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -393,7 +393,6 @@ body {
   display: none;
 }
 
-
 /* 테스트 */
 /* body { 
   height: 1920px;
@@ -1808,6 +1807,16 @@ body {
   padding-top: 160px;
   text-align: center;
   background: linear-gradient(#fff 573px, #f3ede7 390px);
+  position: relative;
+}
+.about-briller-clinic .briller-equipment-title-wrap .hidden-text {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  line-height: 0.7;
+  font-style: italic;
+  font-size: 120px;
+  color: #fcf9f6;
 }
 .about-briller-clinic .briller-equipment-title-wrap .title {
   font-size: 40px;
@@ -1836,6 +1845,7 @@ body {
 .about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap {
   position: static;
   margin-top: 30px;
+  text-align: center;
 }
 .about-briller-clinic
   .swiper
@@ -10093,8 +10103,6 @@ span.only-pc {
 }
 
 @media screen and (max-width: 1600px) {
-
-
   .b1600 {
     display: none;
   }
@@ -10978,6 +10986,10 @@ span.only-pc {
   }
 }
 
+.only-1100 {
+  display: none;
+}
+
 /* about 반응형 */
 
 @media screen and (max-width: 1550px) {
@@ -10988,5 +11000,347 @@ span.only-pc {
   .about-briller-clinic > .directions .directions-text-wrap {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .about-briller-clinic .flex-content-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .about-main {
+    height: 480px;
+  }
+  .about-main .main-img {
+    height: 100%;
+  }
+  .about-main .content-wrap {
+    left: 20px;
+    bottom: 64px;
+    top: auto;
+    transform: none;
+  }
+  .about-main .content-wrap .btn-wrap {
+    justify-content: flex-start;
+  }
+  .about-main .content-wrap .text-wrap .title {
+    text-align: left;
+  }
+  .about-main .content-wrap .text-wrap .text {
+    text-align: left;
+  }
+  .about-main .scroll-wrap {
+    display: none;
+  }
+  .about-briller-clinic .flex-content-wrap {
+    display: block;
+  }
+  .about-briller-clinic .flex-content-wrap .content:not(:first-of-type) {
+    margin-top: 40px;
+  }
+  .about-briller-clinic .flex-content-wrap .content .img-wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-briller-clinic .briller-equipment-title-wrap .hidden-text {
+    font-size: 40px;
+  }
+
+  .only-1100 {
+    display: block;
+  }
+}
+
+.swiper-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .about-main .content-wrap .btn-wrap .home-btn a i {
+    font-size: 17px;
+    line-height: 2.24;
+  }
+  .about-main .content-wrap .btn-wrap .section-btn a {
+    font-size: 14px;
+    line-height: 2.71;
+  }
+  .about-main .content-wrap .btn-wrap i {
+    font-size: 14px;
+    line-height: 2.71;
+  }
+  .about-main .content-wrap .btn-wrap .current-btn a {
+    font-size: 14px;
+    line-height: 2.71;
+  }
+  .about-main .content-wrap .text-wrap .title {
+    margin-top: 11px;
+    font-size: 30px;
+    line-height: 1.33;
+  }
+  .about-main .content-wrap .text-wrap .text {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+
+  .about-briller-clinic .briller-clinic-title-wrap {
+    padding-top: 60px;
+  }
+  .about-briller-clinic .briller-clinic-title-wrap .img-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  .about-briller-clinic .briller-clinic-title-wrap .title {
+    margin-top: 16px;
+    font-size: 24px;
+    line-height: 2;
+  }
+  .about-briller-clinic .briller-clinic-title-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+
+  .about-briller-clinic .flex-content-wrap {
+    margin-top: 40px;
+    padding-bottom: 60px;
+  }
+  .about-briller-clinic .flex-content-wrap .content .img-wrap {
+    width: 280px;
+    height: 280px;
+  }
+  .about-briller-clinic .flex-content-wrap .content .sub-title {
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 2;
+  }
+  .about-briller-clinic .flex-content-wrap .content .title {
+    margin-top: 16px;
+    font-size: 22px;
+    line-height: 1.45;
+  }
+  .about-briller-clinic .flex-content-wrap .content .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .about-briller-clinic .briller-equipment-title-wrap {
+    padding-top: 60px;
+    background: linear-gradient(#fff 443px, #f3ede7 302px);
+  }
+  .about-briller-clinic .briller-equipment-title-wrap .title {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  .about-briller-clinic .briller-equipment-title-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .about-briller-clinic .briller-equipment-title-wrap .swiper {
+    margin-top: 40px;
+    padding-bottom: 89px;
+    height: auto;
+  }
+  .about-briller-clinic
+    .briller-equipment-title-wrap
+    .swiper
+    .swiper-wrapper
+    .swiper-slide {
+    width: 224px !important;
+  }
+  .about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap {
+    margin-top: 16px;
+  }
+  .about-briller-clinic
+    .swiper
+    .swiper-wrapper
+    .swiper-slide
+    .text-wrap
+    .sub-title {
+    font-size: 14px;
+  }
+  .about-briller-clinic
+    .swiper
+    .swiper-wrapper
+    .swiper-slide
+    .text-wrap
+    .title {
+    font-size: 22px;
+  }
+  .about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  .swiper-scrollbar {
+    display: block;
+  }
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    height: 2px !important;
+    bottom: 61px !important;
+    width: calc(100% - 40px) !important;
+    left: 20px !important;
+    background-color: #fff;
+  }
+  .swiper-scrollbar-drag {
+    background-color: #cac2b9 !important;
+  }
+
+  .about-briller-clinic .briller-interior-wrap {
+    margin-top: 60px;
+  }
+  .about-briller-clinic .briller-interior-wrap .title-wrap .title {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  .about-briller-clinic .briller-interior-wrap .title-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .about-briller-clinic .briller-interior-wrap .interior-slide-wrap {
+    margin-top: 40px;
+  }
+  .about-briller-clinic
+    .briller-interior-wrap
+    .interior-slide-wrap
+    .interior-swiper
+    .swiper-wrapper
+    .swiper-slide {
+    width: 335px;
+  }
+
+  .swiper-scrollbar2 {
+    display: block;
+  }
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar2.swiper-scrollbar-horizontal {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 42px;
+    height: 2px !important;
+    width: calc(100% - 40px) !important;
+    background-color: #fff;
+  }
+  .swiper-scrollbar-drag {
+    background-color: #cac2b9 !important;
+  }
+
+  .about-briller-clinic > .directions {
+    padding-bottom: 60px;
+    margin-top: 61px;
+    gap: 40px;
+  }
+  .about-briller-clinic > .directions .directions-map-wrap {
+    width: 100%;
+    height: 430px;
+  }
+
+  .directions .directions-text-wrap .title01 {
+    font-size: 16px;
+  }
+
+  .directions .directions-text-wrap .direction-wrap .wrap .location {
+    font-size: 14px;
+    line-height: 2.14;
+  }
+
+  .directions .directions-text-wrap .direction-wrap .wrap .location.two {
+    letter-spacing: 14px;
+  }
+
+  .directions .directions-text-wrap .direction-wrap::after {
+    left: 55px;
+  }
+
+  .directions .directions-text-wrap .direction-wrap .wrap .location {
+    max-width: 69px;
+  }
+
+  .directions .directions-text-wrap .direction-wrap .wrap .location-detail {
+    font-size: 14px;
+    line-height: 2.14;
+  }
+  .directions .directions-text-wrap .title02 {
+    margin-top: 56px;
+    font-size: 16px;
+  }
+
+  .directions .directions-text-wrap .time-wrap .wrap .time {
+    font-size: 14px;
+    line-height: 2.14;
+    width: 69px;
+  }
+
+  .directions .directions-text-wrap .time-wrap .wrap .time.two {
+    letter-spacing: 14px;
+  }
+  .directions .directions-text-wrap .time-wrap::after {
+    left: 55px;
+  }
+
+  .directions .directions-text-wrap .time-wrap .wrap .time-detail {
+    font-size: 14px;
+    line-height: 2.14;
+  }
+  .directions .directions-text-wrap .title03 {
+    font-size: 16px;
+    line-height: 2.38;
+  }
+  .directions .directions-text-wrap .telephone-wrap {
+    margin-top: 16px;
+  }
+  .directions .directions-text-wrap .telephone-wrap img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .directions .directions-text-wrap .telephone-wrap .number {
+    font-size: 32px;
+    line-height: 0.94;
+  }
+  .directions .directions-text-wrap .contact-btn-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 36px;
+    gap: 4px;
+  }
+
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn {
+    width: 109px !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn a {
+    gap: 4px;
+  }
+
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn a img {
+    width: 22px;
+    height: 22px;
+  }
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn a .btn-text {
+    font-size: 16px;
+    line-height: normal;
+  }
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn .btn-text {
+    font-size: 16px;
+    line-height: normal;
+  }
+  .directions > :not(.directions-map-wrap) {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
