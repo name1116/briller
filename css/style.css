@@ -11344,3 +11344,55 @@ span.only-pc {
     padding-right: 20px;
   }
 }
+
+
+/* about sub02 반응형 */
+
+@media screen and (max-width:1100px) {
+  .doctor-info-wrap {
+    margin-top: 40px;
+    display: block;
+  }
+
+
+  .doctor-info-wrap .doctor-info-text-wrap {
+    margin-top: 40px;
+    width: fit-content;
+    margin-left: 20px;
+  }
+
+}
+
+@media screen and (max-width:767px) {
+  .doctor-info-wrap .doctor-img-wrap {
+    max-width: 355px;
+    max-height: 460px;
+  }
+  .doctor-info-wrap .doctor-info-text-wrap .sub-title {
+    font-size: 16px;
+    line-height: 5;
+  }
+  .doctor-info-wrap .doctor-info-text-wrap .doctor-name {
+    font-size: 36px;
+    letter-spacing: 8.21px;
+  }
+  .doctor-info-wrap .doctor-info-text-wrap .doctor-name span {
+    font-size: 16px;
+  }
+  .doctor-info-wrap .doctor-info-text-wrap .text {
+    font-size: 18px;
+    line-height: 1.44;
+  }
+  .doctor-info-wrap .doctor-info-text-wrap .doctor-history-wrap {
+    margin-top: 32px;
+  }
+  .doctor-info-wrap .doctor-info-text-wrap .doctor-history-wrap .doctor-history .dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 8px;
+  }
+  .doctor-info-wrap .doctor-info-text-wrap .doctor-history-wrap .doctor-history .history {
+    font-size: 14px;
+    line-height: 1.86;
+  }
+}
