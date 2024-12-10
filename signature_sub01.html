@@ -73,19 +73,23 @@
           <p class="text-title font-pm">대표원장의 섬세한 술기와 경험의 집약</p>
 
           <p class="text font-pl">
-            적절한 필러의 선택, 대표원장의 꼼꼼한 시술과 심미안을<br class="only-mobile"> 바탕으로
-            얼굴의 굴곡, 꺼짐, <br class="only-pc" />
-            주름 등을 해결해 생기 있는<br class="only-mobile"> 젊은 인상을 선사합니다. 과하지 않은
-            자연스러운 결과로 <br />
-            몇 년은 어려 보이는 모습을 통해 내외면의 아름다움과<br class="only-mobile"> 자신감을 찾을 수
-            있습니다.
+            적절한 필러의 선택, 대표원장의 꼼꼼한 시술과 심미안을<br
+              class="only-mobile"
+            />
+            바탕으로 얼굴의 굴곡, 꺼짐, <br class="only-pc" />
+            주름 등을 해결해 생기 있는<br class="only-mobile" />
+            젊은 인상을 선사합니다. 과하지 않은 자연스러운 결과로 <br />
+            몇 년은 어려 보이는 모습을 통해 내외면의 아름다움과<br
+              class="only-mobile"
+            />
+            자신감을 찾을 수 있습니다.
           </p>
         </div>
       </div>
 
       <div class="filler-type-wrap fillerSwiper">
         <div class="filler-tree">
-          <img src="./images/tree3.png" alt="tree">
+          <img src="./images/tree3.png" alt="tree" />
         </div>
         <h3 class="filler-type-title font-nb">동안필러 종류</h3>
         <div class="filler-type-flex swiper-wrapper">
@@ -149,7 +153,7 @@
 
         <div class="process-flex">
           <div class="process" data-label="01">
-            <img src="./images/process/01.png" alt="01"/>
+            <img src="./images/process/01.png" alt="01" />
             <p class="text font-pr">1:1 맞춤상담</p>
           </div>
           <div class="process" data-label="02">
@@ -157,19 +161,19 @@
             <p class="text font-pr">자가세안</p>
           </div>
           <div class="process" data-label="03">
-            <img src="./images/process/03.png" alt="03"/>
+            <img src="./images/process/03.png" alt="03" />
             <p class="text font-pr">크림 마취 또는 국소 마취</p>
           </div>
           <div class="process" data-label="04">
-            <img src="./images/process/04.png" alt="04"/>
+            <img src="./images/process/04.png" alt="04" />
             <p class="text font-pr">개별 디자인</p>
           </div>
           <div class="process" data-label="05">
-            <img src="./images/process/05.png" alt="05"/>
+            <img src="./images/process/05.png" alt="05" />
             <p class="text font-pr">시술</p>
           </div>
           <div class="process last" data-label="06">
-            <img src="./images/process/06.png" alt="06"/>
+            <img src="./images/process/06.png" alt="06" />
             <p class="text font-pr">관리방법 안내</p>
           </div>
         </div>
@@ -189,6 +193,7 @@
           autoplay: {
             delay: 1, // 자동 재생 딜레이
             disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+            stopOnLastSlide: false,
           },
           scrollbar: {
             el: ".swiper-scrollbar3", // 스크롤바 엘리먼트 선택자
@@ -199,15 +204,18 @@
           spaceBetween: 124, // 슬라이드 간 간격
           freeMode: true, // 자유롭게 스크롤 가능
         });
-    
+        swiper.on("reachEnd", () => {
+          swiper.autoplay.start(); // 마지막 슬라이드에 도달해도 autoplay를 다시 시작
+        });
+
         return swiper; // Swiper 인스턴스 반환
       }
-    
+
       let fillerSwiperInstance = null; // Swiper 인스턴스를 저장하는 변수
-    
+
       function handleResize() {
         const isSmallScreen = window.innerWidth <= 1500;
-    
+
         // 화면 크기에 따라 Swiper 인스턴스 생성 또는 제거
         if (isSmallScreen && !fillerSwiperInstance) {
           fillerSwiperInstance = swiperAction(); // Swiper 초기화
@@ -216,18 +224,19 @@
           fillerSwiperInstance = null; // 인스턴스 초기화
         }
       }
-    
+
       // 이벤트 리스너 추가
       window.addEventListener("resize", handleResize);
       window.addEventListener("load", handleResize);
     </script>
-    
 
     <script>
-      function imgChange () {
-        const target = document.querySelector(".babyface-filler .babyface-filler-info .img-wrap img");
+      function imgChange() {
+        const target = document.querySelector(
+          ".babyface-filler .babyface-filler-info .img-wrap img"
+        );
 
-        if(window.innerWidth <= 767) {
+        if (window.innerWidth <= 767) {
           target.src = "./images/mo_babyface_filler.png";
         } else {
           target.src = "./images/babyface_filler.png";
@@ -235,10 +244,10 @@
       }
       window.addEventListener("resize", () => {
         imgChange();
-      })
+      });
       window.addEventListener("load", () => {
         imgChange();
-      })
+      });
     </script>
 
     <script
