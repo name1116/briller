@@ -72,10 +72,10 @@
               <p class="text-title font-pm">대표원장의 섬세한 술기와 경험의 집약</p>
     
               <p class="text font-pl">
-                보톡스로 해결되지 않는 주름, 표정을 짓지 않아도 보이는 주름은 주름필러로 해결해야 합니다.<br />
-                주름에 적합한 필러와 주사침을 사용해 섬세한 술기를 통해 주름을 완화시킵니다. 고민이었던 <br />
-                주름을 해결해 더 나은 인상과 어려 보이는 얼굴로 자신감과 만족감을 가지실 수 있습니다.<br />
-                주름필러가 더욱 효과적으로 나타나는 시술 부위는 이마, 미간, 콧등, 눈가, 눈 밑, 팔자, 등 <br/>
+                보톡스로 해결되지 않는 주름, 표정을 짓지 않아도 보이는<br class="only-mobile"> 주름은 주름필러로 해결해야 합니다.<br  class="only-pc"/>
+                주름에 적합한 필러와<br class="only-mobile"> 주사침을 사용해 섬세한 술기를 통해 주름을 완화시킵니다.<br class="only-mobile"> 고민이었던 <br  class="only-pc"/>
+                주름을 해결해 더 나은 인상과 어려 보이는 얼굴로<br class="only-mobile"> 자신감과 만족감을 가지실 수 있습니다.<br  class="only-pc"/>
+                주름필러가 더욱<br class="only-mobile"> 효과적으로 나타나는 시술 부위는 이마, 미간, 콧등, 눈가,<br class="only-mobile"> 눈 밑, 팔자, 등 <br class="only-pc"/>
                 안면에 있는 미세한 주름 또는 굵은 주름입니다.
               </p>
             </div>
@@ -92,19 +92,19 @@
               <div class="type first">
                 <img src="./images/check.png" alt="추천" />
                 <p class="type-text font-pm">
-                    보톡스로 해결되지 않는 주름으로 고민인 분
+                    보톡스로 해결되지 않는<br class="only-mobile"> 주름으로 고민인 분
                 </p>
               </div>
               <div class="type">
                 <img src="./images/check.png" alt="추천" />
                 <p class="type-text font-pm">
-                    얼굴에 날카로운 주름, 잔주름 등으로 스트레스가 많은 분
+                    얼굴에 날카로운<br class="only-mobile"> 주름, 잔주름 등으로<br class="only-mobile"> 스트레스가 많은 분
                 </p>
               </div>
               <div class="type">
                 <img src="./images/check.png" alt="추천" />
                 <p class="type-text font-pm">
-                    여러 주름 시술에도 차도가 없어 고민이었던 분
+                    여러 주름 시술에도<br class="only-mobile"> 차도가 없어 고민이었던 분
                 </p>
               </div>
             </div>
@@ -118,23 +118,23 @@
             </p>
     
             <div class="process-flex">
-              <div class="process">
+              <div class="process" data-label="01">
                 <img src="./images/process/01.png" alt="01" />
                 <p class="text font-pr">1:1 맞춤상담</p>
               </div>
-              <div class="process">
+              <div class="process" data-label="02">
                 <img src="./images/process/02.png" alt="02" />
                 <p class="text font-pr">자가세안</p>
               </div>
-              <div class="process">
+              <div class="process" data-label="03">
                 <img src="./images/process/03.png" alt="03" />
                 <p class="text font-pr">크림 마취</p>
               </div>
-              <div class="process">
+              <div class="process" data-label="04">
                 <img src="./images/process/05.png" alt="04" />
                 <p class="text font-pr">시술</p>
               </div>
-              <div class="process last">
+              <div class="process last" data-label="05">
                 <img src="./images/process/06.png" alt="05" />
                 <p class="text font-pr">관리방법 안내</p>
               </div>
@@ -147,6 +147,35 @@
 
     <div id="top_menu"></div>
     <div id="footer"></div>
+
+    <script>
+      function imgChange() {
+        const target = document.querySelector(
+          ".wrinkle-filler .babyface-filler-info .img-wrap img"
+        );
+        const target01 = document.querySelectorAll(
+          ".filler-suggest-wrap .filler-suggest-type-wrap .type img"
+        );
+
+        if (window.innerWidth <= 767) {
+          target.src = "./images/mo_wrinkle_filler.png";
+          target01.forEach((el) => {
+            el.src = "./images/mo_check.png";
+          })
+        } else {
+          target.src = "./images/wrinkle_filler.png";
+          target01.forEach((el) => {
+            el.src = "./images/check.png";
+          })
+        }
+      }
+      window.addEventListener("resize", () => {
+        imgChange();
+      });
+      window.addEventListener("load", () => {
+        imgChange();
+      });
+    </script>
 
     <script
       charset="UTF-8"
