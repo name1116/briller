@@ -206,27 +206,27 @@
         </p>
 
         <div class="process-flex">
-          <div class="process">
+          <div class="process" data-label="01">
             <img src="./images/process/01.png" alt="01" />
             <p class="text font-pr">1:1 맞춤상담</p>
           </div>
-          <div class="process">
+          <div class="process" data-label="02">
             <img src="./images/process/02.png" alt="02" />
             <p class="text font-pr">자가세안</p>
           </div>
-          <div class="process">
+          <div class="process" data-label="03">
             <img src="./images/process/04.png" alt="03" />
             <p class="text font-pr">디자인</p>
           </div>
-          <div class="process">
+          <div class="process" data-label="04">
             <img src="./images/process/03.png" alt="04" />
             <p class="text font-pr">크림 마취 및 국소 마취</p>
           </div>
-          <div class="process">
+          <div class="process" data-label="05">
             <img src="./images/process/05.png" alt="05" />
             <p class="text font-pr">시술</p>
           </div>
-          <div class="process last">
+          <div class="process last" data-label="06">
             <img src="./images/process/06.png" alt="06" />
             <p class="text font-pr">관리방법 안내</p>
           </div>
@@ -238,6 +238,32 @@
 
     <div id="top_menu"></div>
     <div id="footer"></div>
+
+
+    <script>
+      function imgChange() {
+
+        const target01 = document.querySelectorAll(
+          ".filler-suggest-wrap .filler-suggest-type-wrap .type img"
+        );
+
+        if (window.innerWidth <= 767) {
+          target01.forEach((el) => {
+            el.src = "./images/mo_check.png";
+          })
+        } else {
+          target01.forEach((el) => {
+            el.src = "./images/check.png";
+          })
+        }
+      }
+      window.addEventListener("resize", () => {
+        imgChange();
+      });
+      window.addEventListener("load", () => {
+        imgChange();
+      });
+    </script>
 
     <script
       charset="UTF-8"

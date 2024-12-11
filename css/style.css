@@ -12328,3 +12328,185 @@ span.only-pc {
     line-height: normal;
   }
 }
+
+/* lift sub01 */
+
+
+@media screen and (max-width: 1500px) {
+
+  .thread-lifting .filler-process-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+
+@media screen and (max-width:1400px) {
+  .thread-lifting-type-flex-wrap .flex-wrap {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap .img-wrap {
+    flex: 0 0 50%;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap .text-wrap {
+    flex: 0 0 50%;
+    margin-left: 20px;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap.even {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap.even .text-wrap {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .thread-lifting .filler-process-wrap .process-flex {
+    flex-wrap: wrap;
+  }
+
+  .thread-lifting .filler-process-wrap .process-flex .process::after {
+    width: 56px;
+    height: 53px;
+    left: 0px;
+    top: 0px;
+    content: attr(data-label);
+    font-family: pretendard-b;
+    background-image: none;
+    font-size: 44px;
+    color: #cac2b9;
+  }
+  .thread-lifting .filler-process-wrap .process-flex .process.last::after {
+    display: block;
+  }
+}
+
+.thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap {
+  flex-wrap: nowrap;
+}
+
+
+@media screen and (max-width:1100px) {
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap {
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap::after {
+    position: absolute; 
+    display: block;
+    content: "";
+    clear: both;
+    width: calc(100% - 40px);
+    height: 1px;
+    background-color: #cac2b9;
+
+    top: 50%;
+    left: 20px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap::before {
+    position: absolute; 
+    display: block;
+    content: "";
+    clear: both;
+    width: 1px;
+    height: 100%;
+    background-color: #cac2b9;
+
+    left: 50%;
+    top: 0px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process {
+    width: calc(100% / 2);
+    flex: 0 0 50%;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process::after {
+    display: none;
+  }
+
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process:nth-of-type(1) {
+    margin-bottom: 24px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process:nth-of-type(2) {
+    margin-bottom: 24px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process:nth-of-type(3) {
+    margin-top: 24px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process:nth-of-type(4) {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .thread-lifting .filler-suggest-wrap {
+    background-image: url(../images/mo_filler_suggest.png);
+    padding:60px 20px;
+
+  }
+  .thread-lifting .filler-suggest-wrap .title {
+    font-size: 24px;
+  }
+  .thread-lifting .filler-suggest-wrap .filler-suggest-type-wrap {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    gap: 16px 9px;
+  }
+  .thread-lifting .filler-suggest-wrap .filler-suggest-type-wrap .type.first {
+    margin-top: 0px;
+  }
+  .thread-lifting .filler-suggest-wrap .filler-suggest-type-wrap .type {
+    margin-top: 0px;
+    width: 163px;
+    height: 150px;
+    border-radius: 0px;
+    border-bottom-right-radius: 40px;
+    background-color: #cac2b9;
+
+    flex-direction: column;
+  }
+  .thread-lifting .filler-suggest-wrap .filler-suggest-type-wrap .type img {
+    width: 22px;
+    height: 22px;
+  }
+  .thread-lifting .filler-suggest-wrap .filler-suggest-type-wrap .type .type-text {
+    font-size: 14px;
+    line-height: 1.71;
+    color: #75624d;
+  }
+  .thread-lifting .filler-process-wrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .thread-lifting .filler-process-wrap .title {
+    font-size: 24px;
+    line-height: 2;
+  }
+  .thread-lifting .filler-process-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .thread-lifting .filler-process-wrap .process-flex .process {
+    width: 168px;
+    height: 168px;
+    padding-top: 34px;
+  }
+  .thread-lifting .filler-process-wrap .process-flex .process img {
+    width: 80px;
+    height: 80px;
+  }
+  .thread-lifting .filler-process-wrap .process-flex .process .text {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: normal;
+  }
+}
