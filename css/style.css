@@ -11779,7 +11779,8 @@ span.only-pc {
   #repeat .directions {
     background-color: #fcf9f6;
     margin-top: 0px;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
+    padding-bottom: 60px;
     gap: 40px;
   }
   
@@ -12346,12 +12347,17 @@ span.only-pc {
   .thread-lifting-type-flex-wrap .flex-wrap {
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: flex-start;
   }
   .thread-lifting-type-flex-wrap .flex-wrap .img-wrap {
-    flex: 0 0 50%;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap.even .img-wrap {
+    padding-right: 0px;
+    padding-left: 20px;
   }
   .thread-lifting-type-flex-wrap .flex-wrap .text-wrap {
-    flex: 0 0 50%;
     margin-left: 20px;
   }
   .thread-lifting-type-flex-wrap .flex-wrap.even {
@@ -12508,5 +12514,73 @@ span.only-pc {
     margin-top: 4px;
     font-size: 14px;
     line-height: normal;
+  }
+
+  .thread-lifting .thread-lifting-info {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-title-wrap img {
+    width: 40px;
+    height: 40px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-title-wrap .title {
+    margin-top: 16px;
+    font-size: 24px;
+    line-height: 2;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-title-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap {
+    margin-top: 24px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process img {
+    width: 80px;
+    height: 80px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process .title {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+  .thread-lifting .thread-lifting-info .thread-lifting-process-flex-wrap .process .text {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.86;
+    font-family: pretendard-l;
+  }
+
+  .thread-lifting .thread-lifting-type {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .thread-lifting .thread-lifting-type .thread-lifting-type-title-wrap .title {
+    font-size: 24px;
+    line-height: 2;
+  }
+  .thread-lifting .thread-lifting-type .thread-lifting-type-title-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .thread-lifting-type-flex-wrap {
+    margin-top: 40px;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap {
+    gap: 24px;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap {
+    margin-top: 60px;
+  }
+
+  .thread-lifting-type-flex-wrap .flex-wrap .text-wrap .title  {
+    font-size: 22px;
+  }
+  .thread-lifting-type-flex-wrap .flex-wrap .text-wrap .text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
   }
 }
