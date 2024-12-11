@@ -47,7 +47,7 @@
         <div class="text-wrap">
           <h3 class="title font-ir" translate="no">UNDER EYES FILLER</h3>
           <p class="text font-pl">
-            빛나는, 더 반짝일 수 있는 당신을 위한 눈밑필러를 소개합니다.
+            빛나는, 더 반짝일 수 있는<br class="only-mobile"> 당신을 위한 눈밑필러를 소개합니다.
           </p>
         </div>
       </div>
@@ -73,9 +73,9 @@
               <p class="text-title font-pm">대표원장의 섬세한 술기와 경험의 집약</p>
     
               <p class="text font-pl">
-                눈 밑 꺼짐으로 퀭해 보이는 눈, 다크써클은 이 글을 읽으시는 분의 큰 고민일 것입니다. <br />
-                눈 밑에 적합한 부드러운 필러와 미세한 캐뉼라를 이용해 자연스러운 눈 밑 필러를<br /> 
-                경험해 보시길 권유드립니다. 생기 있는 얼굴, 어려 보이는 인상은 바로 당신의
+                눈 밑 꺼짐으로 퀭해 보이는 눈, 다크써클은<br class="only-mobile"> 이 글을 읽으시는 분의 큰 고민일 것입니다. <br class="only-pc"/>
+                눈 밑에 적합한<br class="only-mobile"> 부드러운 필러와 미세한 캐뉼라를 이용해 자연스러운<br class="only-mobile"> 눈 밑 필러를<br class="only-pc"/> 
+                경험해 보시길 권유드립니다. 생기 있는 얼굴,<br class="only-mobile"> 어려 보이는 인상은 바로 당신의
                 자신감이 될 것 입니다.
               </p>
             </div>
@@ -92,19 +92,19 @@
               <div class="type first">
                 <img src="./images/check.png" alt="추천" />
                 <p class="type-text font-pm">
-                    눈 밑 꺼짐으로 스트레스가 심한 분
+                    눈 밑 꺼짐으로<br class="only-mobile"> 스트레스가 심한 분
                 </p>
               </div>
               <div class="type">
                 <img src="./images/check.png" alt="추천" />
                 <p class="type-text font-pm">
-                    눈 밑 다크써클로 고민이 있는 분
+                    눈 밑 다크써클로<br class="only-mobile"> 고민이 있는 분
                 </p>
               </div>
               <div class="type">
                 <img src="./images/check.png" alt="추천" />
                 <p class="type-text font-pm">
-                    자연스러운 눈 밑 시술을 원하시는 분
+                    자연스러운 눈 밑 시술을<br class="only-mobile"> 원하시는 분
                 </p>
               </div>
             </div>
@@ -118,23 +118,23 @@
             </p>
     
             <div class="process-flex">
-              <div class="process">
+              <div class="process" data-label="01">
                 <img src="./images/process/01.png" alt="01" />
                 <p class="text font-pr">1:1 맞춤상담</p>
               </div>
-              <div class="process">
+              <div class="process" data-label="02">
                 <img src="./images/process/02.png" alt="02" />
                 <p class="text font-pr">자가세안</p>
               </div>
-              <div class="process">
+              <div class="process" data-label="03">
                 <img src="./images/process/03.png" alt="03" />
                 <p class="text font-pr">크림 마취 및 국소 마취</p>
               </div>
-              <div class="process">
+              <div class="process" data-label="04">
                 <img src="./images/process/05.png" alt="04" />
                 <p class="text font-pr">시술</p>
               </div>
-              <div class="process last">
+              <div class="process last" data-label="05">
                 <img src="./images/process/06.png" alt="05" />
                 <p class="text font-pr">관리방법 안내</p>
               </div>
@@ -147,6 +147,31 @@
 
     <div id="top_menu"></div>
     <div id="footer"></div>
+
+    <script>
+      function imgChange() {
+
+        const target01 = document.querySelectorAll(
+          ".eye-filler .filler-suggest-wrap .filler-suggest-type-wrap .type img"
+        );
+
+        if (window.innerWidth <= 767) {
+          target01.forEach((el) => {
+            el.src = "./images/mo_check.png";
+          })
+        } else {
+          target01.forEach((el) => {
+            el.src = "./images/check.png";
+          })
+        }
+      }
+      window.addEventListener("resize", () => {
+        imgChange();
+      });
+      window.addEventListener("load", () => {
+        imgChange();
+      });
+    </script>
 
     <script
       charset="UTF-8"
