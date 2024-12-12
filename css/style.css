@@ -5517,6 +5517,51 @@ td {
   object-fit: cover;
 }
 
+.inmode-wrap .table-container {
+  max-width: 1440px;
+  display: flex;
+  text-align: center;
+  border: 1px solid #cac2b9;
+  margin-top: 57px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.inmode-wrap .table-container .table-box {
+  width: 50%;
+  height: 568px;
+  border: 1px solid #cac2b9;
+  border-collapse: collapse;
+}
+.inmode-wrap .table-container .table-box .subject-wrap {
+  padding-top: 19px;
+  padding-bottom: 19px;
+  background-color: #75624d;
+}
+.inmode-wrap .table-container .table-box .subject-wrap .subject {
+  font-size: 18px;
+  color: #FFF;
+}
+.inmode-wrap .table-container .table-box .content-wrap .img-wrap {
+  margin-top: 30px;
+  max-width: 660px;
+  max-height: 310px;
+}
+.inmode-wrap .table-container .table-box .content-wrap .img-wrap img {
+  object-fit: cover;
+}
+.inmode-wrap .table-container .table-box .content-wrap .text-wrap {
+  margin-top: 30px;
+}
+.inmode-wrap .table-container .table-box .content-wrap .text-wrap .title {
+  font-size: 18px;
+  line-height: 1.44;
+}
+.inmode-wrap .table-container .table-box .content-wrap .text-wrap  .text {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.63;
+}
+
 /* facebody sub01 */
 .botox-wrap {
   width: 100%;
@@ -11567,10 +11612,11 @@ span.only-pc {
   .babyface-filler .filler-type-wrap {
     padding-bottom: 94px;
     /* transform: translate3d(0px, 0, 0) !important; */
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .babyface-filler .filler-process-wrap {
-    /* padding-left: 20px;
-    padding-right: 20px; */
+
   }
 
   .filler-container {
@@ -13431,6 +13477,17 @@ span.only-pc {
 
 
 @media screen and (max-width: 1300px) {
+
+  .inmode-wrap .table-container {
+    flex-direction: column;
+    width: fit-content;
+    margin-top: 40px;
+  }
+  .inmode-wrap .table-container .table-box {
+    width: 100%;
+  }
+
+
   .inmode-wrap .inmode-info-wrap {
     padding-left: 20px;
     padding-right: 20px;
@@ -13665,6 +13722,40 @@ span.only-pc {
   .inmode-wrap .inmode-type-wrap .inmode-table tr td .text-wrap .text {
     font-size: 14px;
     line-height: 1.71;
+  }
+  .inmode-wrap .table-container .table-box {
+    height: 418px;
+  }
+
+  .inmode-wrap .table-container .table-box .subject-wrap {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .inmode-wrap .table-container .table-box .subject-wrap .subject {
+    font-size: 16px;
+  }
+  .inmode-wrap .table-container .table-box .content-wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+    min-height: 370px;
+  }
+  .inmode-wrap .table-container .table-box .content-wrap .img-wrap {
+    margin-top: 0px;
+   padding-top: 16px;
+  }
+  .inmode-wrap .table-container .table-box .content-wrap .text-wrap {
+    margin-top: 24px;
+  }
+  .inmode-wrap .table-container .table-box .content-wrap .text-wrap .title {
+    font-size: 16px;
+  }
+  .inmode-wrap .table-container .table-box .content-wrap .text-wrap .text {
+    font-size: 14px;
+  }
+  .inmode-wrap .table-container .table-box .content-wrap .img-wrap {
+
+    max-width: 303px;
+    max-height: 183px;
   }
   
 }

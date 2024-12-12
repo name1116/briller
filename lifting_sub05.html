@@ -167,43 +167,50 @@
         <div class="text-wrap">
           <h3 class="title font-pb">인모드 리프팅의 원리</h3>
         </div>
+      
 
-        <table class="inmode-table">
-          <tr class="table-head">
-            <th class="col font-pb" scope="col" translate="no">MINI FX</th>
-            <th class="col font-pb" scope="col" translate="no">FORMA</th>
-          </tr>
-          <tr>
-            <td>
+
+        <div class="table-container">
+          <div class="table-box">
+            <div class="subject-wrap">
+              <h3 class="subject font-pb">MINI FX</h3>
+            </div>
+            <div class="content-wrap">
               <div class="img-wrap">
-                <img src="./images/lifting_inmode/mini_fx.png" alt="MINI FX" />
+                <img class="first" src="./images/lifting_inmode/mini_fx.png" alt="MINI FX" />
               </div>
               <div class="text-wrap">
                 <h4 class="title font-pb">지방 세포 사멸 & 페이스 컨투어링</h4>
                 <p class="text font-pl">
-                  HVP에너지 45~47℃ 열로 지방세포 사멸 및 이중턱·처진<br class="only-mobile"> 볼살을
+                  HVP에너지 45~47℃ 열로 지방세포 사멸 및 이중턱·처진 볼살을
                   개선하고 <br class="only-pc"/>
                   지방층에 2000v의 hVP에너지를<br class="only-mobile"> 순간적으로 전달하여 근본적으로
                   지방세포 사멸을<br class="only-mobile"> 유도합니다.
                 </p>
               </div>
-            </td>
-            <td>
+            </div>
+          </div>
+          <div class="table-box">
+            <div class="subject-wrap">
+              <h3 class="subject font-pb">FORMA</h3>
+            </div>
+            <div class="content-wrap">
               <div class="img-wrap">
-                <img src="./images/lifting_inmode/forma.png" alt="FORMA" />
+                <img class="two" src="./images/lifting_inmode/forma.png" alt="FORMA" />
               </div>
               <div class="text-wrap">
                 <h4 class="title font-pb">콜라겐 리모델링 & 스킨 타이트닝</h4>
                 <p class="text font-pl">
                   Multh-Polar에너지가 콜라겐, 엘라스틴 히알루론산을<br class="only-mobile">
                   생성하고<br class="only-pc"/> 피부 표면을 43℃까지 올려 진피층에 강력한 <br class="only-mobile">
-                  열자극으로 콜라겐 생성과<br class="only-pc"/> 엘라스틴 재생촉진, 주름 개선과 <br class="only-mobile">
+                  열자극으로 콜라겐 생성과<br class="only-pc"/> 엘라스틴 재생촉진, 주름 개선과
                   처진 피부에 리프팅을 도와줍니다.
                 </p>
               </div>
-            </td>
-          </tr>
-        </table>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="filler-suggest-wrap">
@@ -272,15 +279,25 @@
         const target01 = document.querySelectorAll(
           ".filler-suggest-wrap .filler-suggest-type-wrap .type img"
         );
+        const target02 = document.querySelector(
+          ".inmode-wrap .table-container .table-box .content-wrap .img-wrap .first"
+        );
+        const target03 = document.querySelector(
+          ".inmode-wrap .table-container .table-box .content-wrap .img-wrap .two"
+        );
 
         if (window.innerWidth <= 767) {
           target01.forEach((el) => {
             el.src = "./images/mo_check.png";
           })
+          target02.src = "./images/lifting_inmode/mo_mini_fx.png";
+          target03.src = "./images/lifting_inmode/mo_forma.png";
         } else {
           target01.forEach((el) => {
             el.src = "./images/check.png";
           })
+          target02.src = "./images/lifting_inmode/mini_fx.png";
+          target03.src = "./images/lifting_inmode/forma.png";
         }
       }
       window.addEventListener("resize", () => {
