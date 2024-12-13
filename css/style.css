@@ -9609,6 +9609,8 @@ td {
 .promotion-wrap {
   width: 100%;
   background-color: #fcf9f6;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 240px;
 }
 .promotion-wrap .text-wrap {
@@ -9801,6 +9803,7 @@ td {
 .promotion-detail-wrap .btn-wrap .next-btn a {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .promotion-detail-wrap .btn-wrap .prev-btn a i {
@@ -17014,3 +17017,115 @@ span.only-pc {
   }
 }
 
+/* promotion 반응형 */
+
+@media screen and (max-width:1300px) {
+  .promotion-wrap {
+    padding-top: 140px;
+  }
+
+}
+
+@media screen and (max-width:1000px){
+  .promotion-wrap .promotion-index-container {
+    display: block;
+  }
+  .promotion-wrap .promotion-index-container .promotion {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+    width: 100%
+
+  }
+  .promotion-wrap .promotion-index-container .promotion .promotion-img-wrap {
+    max-width: 335px;
+    max-height: 192px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .promotion-wrap .promotion-index-container .promotion .promotion-title {
+    max-width: 335px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .promotion-wrap .text-wrap .sub-title {
+    font-size: 14px;
+    letter-spacing: 7px;
+  }
+  .promotion-wrap .text-wrap .title {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+  .promotion-wrap .text-wrap .text {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .promotion-wrap .promotion-index-container {
+    margin-top: 40px;
+  }
+  .promotion-wrap .promotion-index-container .promotion .promotion-title {
+    font-size: 16px;
+  }
+  .promotion-wrap .pagination {
+    margin-top: 62px;
+    padding-bottom: 60px;
+  }
+}
+
+
+/* promotion_detail */
+
+@media screen and (max-width:1350px) {
+  .promotion-detail-wrap {
+    padding-top: 140px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .not-1350 {
+    display: none;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .promotion-detail-wrap .text-wrap .title {
+    font-size: 24px;
+
+  }
+  .promotion-detail-wrap .text-wrap .date-text {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .promotion-detail-wrap .text-wrap .text {
+    font-size: 14px;
+    margin-top: 24px;
+    line-height: 1.71;
+  }
+  .promotion-detail-wrap .text-wrap .text {
+    margin-top: 76px;
+  }
+  .promotion-detail-wrap .btn-wrap::after {
+    top: -16px;
+  }
+  .promotion-detail-wrap .btn-wrap .prev-btn a .btn-title {
+    position: absolute;
+    left: 0px;
+    top: 33px;
+    white-space: nowrap;
+  }
+  .promotion-detail-wrap .btn-wrap {
+    align-items: flex-start;
+  }
+  .promotion-detail-wrap .btn-wrap .next-btn a .btn-title {
+    position: absolute;
+    right: 0px;
+    top: 33px;
+    white-space: nowrap;
+  }
+}
