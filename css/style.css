@@ -717,10 +717,10 @@ body {
   display: block;
   clear: both;
   content: "";
-  top: 10%;
+  top: 25%;
   right: -15px;
   width: 1px;
-  height: calc(100% - 10px);
+  height: calc(100% - 15px);
   background-color: #202020;
   opacity: 0.7;
 }
@@ -1104,7 +1104,7 @@ body {
 }
 .briller-filler-main-text .title {
   font-size: 120px;
-  line-height: 0.8;
+  line-height: 0.75;
   font-style: italic;
   color: #fcf9f6;
 }
@@ -1739,6 +1739,7 @@ body {
 .about-briller-clinic {
   width: 100%;
   background-color: #fcf9f6;
+  position: relative;
 }
 
 .about-briller-clinic .briller-clinic-title-wrap {
@@ -2092,6 +2093,19 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+.about-briller-clinic .col-banner {
+  position: absolute;
+  top: 163px;
+  right: 95px;
+  width: 145px;
+  height: 1050px;
+}
+@media screen and (max-width:1400px) {
+  .about-briller-clinic .col-banner {
+    display: none;
+  }
+}
+
 
 .doctor-info-wrap {
   margin-top: 56px;
@@ -2112,7 +2126,7 @@ body {
 }
 .doctor-info-wrap .doctor-info-text-wrap .sub-title {
   font-size: 20px;
-  line-height: 4;
+  line-height: 2;
   color: #cac2b9;
 }
 .doctor-info-wrap .doctor-info-text-wrap .doctor-name {
@@ -4818,7 +4832,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  border-radius: 22px;
   background-color: #fff;
 }
 .shurink-wrap .shurink-info-wrap .shurink-info-flex-wrap .shurink-info {
@@ -5211,7 +5225,7 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  border-radius: 22px;
   background-color: #fff;
 }
 .inmode-wrap .inmode-info-wrap .inmode-info-flex-wrap .inmode-info {
@@ -8495,8 +8509,11 @@ td {
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-
+  border-radius: 22px;
   background-color: #fff;
+}
+.picore-wrap .picore-process-flex-wrap .process .wrap {
+  text-align: left;
 }
 .picore-wrap .picore-process-flex-wrap .process {
   max-width: 318px;
@@ -9037,7 +9054,7 @@ td {
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-
+  border-radius: 22px;
   background-color: #fff;
 }
 .clarity-wrap .clarity-process-flex-wrap .process {
@@ -9054,6 +9071,9 @@ td {
   margin-left: 30px;
 
   position: relative;
+}
+.clarity-wrap .clarity-process-flex-wrap .process .wrap {
+  text-align: left;
 }
 .clarity-wrap .clarity-process-flex-wrap .process::after {
   position: absolute;
@@ -9556,7 +9576,7 @@ td {
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-
+  border-radius: 22px;
   background-color: #fff;
 }
 .co2-wrap .co2-process-flex-wrap .process {
@@ -9573,6 +9593,9 @@ td {
   margin-left: 30px;
 
   position: relative;
+}
+.co2-wrap .co2-process-flex-wrap .process .wrap {
+  text-align: left;
 }
 .co2-wrap .co2-process-flex-wrap .process::after {
   position: absolute;
@@ -11437,7 +11460,7 @@ span.only-pc {
   }
   .doctor-info-wrap .doctor-info-text-wrap .sub-title {
     font-size: 16px;
-    line-height: 5;
+    line-height:2;
   }
   .doctor-info-wrap .doctor-info-text-wrap .doctor-name {
     font-size: 36px;
