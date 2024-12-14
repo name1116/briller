@@ -10148,7 +10148,7 @@ td {
 }
 
 .directions .directions-text-wrap .time-wrap.english::after {
-  left: 95px;
+  left: 65px;
 }
 
 .principle-flex-wrap .principle {
@@ -11837,6 +11837,9 @@ span.only-pc {
   }
   #repeat .principle-wrap .principle-flex-wrap {
     margin-top: 40px;
+  }
+  #repeat .principle-wrap .principle-flex-wrap .principle {
+    max-width: 280px;
   }
   #repeat .principle-wrap .principle-flex-wrap .principle .img-wrap {
     width: 280px;
