@@ -182,7 +182,7 @@
               </p>
             </label>
             <span class="check-info-detail font-pm">
-              <a href="./private_check.html"> 보기 </a>
+              <a href="./private_check.html" target="_blank"> 보기 </a>
             </span>
           </div>
           <div class="btn-submit-wrap">
@@ -491,6 +491,42 @@
     </div> 
     -->
     <!-- //팝업 -->
+
+
+    <script>
+      const viewMore = document.querySelector(".briller-info-viewmore a");
+      const viewMore1 = document.querySelector(".briller-filler-viewmore a");
+      const viewMore2 = document.querySelector(".briller-museline-viewmore a");
+      const viewMore3 = document.querySelector(".briller-ulthera-viewmore a");
+
+      viewMore.addEventListener("mouseover", () => {
+        viewMore.classList.add("hover");
+      })
+      viewMore.addEventListener("mouseout", () => {
+        viewMore.classList.remove("hover");
+      })
+
+      viewMore1.addEventListener("mouseover", () => {
+        viewMore1.classList.add("hover");
+      })
+      viewMore1.addEventListener("mouseout", () => {
+        viewMore1.classList.remove("hover");
+      })
+
+      viewMore2.addEventListener("mouseover", () => {
+        viewMore2.classList.add("hover");
+      })
+      viewMore2.addEventListener("mouseout", () => {
+        viewMore2.classList.remove("hover");
+      })
+
+      viewMore3.addEventListener("mouseover", () => {
+        viewMore3.classList.add("hover");
+      })
+      viewMore3.addEventListener("mouseout", () => {
+        viewMore3.classList.remove("hover");
+      })
+    </script>
 
 
 

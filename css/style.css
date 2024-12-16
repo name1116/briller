@@ -1,5 +1,5 @@
 * {
-  word-break: keep-all;
+  word-break: normal;
   white-space: normal;
 }
 
@@ -236,6 +236,10 @@ body {
   src: url(../fonts/IvyMode-Regular.ttf);
 }
 @font-face {
+  font-family: ivy-l;
+  src: url(../fonts/IvyMode-Light.ttf);
+}
+@font-face {
   font-family: ivy-sb;
   src: url(../fonts/IvyMode-SemiBold.ttf);
 }
@@ -259,7 +263,8 @@ body {
   font-family: pretendard-b;
 }
 .font-ir {
-  font-family: ivy-r;
+  font-family: ivy-l;
+  font-weight: normal;
 }
 .font-isb {
   font-family: ivy-sb;
@@ -399,9 +404,7 @@ body {
   background-color: #7a736e;
 } */
 
-* {
-  word-break: keep-all;
-}
+
 
 body {
   position: relative;
@@ -427,7 +430,6 @@ body {
 #header .follow-header {
   z-index: 50;
   pointer-events: auto;
-  background-color: rgba(255, 255, 255, 0.5);
   transition: background-color 0.3s;
   position: fixed;
   width: 100%;
@@ -593,6 +595,9 @@ body {
 #header .menu .ham-menu-img-wrap i {
   font-size: 35px;
   color: #202020;
+}
+#header .menu .ham-menu-img-wrap i.xi-close {
+  color: #FFF !important;
 }
 
 #header .ham-menu-wrap {
@@ -1037,6 +1042,7 @@ body {
   font-size: 56px;
   line-height: 1.43;
   color: #202020;
+  font-weight: normal;
 }
 .briller-info-section
   .briller-info
@@ -1062,19 +1068,27 @@ body {
   color: #707070;
 }
 
+
+/* a 태그 기본 스타일 */
 .briller-info-section
   .briller-info
   .briller-info-text-wrap
   .briller-info-viewmore
   a {
-  position: relative;
+  position: relative; /* 기준 위치 설정 */
   margin-top: 84px;
+  padding-left: 0px; /* 초기 padding-left 값 */
 
   font-size: 16px;
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
+  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+
+  transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
+
+/* ::after 기본 스타일 */
 .briller-info-section
   .briller-info
   .briller-info-text-wrap
@@ -1082,16 +1096,34 @@ body {
   a::after {
   display: block;
   content: "";
-  clear: both;
-  width: 56px;
+  width: 56px; /* 초기 width 값 */
   height: 56px;
   border: solid 1px #afa9a4;
   border-radius: 28px;
 
   position: absolute;
   top: -13px;
-  left: 60px;
+  left: 60px; /* 초기 left 값 */
+  z-index: 10; /* a 글씨보다 뒤에 배치 */
+
+  transition: width 0.3s ease, left 0.3s ease; /* width와 left에 transition 적용 */
 }
+
+/* hover 상태에서 a와 ::after 변경 */
+.briller-info-section .briller-info .briller-info-text-wrap .briller-info-viewmore a.hover {
+  padding-left: 35px; /* hover 시 padding-left 변경 */
+  color: #FFF; /* 글자 색상 변경 */
+}
+
+/* hover 상태에서 ::after 스타일 */
+.briller-info-section .briller-info .briller-info-text-wrap .briller-info-viewmore a.hover::after {
+  width: 150px; /* hover 시 width 증가 */
+  left: 0px; /* hover 시 left 위치 변경 */
+  background-color: #afa9a4;
+
+  z-index: -1;
+}
+
 
 /* signature01 */
 
@@ -1111,6 +1143,7 @@ body {
   position: absolute;
   bottom: 0px;
   left: 0px;
+  z-index: 0;
 
   max-width: 610px;
   max-height: 488px;
@@ -1192,27 +1225,54 @@ body {
   position: relative;
   margin-top: 74px;
   margin-right: 43px;
+  padding-left: 0px; /* 초기 padding-left 값 */
+
   font-size: 16px;
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
+  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+
+  transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
 .briller-info-section
   .briller-filler
   .briller-filler-text-wrap
   .briller-filler-viewmore
   a::after {
-  display: block;
-  content: "";
-  clear: both;
-  width: 56px;
-  height: 56px;
-  border: solid 1px #afa9a4;
-  border-radius: 28px;
+    display: block;
+    content: "";
+    width: 56px; /* 초기 width 값 */
+    height: 56px;
+    border: solid 1px #afa9a4;
+    border-radius: 28px;
+  
+    position: absolute;
+    top: -13px;
+    left: 60px; /* 초기 left 값 */
+    z-index: 10; /* a 글씨보다 뒤에 배치 */
+  
+    transition: width 0.3s ease, left 0.3s ease; /* width와 left에 transition 적용 */
+}
+/* hover 상태에서 a와 ::after 변경 */
+.briller-info-section
+  .briller-filler
+  .briller-filler-text-wrap
+  .briller-filler-viewmore a.hover {
+  padding-left: 35px; /* hover 시 padding-left 변경 */
+  color: #FFF; /* 글자 색상 변경 */
+}
 
-  position: absolute;
-  top: -13px;
-  left: 60px;
+/* hover 상태에서 ::after 스타일 */
+.briller-info-section
+  .briller-filler
+  .briller-filler-text-wrap
+  .briller-filler-viewmore a.hover::after {
+  width: 150px; /* hover 시 width 증가 */
+  left: 0px; /* hover 시 left 위치 변경 */
+  background-color: #afa9a4;
+
+  z-index: -1;
 }
 
 /* signature 02 */
@@ -1288,27 +1348,54 @@ body {
   a {
   position: relative;
   margin-top: 74px;
+  padding-left: 0px; /* 초기 padding-left 값 */
+
   font-size: 16px;
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
+  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+
+  transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
 .briller-info-section
   .briller-museline
   .briller-museline-text-wrap
   .briller-museline-viewmore
   a::after {
-  display: block;
-  content: "";
-  clear: both;
-  width: 56px;
-  height: 56px;
-  border: solid 1px #afa9a4;
-  border-radius: 28px;
+    display: block;
+    content: "";
+    width: 56px; /* 초기 width 값 */
+    height: 56px;
+    border: solid 1px #afa9a4;
+    border-radius: 28px;
+  
+    position: absolute;
+    top: -13px;
+    left: 60px; /* 초기 left 값 */
+    z-index: 10; /* a 글씨보다 뒤에 배치 */
+  
+    transition: width 0.3s ease, left 0.3s ease; /* width와 left에 transition 적용 */
+}
+/* hover 상태에서 a와 ::after 변경 */
+.briller-info-section
+  .briller-museline
+  .briller-museline-text-wrap
+  .briller-museline-viewmore a.hover {
+  padding-left: 35px; /* hover 시 padding-left 변경 */
+  color: #FFF; /* 글자 색상 변경 */
+}
 
-  position: absolute;
-  top: -13px;
-  left: 60px;
+/* hover 상태에서 ::after 스타일 */
+.briller-info-section
+  .briller-museline
+  .briller-museline-text-wrap
+  .briller-museline-viewmore a.hover::after {
+  width: 150px; /* hover 시 width 증가 */
+  left: 0px; /* hover 시 left 위치 변경 */
+  background-color: #afa9a4;
+
+  z-index: -1;
 }
 
 /* signature 03 */
@@ -1387,27 +1474,54 @@ body {
   position: relative;
   margin-top: 74px;
   margin-right: 43px;
+  padding-left: 0px; /* 초기 padding-left 값 */
+
   font-size: 16px;
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
+  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+
+  transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
 .briller-info-section
   .briller-ulthera
   .briller-ulthera-text-wrap
   .briller-ulthera-viewmore
   a::after {
-  display: block;
-  content: "";
-  clear: both;
-  width: 56px;
-  height: 56px;
-  border: solid 1px #afa9a4;
-  border-radius: 28px;
+    display: block;
+    content: "";
+    width: 56px; /* 초기 width 값 */
+    height: 56px;
+    border: solid 1px #afa9a4;
+    border-radius: 28px;
+  
+    position: absolute;
+    top: -13px;
+    left: 60px; /* 초기 left 값 */
+    z-index: 10; /* a 글씨보다 뒤에 배치 */
+  
+    transition: width 0.3s ease, left 0.3s ease; /* width와 left에 transition 적용 */
+}
+/* hover 상태에서 a와 ::after 변경 */
+.briller-info-section
+  .briller-ulthera
+  .briller-ulthera-text-wrap
+  .briller-ulthera-viewmore a.hover {
+  padding-left: 35px; /* hover 시 padding-left 변경 */
+  color: #FFF; /* 글자 색상 변경 */
+}
 
-  position: absolute;
-  top: -13px;
-  left: 60px;
+/* hover 상태에서 ::after 스타일 */
+.briller-info-section
+  .briller-ulthera
+  .briller-ulthera-text-wrap
+  .briller-ulthera-viewmore a.hover::after {
+  width: 150px; /* hover 시 width 증가 */
+  left: 0px; /* hover 시 left 위치 변경 */
+  background-color: #afa9a4;
+
+  z-index: -1;
 }
 
 /* section-devide */
@@ -1721,7 +1835,7 @@ body {
 .about-main .content-wrap .text-wrap .title {
   margin-top: 16px;
   font-size: 56px;
-  font-weight: normal;
+  font-weight: 200;
   line-height: 1.29;
   color: #fff;
 }
@@ -8141,6 +8255,8 @@ td {
   padding-top: 160px;
   padding-bottom: 160px;
   position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .picore-wrap .picore-detail-wrap .picore-detail-title-wrap {
@@ -9694,8 +9810,8 @@ td {
   width: calc((100% - 60px) / 3);
 }
 .promotion-wrap .promotion-index-container .promotion .promotion-img-wrap {
-  /* max-width: 460px;
-  max-height: 263px; */
+  max-width: 460px;
+
   position: relative;
   max-height: 263px;
 }
@@ -9724,7 +9840,7 @@ td {
   .promotion.end
   .promotion-img-wrap::after {
   position: absolute;
-  content: "종료된\A이벤트입니다.";
+  content: "";
   white-space: pre;
   color: #fff;
   font-size: 24px;
@@ -9741,6 +9857,22 @@ td {
   background-color: #5d4b38;
   opacity: 0.83;
 }
+.promotion-wrap
+  .promotion-index-container
+  .promotion.end
+  .promotion-img-wrap
+  .end-title {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    line-height: 1.5;
+    color: #FFF;
+    z-index: 10;
+  }
 
 .promotion-wrap .pagination {
   margin-top: 80px;
@@ -9774,9 +9906,16 @@ td {
 .promotion-detail-wrap {
   padding-top: 240px;
   padding-bottom: 160px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #fcf9f6;
 
   text-align: center;
+}
+.promotion-detail-wrap .text-wrap {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .promotion-detail-wrap .text-wrap .title {
@@ -10205,6 +10344,11 @@ span.only-pc {
 }
 .briller-info-section .briller-star {
   display: none;
+}
+
+#header .menu .language-wrap .mobile-lang-btn {
+  display: none;
+
 }
 
 @media screen and (max-width: 1600px) {
@@ -11068,6 +11212,8 @@ span.only-pc {
     .directions-text-wrap
     .contact-btn-wrap
     .contact-btn {
+      padding-left: 7px;
+      padding-right: 7px;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -11106,15 +11252,19 @@ span.only-pc {
   .directions .directions-text-wrap .contact-btn-wrap .contact-btn .btn-text {
     font-size: 16px;
     line-height: normal;
+    word-break: keep-all;
   }
   .directions > :not(.directions-map-wrap) {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
 .only-1100 {
   display: none;
+}
+.roughmap_maker_label .roughmap_lebel_text {
+  word-break: keep-all;
 }
 
 /* about 반응형 */
@@ -11618,6 +11768,8 @@ span.only-pc {
   .location-time-wrap .wrap .contact-btn-wrap .contact-btn {
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
     gap: 4px;
   }
   .location-time-wrap .wrap .contact-btn-wrap .contact-btn a .btn-text {
@@ -16165,7 +16317,7 @@ span.only-pc {
   color: #FFF;
 }
 .picore-wrap .table-container .table-box .content-wrap .img-wrap {
-  margin-top: 30px;
+  margin-top: 16px;
   max-width: 448px;
   max-height: 310px;
   margin-left: auto;
@@ -17134,6 +17286,20 @@ span.only-pc {
     margin-top: 62px;
     padding-bottom: 60px;
   }
+
+  .promotion-wrap
+  .promotion-index-container
+  .promotion.end
+  .promotion-img-wrap
+  .end-title {
+
+
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    line-height: 1.63;
+    color: #FFF;
+    z-index: 10;
+  }
 }
 
 
@@ -17153,6 +17319,8 @@ span.only-pc {
 }
 
 @media screen and (max-width:767px) {
+
+
   .promotion-detail-wrap .text-wrap .title {
     font-size: 24px;
 
@@ -17189,3 +17357,42 @@ span.only-pc {
     white-space: nowrap;
   }
 }
+
+@media screen and (max-width:1500px) {
+  .private-wrap .text-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+
+@media screen and (max-width:1300px) {
+  .clarity-wrap .clarity-process-flex-wrap .process .wrap {
+    text-align: center;
+  }
+  .picore-wrap .picore-process-flex-wrap .process .wrap {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .private-wrap .text-wrap .main-title {
+    font-size: 40px;
+  }
+  .private-wrap .text-wrap .main-sub {
+    font-size: 14px;
+  }
+  .private-wrap .term .term-title {
+    font-size: 20px;
+  }
+  .private-wrap .term .term-text {
+    font-size: 14px;
+  }
+  .private-wrap {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+}
+
+

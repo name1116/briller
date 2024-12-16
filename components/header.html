@@ -471,6 +471,9 @@
     const mainLogo = document.querySelector("#header .logo-img-wrap");
     const mainLogoImg = document.querySelector("#header .logo-img-wrap img");
     const nav = document.querySelector("#header .header-main-nav");
+    const trans = document.querySelector(
+      "#header .menu .language-wrap .mobile-lang-btn"
+    );
     const transText = document.querySelector(
       "#header .menu .language-wrap .mobile-lang-btn p"
     );
@@ -485,24 +488,51 @@
       "#header .header-main-nav .main-nav-btn .main-nav-detail-wrap"
     );
 
+    let isWideScreen = window.innerWidth >= 1200;
 
+    // 색상 초기화 로직 함수화
+    function updateColors() {
+      if (isWideScreen) {
+        transText.style.color = "#fff";
+        transArrow.style.color = "#fff";
+        menu.style.color = "#fff";
 
-    // 마우스를 window 위로 올렸을 때
+        navBtn.forEach((el) => {
+          el.style.color = "#fff";
+        });
+      } else {
+        transText.style.color = "#202020";
+        transArrow.style.color = "#202020";
+        menu.style.color = "#202020";
+
+        navBtn.forEach((el) => {
+          el.style.color = "#202020";
+        });
+      }
+    }
+
+    // 창 크기 조정 이벤트
+    window.addEventListener("resize", () => {
+      const newIsWideScreen = window.innerWidth >= 1200;
+      if (newIsWideScreen !== isWideScreen) {
+        isWideScreen = newIsWideScreen;
+        updateColors();
+      }
+    });
+
+    // 마우스 오버 이벤트
     window.addEventListener("mouseover", (e) => {
-
-      if (e.clientY <= 300 && window.scrollY === 0) {
-
+      if (e.clientY <= 300 && window.scrollY === 0 && isWideScreen) {
         const followHeader = document.querySelector("#header .follow-header");
         const followHeaderLogo = document.querySelector(
           "#header .follow-header .sub-logo-img-wrap"
         );
 
+        // 스타일 업데이트
         mainLogo.style.width = "118px";
         mainLogo.style.height = "64px";
         mainLogo.style.marginTop = "12px";
         mainLogo.style.marginLeft = "20px";
-
-
 
         nav.style.transform = "translateY(-75px)";
         nav.style.transition = "transform 0.3s ease-in-out";
@@ -515,7 +545,6 @@
 
         transText.style.color = "#202020";
         transArrow.style.color = "#202020";
-
         menu.style.color = "#202020";
 
         navBtn.forEach((el) => {
@@ -526,47 +555,42 @@
       }
     });
 
-    // 마우스를 window에서 내릴 때
+    // 마우스 아웃 이벤트
     window.addEventListener("mouseout", (e) => {
       if (e.clientY > 300 && window.scrollY === 0) {
-          // navDetail에 호버하지 않았다면 스타일 초기화
-          const followHeader = document.querySelector("#header .follow-header");
-          const followHeaderLogo = document.querySelector(
-            "#header .follow-header .sub-logo-img-wrap"
-          );
+        const followHeader = document.querySelector("#header .follow-header");
+        const followHeaderLogo = document.querySelector(
+          "#header .follow-header .sub-logo-img-wrap"
+        );
 
-          // 스타일 초기화
-          mainLogo.style.width = "";
-          mainLogo.style.height = "";
-          mainLogo.style.marginTop = "";
-          mainLogo.style.marginLeft = "";
+        // 스타일 초기화
+        mainLogo.style.width = "";
+        mainLogo.style.height = "";
+        mainLogo.style.marginTop = "";
+        mainLogo.style.marginLeft = "";
 
+        nav.style.transform = "translateY(0)";
+        nav.style.transition = "transform 0.3s ease-in-out";
 
+        followHeader.style.display = "none";
+        followHeader.style.height = "";
+        followHeader.style.paddingTop = "";
+        followHeader.style.paddingBottom = "";
+        followHeaderLogo.style.display = "";
 
-          nav.style.transform = "translateY(0)";
-          nav.style.transition = "transform 0.3s ease-in-out";
+        mainLogoImg.style.filter = "";
 
-          followHeader.style.display = "none";
-          followHeader.style.height = "";
-          followHeader.style.paddingTop = "";
-          followHeader.style.paddingBottom = "";
-          followHeaderLogo.style.display = "";
-
-          transText.style.color = "#fff";
-          transArrow.style.color = "#fff";
-
-          menu.style.color = "#fff";
-
-          navBtn.forEach((el) => {
-            el.style.color = "#fff";
-          });
-
-          mainLogoImg.style.filter = "";
-        }
-      
+        // 색상 업데이트
+        updateColors();
+      }
     });
 
-
+    // 스크롤 이벤트
+    window.addEventListener("scroll", () => {
+      if (window.scrollY <= 100) {
+        updateColors();
+      }
+    });
 
     function toggleFollowHeader() {
       const followHeader = document.querySelector(".follow-header");
@@ -606,9 +630,9 @@
           el.style.color = "#FFF";
         });
 
-        menuBtn.style.color = "#FFF";
-        transBtnText.style.color = "#FFF";
-        transBtnArrow.style.color = "#FFF";
+        // menuBtn.style.color = "#FFF";
+        // transBtnText.style.color = "#FFF";
+        // transBtnArrow.style.color = "#FFF";
       }
     }
   }
@@ -750,7 +774,7 @@
       hamMenu.style.display = "none";
       langBtn.forEach((btn) => {
         btn.style.display = "block";
-        moLangBtn.style.display = "flex";
+        moLangBtn.style.display = "";
       });
       header.style.display = "";
     }
@@ -1082,3 +1106,45 @@
     }
   });
 </script>
+
+<script>
+  const fHeader = document.querySelector("#header .follow-header");
+  const logo = document.querySelector("#header .follow-header .sub-logo-img-wrap");
+  const nav = document.querySelectorAll("#header .header-main-nav .main-nav-btn .font-pm");
+  const menu = document.querySelector("#header .menu .ham-menu-img-wrap i");
+  const moLangText = document.querySelector("#header .menu .language-wrap .mobile-lang-btn p");
+  const moLangArrow = document.querySelector("#header .menu .language-wrap .mobile-lang-btn i");
+
+  function scrollTest() {
+    if (!(location.pathname.endsWith("index.html") || location.pathname === "/") && window.scrollY !== 0) {
+      // "index.html"이 아니고, "/"가 아니고, 스크롤이 0이 아닌 경우
+      fHeader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+      logo.style.filter = "";
+      nav.forEach((el) => {
+        el.style.color = "";
+      })
+      menu.style.color = "";
+      moLangText.style.color = "";
+      moLangArrow.style.color = "";
+    } else if (!(location.pathname.endsWith("index.html") || location.pathname === "/") && window.scrollY === 0) {
+      // 스크롤이 0인 경우
+      fHeader.style.backgroundColor = "transparent";
+      logo.style.filter = "none";
+      nav.forEach((el) => {
+        el.style.color = "#FFF";
+      })
+      menu.style.color = "#FFF";
+      moLangText.style.color = "#FFF";
+      moLangArrow.style.color = "#FFF";
+    }
+  }
+
+  window.addEventListener("load", () => {
+    scrollTest();
+  });
+
+  window.addEventListener("scroll", () => {
+    scrollTest();
+  });
+</script>
+
