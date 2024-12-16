@@ -467,13 +467,121 @@
 
 <script>
   if (location.pathname.endsWith("index.html") || location.pathname === "/") {
+    const header = document.querySelector("#header");
+    const mainLogo = document.querySelector("#header .logo-img-wrap");
+    const mainLogoImg = document.querySelector("#header .logo-img-wrap img");
+    const nav = document.querySelector("#header .header-main-nav");
+    const transText = document.querySelector(
+      "#header .menu .language-wrap .mobile-lang-btn p"
+    );
+    const transArrow = document.querySelector(
+      "#header .menu .language-wrap .mobile-lang-btn i"
+    );
+    const menu = document.querySelector("#header .menu .ham-menu-img-wrap i");
+    const navBtn = document.querySelectorAll(
+      "#header .header-main-nav .main-nav-btn .font-pm"
+    );
+    const navDetail = document.querySelectorAll(
+      "#header .header-main-nav .main-nav-btn .main-nav-detail-wrap"
+    );
+
+
+
+    // 마우스를 window 위로 올렸을 때
+    window.addEventListener("mouseover", (e) => {
+
+      if (e.clientY <= 300 && window.scrollY === 0) {
+
+        const followHeader = document.querySelector("#header .follow-header");
+        const followHeaderLogo = document.querySelector(
+          "#header .follow-header .sub-logo-img-wrap"
+        );
+
+        mainLogo.style.width = "118px";
+        mainLogo.style.height = "64px";
+        mainLogo.style.marginTop = "12px";
+        mainLogo.style.marginLeft = "20px";
+
+
+
+        nav.style.transform = "translateY(-75px)";
+        nav.style.transition = "transform 0.3s ease-in-out";
+
+        followHeader.style.display = "block";
+        followHeader.style.height = "88px";
+        followHeader.style.paddingTop = "12px";
+        followHeader.style.paddingBottom = "12px";
+        followHeaderLogo.style.display = "none";
+
+        transText.style.color = "#202020";
+        transArrow.style.color = "#202020";
+
+        menu.style.color = "#202020";
+
+        navBtn.forEach((el) => {
+          el.style.color = "#202020";
+        });
+
+        mainLogoImg.style.filter = "invert(100%) contrast(100%)";
+      }
+    });
+
+    // 마우스를 window에서 내릴 때
+    window.addEventListener("mouseout", (e) => {
+      if (e.clientY > 300 && window.scrollY === 0) {
+          // navDetail에 호버하지 않았다면 스타일 초기화
+          const followHeader = document.querySelector("#header .follow-header");
+          const followHeaderLogo = document.querySelector(
+            "#header .follow-header .sub-logo-img-wrap"
+          );
+
+          // 스타일 초기화
+          mainLogo.style.width = "";
+          mainLogo.style.height = "";
+          mainLogo.style.marginTop = "";
+          mainLogo.style.marginLeft = "";
+
+
+
+          nav.style.transform = "translateY(0)";
+          nav.style.transition = "transform 0.3s ease-in-out";
+
+          followHeader.style.display = "none";
+          followHeader.style.height = "";
+          followHeader.style.paddingTop = "";
+          followHeader.style.paddingBottom = "";
+          followHeaderLogo.style.display = "";
+
+          transText.style.color = "#fff";
+          transArrow.style.color = "#fff";
+
+          menu.style.color = "#fff";
+
+          navBtn.forEach((el) => {
+            el.style.color = "#fff";
+          });
+
+          mainLogoImg.style.filter = "";
+        }
+      
+    });
+
+
+
     function toggleFollowHeader() {
       const followHeader = document.querySelector(".follow-header");
       const nav = document.querySelector(".header-main-nav");
-      const navFont = document.querySelectorAll(".header-main-nav .main-nav-btn .font-pm");
+      const navFont = document.querySelectorAll(
+        ".header-main-nav .main-nav-btn .font-pm"
+      );
       const menuBtn = document.querySelector(".menu .ham-menu-img-wrap i");
       const scrollPosition = window.scrollY; // 스크롤 위치 확인
-      const transBtn = document.querySelector("#header .menu .language-wrap .mobile-lang-btn");
+      const transBtnText = document.querySelector(
+        "#header .menu .language-wrap .mobile-lang-btn p"
+      );
+      const transBtnArrow = document.querySelector(
+        "#header .menu .language-wrap .mobile-lang-btn i"
+      );
 
       // 200px 이상 스크롤 시 follow-header 표시
       if (scrollPosition >= 120) {
@@ -481,10 +589,13 @@
         nav.style.position = "fixed";
         nav.style.left = "50%";
         nav.style.transform = "translate(-50%)";
+        nav.style.transition = "none";
         navFont.forEach((el) => {
           el.style.color = "#202020";
-        })
+        });
         menuBtn.style.color = "#202020";
+        transBtnText.style.color = "#202020";
+        transBtnArrow.style.color = "#202020";
       } else {
         followHeader.style.display = "none";
         nav.style.position = "relative";
@@ -493,9 +604,11 @@
 
         navFont.forEach((el) => {
           el.style.color = "#FFF";
-        })
+        });
 
         menuBtn.style.color = "#FFF";
+        transBtnText.style.color = "#FFF";
+        transBtnArrow.style.color = "#FFF";
       }
     }
   }
@@ -960,11 +1073,11 @@
 
     if (window.innerWidth <= 767 && langCode === "ko") {
       contactBtn.forEach((el) => {
-        el.style.width = "109px"
+        el.style.width = "109px";
       });
     } else {
       contactBtn.forEach((el) => {
-        el.style.width = "168px"
+        el.style.width = "168px";
       });
     }
   });
