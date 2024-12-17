@@ -814,7 +814,10 @@
       ".contact-btn-wrap .contact-btn"
     );
 
+    
+
     if (langCode === "en") {
+      replaceTranslatedWords();
       timeLine.forEach((el) => el.classList.add("english"));
       principles.forEach((el) => {
         el.style.width = "400px";
@@ -825,8 +828,7 @@
     }
 
     if (langCode === "ko") {
-      // 한국어일 경우: Google Translate 세션을 초기화하고 원본으로 복원
-      resetGoogleTranslate();
+
 
       contactBtn.forEach((el) => (el.style.width = "168px"));
       locText.forEach((el) => (el.style.letterSpacing = ""));
@@ -1109,30 +1111,48 @@
 
 <script>
   const fHeader = document.querySelector("#header .follow-header");
-  const logo = document.querySelector("#header .follow-header .sub-logo-img-wrap");
-  const nav = document.querySelectorAll("#header .header-main-nav .main-nav-btn .font-pm");
+  const logo = document.querySelector(
+    "#header .follow-header .sub-logo-img-wrap"
+  );
+  const nav = document.querySelectorAll(
+    "#header .header-main-nav .main-nav-btn .font-pm"
+  );
   const menu = document.querySelector("#header .menu .ham-menu-img-wrap i");
-  const moLangText = document.querySelector("#header .menu .language-wrap .mobile-lang-btn p");
-  const moLangArrow = document.querySelector("#header .menu .language-wrap .mobile-lang-btn i");
+  const moLangText = document.querySelector(
+    "#header .menu .language-wrap .mobile-lang-btn p"
+  );
+  const moLangArrow = document.querySelector(
+    "#header .menu .language-wrap .mobile-lang-btn i"
+  );
 
   function scrollTest() {
-    if (!(location.pathname.endsWith("index.html") || location.pathname === "/") && window.scrollY !== 0) {
+    if (
+      !(
+        location.pathname.endsWith("index.html") || location.pathname === "/"
+      ) &&
+      window.scrollY !== 0
+    ) {
       // "index.html"이 아니고, "/"가 아니고, 스크롤이 0이 아닌 경우
       fHeader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
       logo.style.filter = "";
       nav.forEach((el) => {
         el.style.color = "";
-      })
+      });
       menu.style.color = "";
       moLangText.style.color = "";
       moLangArrow.style.color = "";
-    } else if (!(location.pathname.endsWith("index.html") || location.pathname === "/") && window.scrollY === 0) {
+    } else if (
+      !(
+        location.pathname.endsWith("index.html") || location.pathname === "/"
+      ) &&
+      window.scrollY === 0
+    ) {
       // 스크롤이 0인 경우
       fHeader.style.backgroundColor = "transparent";
       logo.style.filter = "none";
       nav.forEach((el) => {
         el.style.color = "#FFF";
-      })
+      });
       menu.style.color = "#FFF";
       moLangText.style.color = "#FFF";
       moLangArrow.style.color = "#FFF";
@@ -1147,4 +1167,3 @@
     scrollTest();
   });
 </script>
-
