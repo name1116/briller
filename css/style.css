@@ -19,12 +19,21 @@ body {
 }
 
 /* 팝업 */
+.popup-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 .pop-parent {
   position: fixed;
-  top: 200px;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 999;
-  transition: all 0.2s;
 }
 
 .pop-parent .m-ratioBox-wrap {
@@ -45,13 +54,21 @@ body {
 /*
 .m-ratioBox-wrap .m-ratioBox:after {content:""; width:83px; height:28px; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:url("../img/logo.png") no-repeat; background-size:100%; opacity:0.4;}
  */
+ .pop-parent .swiper-wrapper {
+  width: 100%;
+  max-height: 750px;
+ }
+ .pop-parent .swiper .swiper-wrapper .swiper-slide {
+  max-height: 750px;
+ }
+
 .pop-parent .m-ratioBox-wrap img {
   display: block;
   width: 100%;
+  object-fit: contain;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
+  left: 0px;
+  top: 0px;
   z-index: 1;
 }
 .pop-parent .m-ratioBox-wrap iframe {
@@ -65,18 +82,31 @@ body {
 
 .pop-parent .swiper {
   overflow: hidden;
+  max-height: 750px;
 }
 .pop-parent .swiper-container {
   overflow: visible;
 }
 .pop-parent .swiper-pagination {
+  position: static;
   display: flex;
+  align-items: flex-start;
+  height: 100%;
+  max-width: 1228px;
+  width: 100%;
 }
+.pop-parent .swiper-pagination-bullet {
+  max-width: none;
+  width: calc(100% / 2);
+  height: 100%;
+  
+ }
 .pop-parent .pop {
-  width: 400px;
+  max-width: 1228px;
   position: relative;
 }
 .pop-parent .pop .btn-toggle {
+  display: none;
   width: 40px;
   height: 40px;
   position: relative;
@@ -93,12 +123,14 @@ body {
 }
 .pop-parent .pop-btns {
   display: flex;
+  max-width: 1228px;
+  width: 100%;
+  justify-content: space-between;
   position: absolute;
-  top: 80px;
-  left: -120px;
+  bottom: -80px;
+  left: 0px;
   background-color: #3c3c3c;
   opacity: 1;
-  transform: rotate(90deg);
 }
 .pop-parent .pop-btns a {
   color: #fff;
@@ -145,25 +177,25 @@ body {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 21px;
-  right: 20px;
+  bottom: -40px;
   z-index: 2;
 }
-.pop-parent .swiper-control .swiper-pagination {
-  position: static;
+.pop-parent .swiper-control {
+  position: absolute;
+  max-width: 1228px;
+  width: 100%;
+  height: 40px;
 }
 .pop-parent .swiper-pagination-bullet {
   flex: 0 0 auto;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
+  margin: 0 !important;
   border-radius: 0;
-  border: 1px solid white;
-  opacity: 0.5;
-  background-color: transparent;
+  border-right: 2px solid rgba(217, 216, 216, 0.611);
+  background-color: #fff;
+  opacity: 1;
 }
 .pop-parent .swiper-pagination-bullet-active {
-  background-color: #fff;
+  border-right: 2px solid rgba(217, 216, 216, 0.611);
   opacity: 1;
 }
 .pop-parent.active {
@@ -174,14 +206,13 @@ body {
 }
 
 .pop-parent .pop .btn-close {
-  display: none;
   width: 40px;
   height: 40px;
   position: relative;
   background-color: black;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   .pop-parent .pop {
     width: 310px;
   }
@@ -210,6 +241,9 @@ body {
   }
   .pop-parent .pop .btn-close {
     display: block;
+  }
+  .pop-parent .swiper .swiper-wrapper .swiper-slide {
+    max-height: none;
   }
 }
 

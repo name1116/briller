@@ -361,7 +361,7 @@
             <div class="wrap">
               <p class="location two font-pm">주차</p>
               <p class="location-detail font-pm">
-                건물 1층 투썸플레이스 옆 발렛 부스
+                건물 1층 써브웨이 옆 발렛 부스
               </p>
             </div>
           </div>
@@ -452,46 +452,59 @@
     <div id="footer"></div>
 
     <!-- 팝업 -->
-    <!-- 
-    <div class="pop-parent" id="popParent">
+    <div class="popup-wrap" id="popupWrap">
+      <div class="pop-parent" id="popParent">
         <div class="pop">
-            <div class="swiper-container">
-                <div class="swiper popupSwiper">
-                    <div class="swiper-wrapper">
-                        <a href="{{$item->link}}" class="swiper-slide" target="_blank">
-                            <div class="m-ratioBox-wrap">
-                                <div class="m-ratioBox">
-                                    <img src="https://admin.hielpay.com/storage/popup/1698050140_open-popup2.jpg" alt="">
-                                </div>
-                            </div>
-                        </a>
+          <div class="swiper-container">
+            <div class="swiper popupSwiper">
+              <div class="swiper-wrapper">
+                <a href="{{$item->link}}" class="swiper-slide" target="_blank">
+                  <div class="m-ratioBox-wrap">
+                    <div class="m-ratioBox">
+                      <img
+                        src="./images/pop_test.jpg"
+                        alt=""
+                      />
                     </div>
-                </div>
-
-                <div class="swiper-control">
-                    <div class="swiper-pagination"></div>
-                </div>
-
-                <div class="pop-btns">
-                    <input type="checkbox" name="oneday" id="oneday_check">
-                    <label for="oneday_check">
-                        <span class="icon"></span> 오늘하루 보지 않기
-                    </label>
-
-                    <button class="btn-toggle">
-                        <i class="xi-angle-up" style="color:#fff;"></i>
-                    </button>
-
-                    <button class="btn-close" onclick="nonePopup()">
-                        <i class="xi-close" style="color:#fff;"></i>
-                    </button>
-                </div>
+                  </div>
+                </a>
+                <a href="{{$item->link}}" class="swiper-slide" target="_blank">
+                  <div class="m-ratioBox-wrap">
+                    <div class="m-ratioBox">
+                      <img
+                        src="./images/pop_test.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
-        </div>
-    </div> 
-    -->
-    <!-- //팝업 -->
 
+            <div class="swiper-control">
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="pop-btns">
+              <input type="checkbox" name="oneday" id="oneday_check" />
+              <label for="oneday_check">
+                <span class="icon"></span> 오늘하루 보지 않기
+              </label>
+
+              <button class="btn-toggle">
+                <i class="xi-angle-up" style="color: #fff"></i>
+              </button>
+
+              <button class="btn-close" onclick="nonePopup()">
+                <i class="xi-close" style="color: #fff"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- //팝업 -->
 
     <script>
       const viewMore = document.querySelector(".briller-info-viewmore a");
@@ -501,34 +514,32 @@
 
       viewMore.addEventListener("mouseover", () => {
         viewMore.classList.add("hover");
-      })
+      });
       viewMore.addEventListener("mouseout", () => {
         viewMore.classList.remove("hover");
-      })
+      });
 
       viewMore1.addEventListener("mouseover", () => {
         viewMore1.classList.add("hover");
-      })
+      });
       viewMore1.addEventListener("mouseout", () => {
         viewMore1.classList.remove("hover");
-      })
+      });
 
       viewMore2.addEventListener("mouseover", () => {
         viewMore2.classList.add("hover");
-      })
+      });
       viewMore2.addEventListener("mouseout", () => {
         viewMore2.classList.remove("hover");
-      })
+      });
 
       viewMore3.addEventListener("mouseover", () => {
         viewMore3.classList.add("hover");
-      })
+      });
       viewMore3.addEventListener("mouseout", () => {
         viewMore3.classList.remove("hover");
-      })
+      });
     </script>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -560,21 +571,20 @@
       openBtn.addEventListener("click", () => {
         if (arrow.className === "xi-angle-up-thin") {
           arrow.className = "xi-angle-down-thin";
-    
+
           form.classList.remove("disable");
           openBtn.style.position = "";
           openBtn.style.bottom = "";
-          openBtn.style.display = "flex"
-          openBtn.style.transform = "none"
-          
+          openBtn.style.display = "flex";
+          openBtn.style.transform = "none";
         } else {
           arrow.className = "xi-angle-up-thin";
-    
+
           form.classList.add("disable");
-    
+
           openBtn.style.position = "absolute";
           openBtn.style.bottom = "0px";
-          openBtn.style.left="50%"
+          openBtn.style.left = "50%";
           openBtn.style.transform = "translate(-50%)";
         }
       });
@@ -656,8 +666,11 @@
   <script src="./js/jquery.js"></script>
   <script src="./js/script.js"></script>
   <script>
+
+
+
     function nonePopup() {
-      document.getElementById("popParent").style.display = "none";
+      document.getElementById("popupWrap").style.display = "none";
     }
 
     //popup
@@ -666,7 +679,8 @@
         delay: 3000,
       },
       pagination: {
-        el: ".swiper-pagination",
+        el: ".swiper-control .swiper-pagination",
+        clickable: true,
       },
       loop: true,
     });
@@ -674,5 +688,7 @@
     $(".pop-parent .btn-toggle").click(function () {
       $(".pop-parent").toggleClass("active");
     });
+
+
   </script>
 </html>
