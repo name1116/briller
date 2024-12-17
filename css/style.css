@@ -14,6 +14,10 @@ body {
   position: static !important;
 }
 
+.principle-wrap .principle-flex-wrap .principle .img-wrap img {
+  border-radius: 50%;
+}
+
 /* 팝업 */
 .pop-parent {
   position: fixed;
@@ -10307,7 +10311,12 @@ td {
 }
 
 .directions .directions-text-wrap .time-wrap.english::after {
-  left: 65px;
+  left: 95px;
+}
+@media screen and (max-width:767px) {
+  .directions .directions-text-wrap .time-wrap.english::after {
+    left: 65px;
+  }
 }
 
 .principle-flex-wrap .principle {
