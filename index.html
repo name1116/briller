@@ -488,15 +488,16 @@
             <div class="pop-btns">
               <input type="checkbox" name="oneday" id="oneday_check" />
               <label for="oneday_check">
-                <span class="icon"></span> 오늘하루 보지 않기
+                <p class="open">하루동안 보지 않기</p>
+                <p class="hidden">클릭하면 오늘 하루 OFF</p>
               </label>
 
               <button class="btn-toggle">
-                <i class="xi-angle-up" style="color: #fff"></i>
+                <i class="xi-angle-up" style="color: #333"></i>
               </button>
 
-              <button class="btn-close" onclick="nonePopup()">
-                <i class="xi-close" style="color: #fff"></i>
+              <button class="btn-close" onclick="nonePopup()" >
+                <i class="xi-close" style="color: #333"></i>
               </button>
             </div>
           </div>
@@ -666,8 +667,8 @@
   <script src="./js/jquery.js"></script>
   <script src="./js/script.js"></script>
   <script>
-
-
+    const popupLabel = document.querySelector(".pop-parent .pop-btns #oneday_check + label");
+    const popupClose = document.querySelector(".pop-parent .pop .btn-close i");
 
     function nonePopup() {
       document.getElementById("popupWrap").style.display = "none";
@@ -675,9 +676,10 @@
 
     //popup
     var popupSwiper = new Swiper(".popupSwiper", {
-      autoplay: {
-        delay: 3000,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      // },
+      slidesPerView: 'auto',
       pagination: {
         el: ".swiper-control .swiper-pagination",
         clickable: true,
@@ -688,6 +690,23 @@
     $(".pop-parent .btn-toggle").click(function () {
       $(".pop-parent").toggleClass("active");
     });
+
+    popupLabel.addEventListener("mouseover", () => {
+      popupLabel.querySelector(".open").style.opacity = "0";
+      popupLabel.querySelector(".hidden").style.opacity = "1";
+    })
+
+    popupLabel.addEventListener("mouseout", () => {
+      popupLabel.querySelector(".open").style.opacity = "1";
+      popupLabel.querySelector(".hidden").style.opacity = "0";
+    })
+
+    popupClose.addEventListener("mouseover", () => {
+      popupClose.classList.add("hover");
+    })
+    popupClose.addEventListener("mouseout", () => {
+      popupClose.classList.remove("hover");
+    })
 
 
   </script>
