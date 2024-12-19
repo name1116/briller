@@ -77,6 +77,13 @@
       align-items: center;
       justify-content: center;
     }
+
+    @media screen and (max-width: 767px) {
+      #header .follow-header {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+    }
   </style>
 
   <body>
@@ -100,7 +107,7 @@
             </p>
           </div>
         </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide two">
           <img class="slide-02" src="./images/main_02.png" />
           <div class="text-wrap">
             <h3 class="clinic-title font-pb" translate="no">
@@ -156,7 +163,7 @@
       </div>
       <div class="swiper-pagination"></div>
 
-      <div class="quick-form-wrap">
+      <!-- <div class="quick-form-wrap">
         <div class="quick-btn-wrap">
           <button class="quick-form-open-btn">
             <p class="font-pm">빠른 상담 신청</p>
@@ -189,7 +196,7 @@
             <button type="submit" class="btn-submit font-pb">신청하기</button>
           </div>
         </form>
-      </div>
+      </div> -->
     </div>
 
     <div class="briller-info-section">
@@ -448,6 +455,7 @@
       </section>
     </div>
 
+    <div id="quick"></div>
     <div id="top_menu"></div>
     <div id="footer"></div>
 
@@ -461,20 +469,14 @@
                 <a href="{{$item->link}}" class="swiper-slide" target="_blank">
                   <div class="m-ratioBox-wrap">
                     <div class="m-ratioBox">
-                      <img
-                        src="./images/pop_test.jpg"
-                        alt=""
-                      />
+                      <img src="./images/pop_test.jpg" alt="" />
                     </div>
                   </div>
                 </a>
                 <a href="{{$item->link}}" class="swiper-slide" target="_blank">
                   <div class="m-ratioBox-wrap">
                     <div class="m-ratioBox">
-                      <img
-                        src="./images/pop_test.jpg"
-                        alt=""
-                      />
+                      <img src="./images/pop_test.jpg" alt="" />
                     </div>
                   </div>
                 </a>
@@ -496,7 +498,7 @@
                 <i class="xi-angle-up" style="color: #333"></i>
               </button>
 
-              <button class="btn-close" onclick="nonePopup()" >
+              <button class="btn-close" onclick="nonePopup()">
                 <i class="xi-close" style="color: #333"></i>
               </button>
             </div>
@@ -564,32 +566,6 @@
       });
     </script>
 
-    <script>
-      const openBtn = document.querySelector(".quick-form-open-btn");
-      const arrow = document.querySelector(".quick-form-open-btn i");
-      const form = document.querySelector(".quick-form");
-
-      openBtn.addEventListener("click", () => {
-        if (arrow.className === "xi-angle-up-thin") {
-          arrow.className = "xi-angle-down-thin";
-
-          form.classList.remove("disable");
-          openBtn.style.position = "";
-          openBtn.style.bottom = "";
-          openBtn.style.display = "flex";
-          openBtn.style.transform = "none";
-        } else {
-          arrow.className = "xi-angle-up-thin";
-
-          form.classList.add("disable");
-
-          openBtn.style.position = "absolute";
-          openBtn.style.bottom = "0px";
-          openBtn.style.left = "50%";
-          openBtn.style.transform = "translate(-50%)";
-        }
-      });
-    </script>
 
     <script
       charset="UTF-8"
@@ -667,7 +643,9 @@
   <script src="./js/jquery.js"></script>
   <script src="./js/script.js"></script>
   <script>
-    const popupLabel = document.querySelector(".pop-parent .pop-btns #oneday_check + label");
+    const popupLabel = document.querySelector(
+      ".pop-parent .pop-btns #oneday_check + label"
+    );
     const popupClose = document.querySelector(".pop-parent .pop .btn-close i");
 
     function nonePopup() {
@@ -679,7 +657,7 @@
       // autoplay: {
       //   delay: 3000,
       // },
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       pagination: {
         el: ".swiper-control .swiper-pagination",
         clickable: true,
@@ -694,20 +672,18 @@
     popupLabel.addEventListener("mouseover", () => {
       popupLabel.querySelector(".open").style.opacity = "0";
       popupLabel.querySelector(".hidden").style.opacity = "1";
-    })
+    });
 
     popupLabel.addEventListener("mouseout", () => {
       popupLabel.querySelector(".open").style.opacity = "1";
       popupLabel.querySelector(".hidden").style.opacity = "0";
-    })
+    });
 
     popupClose.addEventListener("mouseover", () => {
       popupClose.classList.add("hover");
-    })
+    });
     popupClose.addEventListener("mouseout", () => {
       popupClose.classList.remove("hover");
-    })
-
-
+    });
   </script>
 </html>

@@ -344,7 +344,13 @@ body {
   justify-content: center;
   opacity: 1;
   transition: 0.3s;
-  z-index: 500;
+  z-index: 200;
+}
+@media screen and (max-width:767px) {
+  .sns-open {
+    right: 20px;
+    /* bottom: 125px !important; */
+  }
 }
 .sns-open i {
   color: #fff;
@@ -365,7 +371,13 @@ body {
   justify-content: center;
   opacity: 0;
   transition: 0.3s;
-  z-index: 100;
+  z-index: 200;
+}
+@media screen and (max-width:767px) {
+  .Top_Scroll_btn {
+    right: 20px;
+    bottom: 61px;
+  }
 }
 
 .Top_Scroll_btn.active {
@@ -410,6 +422,13 @@ body {
   bottom: 112px;
   right: 48px;
   z-index: 500;
+}
+
+@media screen and (max-width: 767px) {
+  .sns-btn-wrap.active {
+    right: 20px;
+    bottom: 128px;
+  }
 }
 
 .sns-btn-wrap.active .sns-btn {
@@ -499,6 +518,8 @@ body {
   transition: transform 0.3 ease;
   transform: translateY(-100px);
 } */
+
+
 
 
 
@@ -932,8 +953,8 @@ body {
 }
 
 .swiper .quick-form-wrap {
-  z-index: 50;
-  position: absolute;
+  z-index: 9999;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   /* left: calc(50% - 109px); */
@@ -965,6 +986,7 @@ body {
 .swiper .quick-form-wrap .quick-form.disable {
   opacity: 0;
   visibility: hidden;
+  height: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -1140,7 +1162,7 @@ body {
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
-  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+  z-index: 0; /* 텍스트가 ::after 위에 렌더링되도록 */
 
   transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
@@ -1288,7 +1310,7 @@ body {
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
-  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+  z-index: 1; /* 텍스트가 ::after 위에 렌더링되도록 */
 
   transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
@@ -1307,7 +1329,7 @@ body {
     position: absolute;
     top: -13px;
     left: 60px; /* 초기 left 값 */
-    z-index: 10; /* a 글씨보다 뒤에 배치 */
+    z-index: 1; /* a 글씨보다 뒤에 배치 */
   
     transition: width 0.3s ease, left 0.3s ease; /* width와 left에 transition 적용 */
 }
@@ -1411,7 +1433,7 @@ body {
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
-  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+  z-index: 0; /* 텍스트가 ::after 위에 렌더링되도록 */
 
   transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
@@ -1430,7 +1452,7 @@ body {
     position: absolute;
     top: -13px;
     left: 60px; /* 초기 left 값 */
-    z-index: 10; /* a 글씨보다 뒤에 배치 */
+    z-index: 0; /* a 글씨보다 뒤에 배치 */
   
     transition: width 0.3s ease, left 0.3s ease; /* width와 left에 transition 적용 */
 }
@@ -1537,7 +1559,7 @@ body {
   font-weight: 300;
   line-height: 2;
   color: #afa9a4;
-  z-index: 20; /* 텍스트가 ::after 위에 렌더링되도록 */
+  z-index: 0; /* 텍스트가 ::after 위에 렌더링되도록 */
 
   transition: padding-left 0.3s ease; /* padding-left에 transition 적용 */
 }
@@ -1556,7 +1578,7 @@ body {
     position: absolute;
     top: -13px;
     left: 60px; /* 초기 left 값 */
-    z-index: 10; /* a 글씨보다 뒤에 배치 */
+    z-index: 0; /* a 글씨보다 뒤에 배치 */
   
     transition: width 0.3s ease, left 0.3s ease; /* width와 left에 transition 적용 */
 }
@@ -1819,6 +1841,7 @@ body {
 }
 
 .briller-info-section .directions .directions-map-wrap {
+  z-index: 0;
   margin-top: 30px;
   max-width: 720px;
   width: 100%;
@@ -4918,6 +4941,12 @@ body {
 }
 .tentherma-wrap .principle-wrap .principle-banner-wrap img {
   object-fit: cover;
+}
+
+@media screen and (max-width:767px) {
+  .principle-wrap .principle-banner-wrap {
+    display: none;
+  }
 }
 
 /* lifting sub04 */
@@ -10741,7 +10770,7 @@ span.only-pc {
     padding-bottom: 8px;
   }
   #header .menu {
-    top: 14px;
+    top: 16px;
     right: 23px;
   }
   #header .menu .ham-menu-img-wrap {
@@ -10860,7 +10889,8 @@ span.only-pc {
   .swiper .swiper-wrapper .swiper-slide .text-wrap .clinic-title {
     font-size: 14px;
     line-height: 2;
-    letter-spacing: 7;
+    letter-spacing: 7px;
+    text-align: left;
     color: #7a736e;
   }
   .swiper .swiper-wrapper .swiper-slide .text-wrap .text-wrap-title {
@@ -10868,11 +10898,12 @@ span.only-pc {
     font-size: 40px;
     line-height: 1.2;
     color: #202020;
+    text-align: left;
   }
   .swiper .swiper-wrapper .swiper-slide .text-wrap .clinic-title span {
     font-size: 14px;
     line-height: 2;
-    letter-spacing: 7;
+    letter-spacing: 7px;
     color: #7a736e;
   }
   .swiper .swiper-wrapper .swiper-slide .text-wrap p {
@@ -10880,18 +10911,40 @@ span.only-pc {
     font-size: 14px;
     line-height: 1.71;
     color: #7a736e;
+    text-align: left;
+  }
+  .swiper .swiper-wrapper .swiper-slide.two .text-wrap {
+    left: auto;
+    right: 20px;
+  }
+  .swiper .swiper-wrapper .swiper-slide.two .text-wrap .clinic-title {
+    text-align: right;
+  }
+  .swiper .swiper-wrapper .swiper-slide.two .text-wrap .text-wrap-title {
+    margin-top: 0px;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #202020;
+    text-align: right;
+  }
+  .swiper .swiper-wrapper .swiper-slide.two .text-wrap p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #7a736e;
+    text-align: right;
   }
 
   .swiper .swiper-wrapper .swiper-slide.last .text-wrap .clinic-title {
     font-size: 14px;
     line-height: 2;
-    letter-spacing: 7;
+    letter-spacing: 7px;
     color: #7a736e;
   }
   .swiper .swiper-wrapper .swiper-slide.last .text-wrap .clinic-title span {
     font-size: 14px;
     line-height: 2;
-    letter-spacing: 7;
+    letter-spacing: 7px;
     color: #7a736e;
   }
   .swiper .swiper-wrapper .swiper-slide.last .text-wrap .wrap .text-wrap-title {
@@ -10967,18 +11020,18 @@ span.only-pc {
   }
 
   .briller-info-section .briller-filler .briller-filler-img-wrap {
-    max-width: 355px;
-    max-height: 260px;
+    max-width: 700px;
+    padding-right: 20px;
     align-self: flex-start;
   }
   .briller-info-section .briller-museline .briller-museline-img-wrap {
-    max-width: 355px;
-    max-height: 260px;
+    max-width: 700px;
+    padding-left: 20px;
     align-self: flex-end;
   }
   .briller-info-section .briller-ulthera .briller-ulthera-img-wrap {
-    max-width: 355px;
-    max-height: 260px;
+    max-width: 700px;
+    padding-right: 20px;
     align-self: flex-start;
   }
   .briller-info-section
@@ -11152,6 +11205,7 @@ span.only-pc {
   }
   .briller-info-section .directions {
     margin-top: 0px;
+    padding-bottom: 60px;
   }
   .briller-info-section .directions .directions-map-wrap {
     margin-top: 0px;
@@ -11757,9 +11811,16 @@ span.only-pc {
 }
 
 @media screen and (max-width: 767px) {
+  .location-time-wrap .wrap .direction-wrap .wrap .location {
+    white-space: nowrap;
+  }
+  .location-time-wrap .wrap .direction-wrap .wrap .location.two {
+    letter-spacing: 12px;
+  }
   .location-map-wrap .root_daum_roughmap.root_daum_roughmap_landing {
     height: 520px !important;
   }
+
 
   .location-time-wrap .wrap > .title-wrap p {
     font-size: 16px;
@@ -11804,11 +11865,15 @@ span.only-pc {
 
   .location-time-wrap .wrap .time-wrap .wrap .time {
     font-size: 14px;
+    white-space: nowrap;
     width: 58px;
   }
   .location-time-wrap .wrap .time-wrap .wrap .time-detail {
     font-size: 14px;
     line-height: 2.14;
+  }
+  .location-time-wrap .wrap .time-wrap .wrap .time.two {
+    letter-spacing: 12px;
   }
   .location-time-wrap .wrap .time-wrap::after {
     left: 50px;
@@ -11830,8 +11895,8 @@ span.only-pc {
   .location-time-wrap .wrap .contact-btn-wrap .contact-btn {
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-left: 0;
+    padding-right: 0;
     gap: 4px;
   }
   .location-time-wrap .wrap .contact-btn-wrap .contact-btn a .btn-text {
@@ -12073,6 +12138,7 @@ span.only-pc {
   }
   #repeat .principle-wrap {
     padding-top: 60px;
+    padding-bottom: 60px;
   }
   #repeat .principle-wrap .title {
     font-size: 24px;
@@ -12094,7 +12160,7 @@ span.only-pc {
     height: 280px;
   }
   #repeat .principle-wrap .principle-flex-wrap .principle .principle-title {
-    margin-top: 67px;
+    margin-top: 32px;
     font-size: 22px;
     line-height: 1.45;
   }
@@ -13084,7 +13150,7 @@ span.only-pc {
   .ulthera-wrap .ulthera-info-wrap .ulthera-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
   .ulthera-wrap .ulthera-detail-wrap {
     padding-top: 60px;
@@ -13349,7 +13415,7 @@ span.only-pc {
   .tentherma-wrap .tentherma-info-wrap .tentherma-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
   .tentherma-wrap .tentherma-detail-wrap {
     padding-top: 60px;
@@ -13675,7 +13741,7 @@ span.only-pc {
   .shurink-wrap .shurink-info-wrap .shurink-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
 
 
@@ -13952,7 +14018,7 @@ span.only-pc {
   .inmode-wrap .inmode-info-wrap .inmode-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
 
 
@@ -14656,7 +14722,7 @@ span.only-pc {
   .ultracol-wrap .ultracol-info-wrap .ultracol-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
 
 
@@ -15014,6 +15080,9 @@ span.only-pc {
   .face-contouring-wrap .face-contouring-type-wrap .face-contouring-table .table-head th {
     padding: 15px 0;
     font-size: 16px;
+  }
+  .face-contouring-wrap .face-contouring-type-wrap .face-contouring-table {
+    width: 1000px;
   }
   .face-contouring-wrap .face-contouring-type-wrap .face-contouring-table tr td.devide .text {
     font-size: 16px;
@@ -16300,7 +16369,7 @@ span.only-pc {
   .picore-wrap .picore-info-wrap .picore-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
 
 
@@ -16406,9 +16475,8 @@ span.only-pc {
 
   .picore-wrap .table-container {
     flex-direction: column;
-    width: fit-content;
+    width: 100%;
     margin-top: 40px;
-    padding: 0 20px;
   }
   .picore-wrap .table-container .table-box {
     width: 100%;
@@ -16756,7 +16824,7 @@ span.only-pc {
   .clarity-wrap .clarity-info-wrap .clarity-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
 
 
@@ -17217,7 +17285,7 @@ span.only-pc {
   .co2-wrap .co2-info-wrap .co2-flex-wrap .content-text-wrap .content-text .text-wrap .text {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.71;
+    line-height: 1.5;
   }
 
 
@@ -17230,6 +17298,7 @@ span.only-pc {
   }
   .co2-wrap .co2-info-wrap .co2-process-flex-wrap .process .wrap {
     margin-top: 8px;
+    text-align: center;
   }
   .co2-wrap .co2-info-wrap .co2-process-flex-wrap .process .wrap .title {
     font-size: 16px;
@@ -17288,6 +17357,15 @@ span.only-pc {
   }
   .co2-wrap .co2-table tr td .text-wrap {
     margin: 0px;
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+  .co2-wrap .co2-table tr td .text-wrap .text {
+    font-size: 14px;
+  }
+  .co2-wrap .co2-table .table-head .col {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
@@ -17455,6 +17533,29 @@ span.only-pc {
     padding-top: 100px;
     padding-bottom: 60px;
   }
+
+
+  .ulthera-wrap .ulthera-info-wrap .ulthera-flex-wrap .content-img-wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .tentherma-wrap .tentherma-info-wrap .tentherma-flex-wrap .content-img-wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .shurink-wrap .shurink-info-wrap .shurink-flex-wrap .content-img-wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .inmode-wrap .inmode-info-wrap .inmode-flex-wrap .content-img-wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .ultracol-wrap .ultracol-info-wrap .ultracol-flex-wrap .content-img-wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
 }
 
 
