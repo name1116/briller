@@ -17,8 +17,28 @@ body {
 .principle-wrap .principle-flex-wrap .principle .img-wrap img {
   border-radius: 50%;
 }
+.directions {
+  margin-top: 120px;
+  padding-bottom: 120px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 200px;
+}
+.directions .directions-map-wrap {
+  margin-top: 30px;
+  width: 720px;
+  height: 661px;
+  overflow: hidden;
+}
 
-
+.face-contouring-wrap .face-contouring-type-wrap .face-contouring-table .text.two > td {
+  padding-left: 35px;
+  padding-right: 35px;
+  vertical-align: middle;
+}
 
 .main-modal {
   position: fixed;
@@ -403,6 +423,7 @@ body {
   top: 0px;
   padding-top: 12px;
   padding-bottom: 12px;
+  backdrop-filter: blur(7px) !important;
 }
 
 /* #header .header-main-nav {
@@ -662,6 +683,13 @@ body {
   height: 1px;
   background-color: #b8ab9f;
 }
+.text-sub02 {
+  font-size: 20px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #707070;
+}
+
 .footer-wrap .com-info-wrap .com-info-text-wrap .com-info-text.last::after {
   display: none;
 }
@@ -1547,7 +1575,6 @@ body {
 
 .briller-info-section .directions {
   margin-top: 120px;
-  padding-bottom: 120px;
   width: 100%;
   height: auto;
   display: flex;
@@ -2196,6 +2223,16 @@ body {
 .root_daum_roughmap .wrap_btn_zoom {
   display: none !important;
 }
+.ulthera-wrap .ulthera-detail-process .ulthera-detail-process-flex-wrap .process-flex {
+  max-width: 405px;
+}
+.text-sub {
+  margin-top: 0px;
+  font-size: 18px;
+    font-weight: 300;
+    line-height: 1.44;
+    color: #202020;
+}
 
 /* about_sub02 */
 
@@ -2206,12 +2243,13 @@ body {
 }
 .about-briller-clinic .col-banner {
   position: absolute;
+  z-index: 0;
   top: 163px;
   right: 95px;
   width: 145px;
   height: 1050px;
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1800px) {
   .about-briller-clinic .col-banner {
     display: none;
   }
@@ -4516,7 +4554,7 @@ body {
 .tentherma-wrap .tentherma-detail-wrap .tentherma-detail-flex-wrap .detail {
   max-width: 460px;
   width: 100%;
-  height: 516px;
+  height: 600px;
   padding-left: 30px;
   padding-right: 30px;
   border: solid 1px #cac2b9;
@@ -4610,6 +4648,7 @@ body {
   .tentherma-detail-process
   .tentherma-detail-process-flex-wrap
   .process-flex {
+    max-width: 405px;
   text-align: left;
   position: relative;
 }
@@ -16938,6 +16977,7 @@ span.only-pc {
   line-height: 1.63;
 }
 
+
 @media screen and (max-width: 1300px) {
   .picore-wrap .table-container {
     flex-direction: column;
@@ -17382,7 +17422,7 @@ span.only-pc {
 }
 .clarity-wrap .table-container .table-box {
   width: calc(100% / 3);
-  height: 568px;
+  height: 650px;
   border: 1px solid #cac2b9;
   border-collapse: collapse;
 }
@@ -17414,6 +17454,10 @@ span.only-pc {
 }
 .clarity-wrap .table-container .table-box .content-wrap .text-wrap .text {
   margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.63;
+}
+.clarity-wrap .table-container .table-box .content-wrap .text-wrap .text-sub01 {
   font-size: 16px;
   line-height: 1.63;
 }
@@ -18029,11 +18073,31 @@ span.only-pc {
   }
 }
 
-
 .principle-title-sub {
   text-align: center;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.25;
   color: #75624d;
+}
+
+.about-briller-clinic .flex-content-wrap .content {
+  max-width: 400px;
+}
+.about-briller-clinic .flex-content-wrap .content .title-sub {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #75624d;
+}
+
+@media screen and (max-width:767px) {
+  .text-sub02 {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .principle-title-sub {
+    font-size: 22px;
+    line-height: 1.45;
+  }
 }
