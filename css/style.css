@@ -889,6 +889,7 @@ body {
 .swiper .quick-form-wrap .quick-form-open-btn p {
   font-size: 16px;
   color: #fff;
+  width: 91px;
 }
 .swiper .quick-form-wrap .quick-form-open-btn i {
   font-size: 16px;
@@ -2191,7 +2192,7 @@ body {
 
 .directions .directions-text-wrap .contact-btn-wrap .contact-btn a .btn-text {
   font-size: 20px;
-  line-height: 1.95;
+  line-height: 1.2;
   color: #fff;
 }
 .directions .directions-text-wrap .contact-btn-wrap .contact-btn {
@@ -10332,7 +10333,7 @@ td {
 }
 @media screen and (max-width: 767px) {
   .directions .directions-text-wrap .time-wrap.english::after {
-    left: 65px;
+    left: 65px !important;
   }
 }
 
@@ -12351,7 +12352,7 @@ span.only-pc {
     height: 22px;
   }
   .scar-filler .filler-suggest-wrap .filler-suggest-type-wrap .type .type-text {
-    font-size: 14px;
+    font-size: 14px !important;
     line-height: 1.71;
     color: #75624d;
   }
@@ -18091,6 +18092,13 @@ span.only-pc {
   color: #75624d;
 }
 
+.filler-process-wrap .process-flex .process .text {
+  font-size: 16px !important;
+}
+.filler-suggest-wrap .filler-suggest-type-wrap .type .type-text {
+  font-size: 16px !important;
+}
+
 @media screen and (max-width:767px) {
   .text-sub02 {
     font-size: 14px;
@@ -18099,5 +18107,37 @@ span.only-pc {
   .principle-title-sub {
     font-size: 22px;
     line-height: 1.45;
+  }
+
+  .filler-suggest-type-wrap .type .type-text {
+    font-size: 12px !important;
+  }
+  .filler-process-wrap .process-flex .process .text {
+    font-size: 10px !important;
+  }
+  .filler-suggest-wrap .filler-suggest-type-wrap .type .type-text {
+    font-size: 12px !important;
+  }
+  .tentherma-wrap .tentherma-detail-wrap .tentherma-detail-flex-wrap .detail {
+    height: 450px;
+  }
+
+  .text-sub {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .about-briller-clinic .flex-content-wrap .content .title-sub {
+    font-size: 22px;
+        line-height: 1.45;
+  }
+  .about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap .sub-title {
+    text-align: center;
+  }
+  .about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap .text {
+    text-align: center;
+  }
+  .about-briller-clinic .flex-content-wrap .content {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

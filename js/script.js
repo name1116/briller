@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Three Principles of the Briller"
       );
       replaceTextInPage(["브리에", "Brie"], "Briller");
+      replaceTextInPage(["Brillerr"], "Briller");
       replaceTextInPage(["布里亚医院"], "Briller");
       replaceTextInPage(["injection"], "Injection");
       replaceTextInPage(["울쎄라", "cry", "well"], "Ulthera");
@@ -218,6 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
       replaceTextInPage(["美版超声刀"], "울쎄라");
       replaceTextInPage(["韩版热玛吉"], "텐써마");
       replaceTextInPage(["브리에 Clinic"], "브리에의원");
+      replaceTextInPage(["브리에의원 Clinic"], "브리에의원");
       replaceTextInPage(["韩版超声刀宇宙版"], "슈링크유니버스");
 
       const flex = document.querySelectorAll(".tentherma-wrap .tentherma-detail-process .tentherma-detail-process-flex-wrap .process-flex");
@@ -287,3 +289,65 @@ document.addEventListener("DOMContentLoaded", () => {
 // });
 // import { GSAPInfoBar } from "https://codepen.io/GreenSock/pen/vYqpyLg.js"
 // new GSAPInfoBar({ link: "https://gsap.com/docs/v3/Plugins/ScrollSmoother/"});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 현재 언어를 localStorage에서 가져오는 함수
+  function getCurrentLanguage() {
+    return localStorage.getItem("selectedLang") || "ko";
+  }
+
+  // 모든 <br> 태그 제거
+  function removeAllBrTags() {
+    const elements = document.querySelectorAll("p");
+    elements.forEach((el) => {
+      const originalText = el.getAttribute("data-original-text");
+      if (originalText) {
+        el.innerHTML = originalText; // 초기 텍스트로 복원
+      }
+    });
+  }
+
+  // 50자마다 <br> 삽입
+  function addBrEvery50Characters() {
+    const elements = document.querySelectorAll("p");
+    elements.forEach((el) => {
+      const originalText = el.getAttribute("data-original-text") || el.textContent.trim();
+      if (!el.hasAttribute("data-original-text")) {
+        el.setAttribute("data-original-text", originalText); // 초기 텍스트 저장
+      }
+
+      if (originalText.length > 2) {
+        const updatedText = originalText.replace(/(.{50})/g, "$1<br>");
+        el.innerHTML = updatedText; // 텍스트를 <br> 추가된 HTML로 설정
+      }
+    });
+  }
+
+  // 언어에 따른 동작 처리
+  function applyLanguageSpecificRules() {
+    const currentLang = getCurrentLanguage();
+
+    if (currentLang === "en") {
+      removeAllBrTags(); // 기존 <br> 태그 제거
+      addBrEvery50Characters(); // 50자마다 <br> 삽입
+    } else {
+      removeAllBrTags(); // 다른 언어는 초기 상태로 복원
+    }
+  }
+
+  // 초기 실행
+  applyLanguageSpecificRules();
+
+  // 언어 변경 시 동작
+  const languageButtons = document.querySelectorAll("[data-lang]");
+  languageButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const selectedLang = event.target.getAttribute("data-lang");
+      if (selectedLang) {
+        localStorage.setItem("selectedLang", selectedLang);
+        applyLanguageSpecificRules(); // 새로고침 없이 즉시 규칙 적용
+      }
+    });
+  });
+});
+

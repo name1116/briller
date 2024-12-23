@@ -1,11 +1,9 @@
 <style>
-
   /* .swiper .quick-form-wrap .quick-btn-wrap {
   width: 100%;
   height: 100%;
   position: relative;
 } */
-
 
   .quick-form-wrap {
     /* display: none; */
@@ -32,6 +30,7 @@
   .quick-form-wrap .quick-form-open-btn p {
     font-size: 16px;
     color: #fff;
+    width: 150px;
   }
   .quick-form-wrap .quick-form-open-btn i {
     font-size: 16px;
@@ -156,31 +155,29 @@
     }
   }
 
+  .quick-form-wrap .quick-form.disable {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
 
+  .quick-form-wrap .quick-form {
+    width: 100%;
+    background-color: #75624d;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    gap: 16px 16px;
 
-.quick-form-wrap .quick-form.disable {
-  opacity: 0;
-  height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
-.quick-form-wrap .quick-form {
-  width: 100%;
-  background-color: #75624d;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  display: flex;
-  gap: 16px 16px;
-
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
 </style>
 
 <div class="quick-form-wrap">
@@ -229,9 +226,8 @@
       form.classList.remove("disable");
       openBtn.style.position = "";
       openBtn.style.bottom = "";
-      openBtn.style.display = "flex"
-      openBtn.style.transform = "none"
-      
+      openBtn.style.display = "flex";
+      openBtn.style.transform = "none";
     } else {
       arrow.className = "xi-angle-up-thin";
 
@@ -239,8 +235,9 @@
 
       openBtn.style.position = "absolute";
       openBtn.style.bottom = "0px";
-      openBtn.style.left="50%"
+      openBtn.style.left = "50%";
       openBtn.style.transform = "translate(-50%)";
     }
   });
 </script>
+
