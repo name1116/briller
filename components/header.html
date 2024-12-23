@@ -814,10 +814,8 @@
       ".contact-btn-wrap .contact-btn"
     );
 
-    
-
     if (langCode === "en") {
-      replaceTranslatedWords();
+      // replaceTranslatedWords();
       timeLine.forEach((el) => el.classList.add("english"));
       principles.forEach((el) => {
         el.style.width = "400px";
@@ -828,8 +826,6 @@
     }
 
     if (langCode === "ko") {
-
-
       contactBtn.forEach((el) => (el.style.width = "168px"));
       locText.forEach((el) => (el.style.letterSpacing = ""));
       timeText.forEach((el) => (el.style.letterSpacing = ""));
@@ -877,6 +873,7 @@
       if (langCode === "ko") {
         // 한국어일 경우: Google Translate 세션을 초기화하고 원본으로 복원
         resetGoogleTranslate();
+        restoreOriginalText();
 
         contactBtn.forEach((el) => (el.style.width = "168px"));
         locText.forEach((el) => (el.style.letterSpacing = ""));

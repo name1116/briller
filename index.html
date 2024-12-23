@@ -459,55 +459,161 @@
     <div id="top_menu"></div>
     <div id="footer"></div>
 
-    <!-- 팝업 -->
-    <div class="popup-wrap" id="popupWrap">
-      <div class="pop-parent" id="popParent">
-        <div class="pop">
-          <div class="swiper-container">
-            <div class="swiper popupSwiper">
-              <div class="swiper-wrapper">
-                <a href="{{$item->link}}" class="swiper-slide" target="_blank">
-                  <div class="m-ratioBox-wrap">
-                    <div class="m-ratioBox">
-                      <img src="./images/pop_test.jpg" alt="" />
-                    </div>
+   
+
+    <!-- //팝업 -->
+
+    <div id="popup-wrap" class="main-modal">
+      <div class="modal-wrap">
+        <div class="scroll-wrap">
+          <div class="swiper contents-swiper">
+            <div class="swiper-wrapper" id="swiper-wrapper-7c8345bcfaf499e3">
+              <!-- 추가한 슬라이드 2023-05-15 -->
+
+              <!--// 추가한 슬라이드 2023-05-15 -->
+              <div class="swiper-slide">
+                <a href="http://pf.kakao.com/_xhyxbxnxj/chat">
+                  <div class="img-wrap">
+                    <img
+                      class="pc"
+                      src="https://admin.monsterclinic.com/storage/popups/1717481022_KakaoTalk_20240601_134404256.jpg"
+                    />
+                    <img
+                      class="mb"
+                      src="https://admin.monsterclinic.com/storage/popups/1723425642_KakaoTalk_20240810_145027969.jpg"
+                    />
                   </div>
                 </a>
-                <a href="{{$item->link}}" class="swiper-slide" target="_blank">
-                  <div class="m-ratioBox-wrap">
-                    <div class="m-ratioBox">
-                      <img src="./images/pop_test.jpg" alt="" />
-                    </div>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.youtube.com/channel/UC1Kvt14mjBEDGuFzsO_iPBg"
+                >
+                  <div class="img-wrap">
+                    <img
+                      class="pc"
+                      src="https://admin.monsterclinic.com/storage/popups/1704503986_KakaoTalk_20240105_231102029.jpg"
+                    />
+                    <img
+                      class="mb"
+                      src="https://admin.monsterclinic.com/storage/popups/1723424949_KakaoTalk_20240810_144959970.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <div class="img-wrap">
+                  <!-- 사이즈 큰것 -->
+                  <!-- <img class="pc" src="/storage/popups/main_pop_pc_001.jpg" usemap="#image-map-pc" /> -->
+                  <!-- <img class="mb" src="/storage/popups/main_pop_mo_001.jpg" usemap="#image-map-mo" /> -->
+
+                  <!-- 사이즈 작은것 -->
+                  <!-- <img class="pc" src="/storage/popups/pc_20240531_134320406.jpg" usemap="#image-map-pc2" /> -->
+                  <!-- <img class="mb" src="/storage/popups/mo_20240531_134320406.jpg" usemap="#image-map-mo2" /> -->
+
+                  <img
+                    class="pc"
+                    src="./images/pop_test.jpg"
+                    usemap="#image-map-pc4"
+                  />
+                  <img
+                    class="mb"
+                    src="./images/mo_pop_test.jpg"
+                    usemap="#image-map-mo4"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <a href="http://pf.kakao.com/_xhyxbxnxj/chat">
+                  <div class="img-wrap">
+                    <img
+                      class="pc"
+                      src="https://admin.monsterclinic.com/storage/popups/1733061061_(최종)12월프로모션_PC.jpg"
+                    />
+                    <img
+                      class="mb"
+                      src="https://admin.monsterclinic.com/storage/popups/1733061061_(최종)12월프로모션_MO.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="http://pf.kakao.com/_xhyxbxnxj/chat">
+                  <div class="img-wrap">
+                    <img
+                      class="pc"
+                      src="https://admin.monsterclinic.com/storage/popups/1722936833_팝업_소비자앰블럼_PC.jpg"
+                    />
+                    <img
+                      class="mb"
+                      src="https://admin.monsterclinic.com/storage/popups/1722936833_팝업.jpg"
+                    />
                   </div>
                 </a>
               </div>
             </div>
-
-            <div class="swiper-control">
-              <div class="swiper-pagination"></div>
+            <div class="swiper-pagination">
+              <span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 1"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 2"
+                aria-current="true"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 3"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 4"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 5"
+              ></span>
             </div>
-
-            <div class="pop-btns">
-              <input type="checkbox" name="oneday" id="oneday_check" />
-              <label for="oneday_check">
-                <p class="open">하루동안 보지 않기</p>
-                <p class="hidden">클릭하면 오늘 하루 OFF</p>
-              </label>
-
-              <button class="btn-toggle">
-                <i class="xi-angle-up" style="color: #333"></i>
-              </button>
-
-              <button class="btn-close" onclick="nonePopup()">
-                <i class="xi-close" style="color: #333"></i>
-              </button>
+            <span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span>
+          </div>
+          <div thumbsslider="" class="swiper thumbs-swiper">
+            <div
+              class="swiper-wrapper"
+              id="swiper-wrapper-010384f1094cec5cf8"
+              aria-live="polite"
+            >
+              <div class="swiper-slide">테스트</div>
+              <div class="swiper-slide">테스트</div>
+              <div class="swiper-slide">테스트</div>
+              <div class="swiper-slide">테스트</div>
+              <div class="swiper-slide">테스트</div>
             </div>
+            <span class="swiper-notification"></span>
+          </div>
+          <div class="btn-wrap">
+            <button onclick="nonePopupOneDay()" class="close-today-btn">
+              오늘 하루 보지 않기
+            </button>
+            <button class="close-btn" onclick="nonePopup()">닫기</button>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- //팝업 -->
 
     <script>
       const viewMore = document.querySelector(".briller-info-viewmore a");
@@ -565,7 +671,6 @@
         loop: true,
       });
     </script>
-
 
     <script
       charset="UTF-8"
@@ -642,48 +747,64 @@
 
   <script src="./js/jquery.js"></script>
   <script src="./js/script.js"></script>
-  <script>
-    const popupLabel = document.querySelector(
-      ".pop-parent .pop-btns #oneday_check + label"
-    );
-    const popupClose = document.querySelector(".pop-parent .pop .btn-close i");
 
+  <script>
+    function setCookie(name, value, exp) {
+      var date = new Date();
+      date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+
+      document.cookie =
+        name + "=" + value + ";expires=" + date.toUTCString() + ";path=/";
+    }
+
+    function nonePopupOneDay() {
+      setCookie("popup", "none", 1); /* popup=none, 1일 뒤 만료됨 */
+
+      document.getElementById("popup-wrap").style.display = "none";
+    }
+
+    function getCookie(name) {
+      var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+      return value ? value[2] : null;
+    }
+
+    if (getCookie("popup") == "none") {
+      document.getElementById("popup-wrap").style.display = "none";
+    }
+  </script>
+  <script>
     function nonePopup() {
-      document.getElementById("popupWrap").style.display = "none";
+      document.getElementById("popup-wrap").style.display = "none";
     }
 
     //popup
-    var popupSwiper = new Swiper(".popupSwiper", {
-      // autoplay: {
-      //   delay: 3000,
-      // },
-      slidesPerView: "auto",
+    var swiper = new Swiper(".thumbs-swiper", {
+      loop: true,
+      spaceBetween: 0,
+      slidesPerView: 5,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".contents-swiper", {
+      loop: true,
+      autoHeight: true,
+      autoplay: {
+        delay: 5000,
+      },
+      spaceBetween: 10,
       pagination: {
-        el: ".swiper-control .swiper-pagination",
+        el: ".swiper-pagination",
         clickable: true,
       },
-      loop: true,
+      thumbs: {
+        swiper: swiper,
+      },
     });
 
-    $(".pop-parent .btn-toggle").click(function () {
-      $(".pop-parent").toggleClass("active");
-    });
-
-    popupLabel.addEventListener("mouseover", () => {
-      popupLabel.querySelector(".open").style.opacity = "0";
-      popupLabel.querySelector(".hidden").style.opacity = "1";
-    });
-
-    popupLabel.addEventListener("mouseout", () => {
-      popupLabel.querySelector(".open").style.opacity = "1";
-      popupLabel.querySelector(".hidden").style.opacity = "0";
-    });
-
-    popupClose.addEventListener("mouseover", () => {
-      popupClose.classList.add("hover");
-    });
-    popupClose.addEventListener("mouseout", () => {
-      popupClose.classList.remove("hover");
+    $(function () {
+      $(".btn-wrap .close-btn").click(function () {
+        $(".main-modal").css("display", "none");
+      });
     });
   </script>
 </html>
