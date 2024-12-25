@@ -42,33 +42,44 @@ function restoreOriginalText() {
 function replaceTextInPage(searchWords, replacement) {
   const walker = document.createTreeWalker(
     document.body,
-    NodeFilter.SHOW_TEXT, // 텍스트 노드만 탐색
+    NodeFilter.SHOW_TEXT,
     (node) => {
-      // 텍스트 노드가 `translate="no"`를 가진 부모 요소 내에 있을 경우 제외
       if (
         node.parentNode &&
         node.parentNode.hasAttribute("translate") &&
         node.parentNode.getAttribute("translate") === "no"
       ) {
-        return NodeFilter.FILTER_REJECT; // 번역하지 않음
+        return NodeFilter.FILTER_REJECT;
       }
-      return NodeFilter.FILTER_ACCEPT; // 번역 가능
+      return NodeFilter.FILTER_ACCEPT;
     },
     false
+  );
+
+  const boundaryRegex = new RegExp(
+    `\\b(${searchWords
+      .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .join("|")})\\b`,
+    "gi"
   );
 
   let node;
   while ((node = walker.nextNode())) {
     const originalText = node.nodeValue;
-    const updatedText = originalText.replace(
-      new RegExp(searchWords.join("|"), "gi"),
-      replacement
-    );
+
+    // 변환된 텍스트인지 확인
+    if (originalText.includes(replacement)) {
+      continue; // 이미 변환된 경우 스킵
+    }
+
+    const updatedText = originalText.replace(boundaryRegex, replacement);
     if (updatedText !== originalText) {
       node.nodeValue = updatedText;
     }
   }
 }
+
+
 
 // 언어에 따라 텍스트 교체 및 복원
 function correctWords() {
@@ -84,8 +95,8 @@ function correctWords() {
     });
 
     replaceTextInPage(
-      ["The Three Principles of the Council of Ministers of Briere"],
-      "Three Principles of the Briller"
+      ["the Council of Ministers of Briere"],
+      "the Briller"
     );
     replaceTextInPage(
       ["The Three Principles of the Council of Ministers of Brillerre"],
@@ -177,6 +188,7 @@ function correctWords() {
     replaceTextInPage(["Whipped cream"], "Whipped Cream Peeling");
     replaceTextInPage(["Aquaphil"], "Aqua Peeling");
     replaceTextInPage(["Iontotherapy"], "Ion Therapy");
+    // replaceTextInPage(["phil", "Peel", "fil", "Phil", "peel"], "Peeling");
     replaceTextInPage(
       ["SONo Ultrasonic Management"],
       "SONO Ultrasonic Management"

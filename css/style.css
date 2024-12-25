@@ -18140,4 +18140,15 @@ span.only-pc {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn a .btn-text {
+    font-size: 14px !important;
+  }
+  .directions .directions-text-wrap .contact-btn-wrap .contact-btn .btn-text {
+    font-size: 14px;
+  }
+}
+
+.mo-en {
+  display: none;
 }
