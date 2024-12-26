@@ -1164,3 +1164,25 @@
     scrollTest();
   });
 </script>
+
+<script >
+  window.onload = () => {
+    console.log("active");
+    const lang = localStorage.getItem("selectedLang");
+    const langSelected = document.querySelector(
+      ".menu .language-wrap .mobile-lang-btn .btn-text.font-pl"
+    );
+    
+    
+
+    if (lang === "ko") {
+      langSelected.innerHTML = "KO";
+    } else if (lang === "en") {
+      langSelected.innerHTML = "US";
+    } else if (lang === "ja") {
+      langSelected.innerHTML = "JP";
+    } else if (lang === "zhCN") {
+      langSelected.innerHTML = "CN";
+    }
+  }
+</script>

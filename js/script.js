@@ -266,6 +266,7 @@ function correctWords() {
     replaceTextInPage(["去痣激光"], "点痣激光");
     replaceTextInPage(["前"], "前任");
     replaceTextInPage(["制造部"], "布里亚医院");
+    replaceTextInPage(["Clariti Pro"], "Clarity Pro");
   } else if (currentLang === "ko") {
     replaceTextInPage(["Briller"], "브리에");
     replaceTextInPage(["Ulthera"], "울쎄라");
@@ -405,3 +406,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
