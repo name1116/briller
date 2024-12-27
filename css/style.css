@@ -15,7 +15,7 @@ body {
 }
 
 .filler-suggest-wrap .filler-suggest-type-wrap .type .type-text {
-  font-size: 16px !important;
+  font-size: 16px ;
 }
 
 .principle-wrap .principle-flex-wrap .principle .img-wrap img {
@@ -4618,6 +4618,10 @@ body {
   padding-left: 300px;
   padding-right: 300px;
 }
+.tentherma-wrap .tentherma-detail-process .tentherma-detail-process-title-wrap .text {
+  padding-left: 300px;
+  padding-right: 300px;
+}
 @media  screen and (max-width:1300px) {
   .tentherma-wrap .tentherma-info-wrap .tentherma-title-wrap .text {
     padding-left: 100px;
@@ -4784,7 +4788,7 @@ body {
   .process-flex
   .text {
   margin-top: 24px;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.44;
   color: #202020;
 }
@@ -18350,7 +18354,7 @@ span.only-pc {
   }
 
   .filler-suggest-type-wrap .type .type-text {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   /* .filler-process-wrap .process-flex .process .text {
     font-size: 10px !important;
@@ -18699,4 +18703,111 @@ span.only-pc {
 .notice-detail-detail-wrap .btn-wrap .index-btn {
   width: 56px;
   height: 56px;
+}
+
+
+@media screen and (max-width:767px) {
+  .notice-container {
+    margin-top: 40px;
+  }
+  .notice-container .notice-wrap {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .notice-container .notice-wrap .index-subject .index-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  .notice-container .notice-wrap.pin .index-subject .index-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  .notice-container .notice-wrap.pin .index-subject .index-wrap i {
+    font-size: 16px;
+  }
+  .notice-container .notice-wrap .index-subject .index-wrap p {
+    font-size: 14px;
+
+    font-family: pretendard-r;
+  }
+  .notice-container .notice-wrap .index-subject {
+    gap: 16px;
+  }
+  .notice-container .notice-wrap .index-subject .subject-wrap .subject {
+    font-size: 14px;
+  }
+  .notice-container .notice-wrap .date-wrap .date {
+    font-size: 10px;
+  }
+  .notice-detail-detail-wrap {
+    padding-top: 124px;
+    padding-bottom: 61px;
+  }
+  .notice-detail-detail-wrap .text-wrap {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .notice-detail-detail-wrap .text-wrap .title {
+    font-size: 24px;
+  }
+  .notice-detail-detail-wrap .text-wrap .date-wrap {
+    margin-top: 16px;
+    gap: 8px;
+  }
+  .notice-detail-detail-wrap .text-wrap .date-wrap .date-subject {
+    font-size: 12px;
+  }
+  .notice-detail-detail-wrap .text-wrap .date-wrap .date {
+    font-size: 12px;
+  }
+  .notice-detail-detail-wrap .detail-text-wrap {
+    margin-top: 24px;
+  }
+  .notice-detail-detail-wrap .detail-text-wrap .detail-text {
+    font-size: 14px;
+  }
+  .notice-detail-detail-wrap .img-wrap {
+    margin-top: 24px;
+  }
+  .notice-detail-detail-wrap .btn-wrap {
+    margin-top: 76px;
+  }
+  .notice-detail-detail-wrap .btn-wrap .index-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .notice-detail-detail-wrap .btn-wrap::after {
+    top: -16px;
+  }
+  .notice-detail-detail-wrap .btn-wrap .prev-btn a .btn-title {
+    position: absolute;
+    left: 0px;
+    top: 28px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  .notice-detail-detail-wrap .btn-wrap {
+    align-items: flex-start;
+  }
+  .notice-detail-detail-wrap .btn-wrap .next-btn a .btn-title {
+    position: absolute;
+    right: 0px;
+    top: 33px;
+    white-space: nowrap;
+  }
+  .notice-detail-detail-wrap .btn-wrap .prev-btn a i {
+    font-size: 16px;
+  }
+  .notice-detail-detail-wrap .btn-wrap .next-btn a i {
+    font-size: 16px;
+  }
+  .notice-detail-detail-wrap .btn-wrap .next-btn a .btn-title {
+    top: 28px;
+    font-size: 14px;
+  }
+
+  .filler-suggest-wrap .filler-suggest-type-wrap .type {
+    gap: 10px !important;
+  }
+
 }

@@ -9,6 +9,34 @@ $(document).ready(function () {
   $("#quick").load("../components/quick.html");
 });
 
+// Function to update visibility of .only-mobile elements based on selected language
+function updateMobileVisibility() {
+  const lang = localStorage.getItem("selectedLang");
+  const mBr = document.querySelectorAll(".only-mobile");
+
+  mBr.forEach(el => {
+    if (lang === "en" || window.innerWidth >767) {
+      el.style.display = "none";
+    } else if(!(lang === "en") && window.innerWidth <=767) {
+      el.style.display = "block";
+    }
+  });
+}
+
+// Event listener for language change
+window.addEventListener("storage", (event) => {
+  if (event.key === "selectedLang") {
+    updateMobileVisibility();
+  }
+});
+
+// Event listener for window resize
+window.addEventListener("resize", updateMobileVisibility);
+
+// Initial call on page load
+document.addEventListener("DOMContentLoaded", updateMobileVisibility);
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const weChatBtn = document.querySelector(".contact-btn.wechat");
   const weChatPop = document.querySelector(".wechat-qr-img");
@@ -596,3 +624,5 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("The '.time-wrap' element was not found.");
     }
   }
+
+
