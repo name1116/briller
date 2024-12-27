@@ -261,7 +261,7 @@ body {
   justify-content: center;
   opacity: 1;
   transition: 0.3s;
-  z-index: 200;
+  z-index: 50;
 }
 @media screen and (max-width: 767px) {
   .sns-open {
@@ -288,7 +288,7 @@ body {
   justify-content: center;
   opacity: 0;
   transition: 0.3s;
-  z-index: 200;
+  z-index: 50;
 }
 @media screen and (max-width: 767px) {
   .Top_Scroll_btn {
@@ -411,6 +411,10 @@ body {
   height: 100%;
   z-index: 3;
 } */
+
+#header {
+  z-index: 200;
+}
 #header .logo-img-wrap {
   display: none;
 }
@@ -556,6 +560,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  z-index: 99999;
 }
 #header .menu .language-wrap .mobile-lang {
   display: none;
@@ -576,6 +581,7 @@ body {
 }
 #header .menu .ham-menu-img-wrap {
   margin-left: 16px;
+  z-index: 999999;
 }
 
 /* 살짝 애매함 */
@@ -597,6 +603,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: #75624d;
+
+  overflow-y: auto;
 }
 #header .ham-menu-wrap .wrap {
   margin-top: 20%;
@@ -1937,8 +1945,8 @@ body {
   text-align: center;
 }
 .about-briller-clinic .flex-content-wrap .content .img-wrap {
-  max-width: 400px;
-  max-height: 400px;
+  width: 400px;
+  height: 400px;
 }
 .about-briller-clinic .flex-content-wrap .content .img-wrap img {
   object-fit: cover;
@@ -11523,6 +11531,14 @@ span.only-pc {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .about-briller-clinic .flex-content-wrap {
+    display: block;
+  }
+  
+  .about-briller-clinic .flex-content-wrap .content {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media screen and (max-width: 1100px) {
   .about-main {
@@ -11549,9 +11565,7 @@ span.only-pc {
   .about-main .scroll-wrap {
     display: none;
   }
-  .about-briller-clinic .flex-content-wrap {
-    display: block;
-  }
+
   .about-briller-clinic .flex-content-wrap .content:not(:first-of-type) {
     margin-top: 40px;
   }
@@ -18691,9 +18705,15 @@ span.only-pc {
   margin-right: 19px;
 }
 .notice-detail-detail-wrap .btn-wrap .prev-btn a .btn-title {
+  width: 100px;
   font-size: 16px;
   color: #cac2b9;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 
 .notice-detail-detail-wrap .btn-wrap .next-btn a i {
   font-size: 24px;
@@ -18708,8 +18728,13 @@ span.only-pc {
   margin-left: 19px;
 }
 .notice-detail-detail-wrap .btn-wrap .next-btn a .btn-title {
+  width: 100px;
   font-size: 16px;
   color: #cac2b9;
+
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
 .notice-detail-detail-wrap .btn-wrap .index-btn {
   width: 56px;

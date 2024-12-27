@@ -9,21 +9,26 @@ $(document).ready(function () {
   $("#quick").load("../components/quick.html");
 });
 
+
+
+
 // Function to update visibility of .only-mobile elements based on selected language
 function updateMobileVisibility() {
   const lang = localStorage.getItem("selectedLang");
   const mBr = document.querySelectorAll(".only-mobile");
-  const sBr = document.querySelectorAll(".about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap .text br");
+  const sBr = document.querySelectorAll(
+    ".about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap .text br"
+  );
 
-  mBr.forEach(el => {
-    if (lang === "en" || window.innerWidth >767) {
+  mBr.forEach((el) => {
+    if (lang === "en" || window.innerWidth > 767) {
       el.style.display = "none";
-    } else if(!(lang === "en") && window.innerWidth <=767) {
+    } else if (!(lang === "en") && window.innerWidth <= 767) {
       el.style.display = "";
     }
   });
 
-  sBr.forEach(el => {
+  sBr.forEach((el) => {
     if (lang === "en") {
       el.style.display = "none";
     } else {
@@ -44,7 +49,6 @@ window.addEventListener("resize", updateMobileVisibility);
 
 // Initial call on page load
 document.addEventListener("DOMContentLoaded", updateMobileVisibility);
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const weChatBtn = document.querySelector(".contact-btn.wechat");
@@ -115,6 +119,42 @@ function getCurrentLanguage() {
 //     }
 //   }
 // }
+// 222222
+// function replaceTextInPage(searchWords, replacement) {
+//   const walker = document.createTreeWalker(
+//     document.body,
+//     NodeFilter.SHOW_TEXT,
+//     (node) => {
+//       if (
+//         node.parentNode &&
+//         node.parentNode.hasAttribute("translate") &&
+//         node.parentNode.getAttribute("translate") === "no"
+//       ) {
+//         return NodeFilter.FILTER_REJECT;
+//       }
+//       return NodeFilter.FILTER_ACCEPT;
+//     },
+//     false
+//   );
+
+//   const boundaryRegex = new RegExp(
+//     `(${searchWords
+//       .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+//       .join("|")})`,
+//     "gi"
+//   );
+
+//   let node;
+//   while ((node = walker.nextNode())) {
+//     const originalText = node.nodeValue;
+
+//     // 변환된 텍스트 탐지 로직 제거
+//     const updatedText = originalText.replace(boundaryRegex, replacement);
+//     if (updatedText !== originalText) {
+//       node.nodeValue = updatedText;
+//     }
+//   }
+// }
 
 function replaceTextInPage(searchWords, replacement) {
   const walker = document.createTreeWalker(
@@ -134,9 +174,9 @@ function replaceTextInPage(searchWords, replacement) {
   );
 
   const boundaryRegex = new RegExp(
-    `\\b(${searchWords
+    `(${searchWords
       .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-      .join("|")})\\b`,
+      .join("|")})`,
     "gi"
   );
 
@@ -144,10 +184,20 @@ function replaceTextInPage(searchWords, replacement) {
   while ((node = walker.nextNode())) {
     const originalText = node.nodeValue;
 
-    // 변환된 텍스트 탐지 로직 제거
+    // 이미 번역된 텍스트인지 확인
+    if (node.parentNode && node.parentNode.dataset.original) {
+      continue; // 이미 번역된 경우 스킵
+    }
+
     const updatedText = originalText.replace(boundaryRegex, replacement);
+
     if (updatedText !== originalText) {
-      node.nodeValue = updatedText;
+      // 원본 텍스트를 data-original 속성에 저장
+      if (!node.parentNode.dataset.original) {
+        node.parentNode.dataset.original = originalText;
+      }
+
+      node.nodeValue = updatedText; // 텍스트 업데이트
     }
   }
 }
@@ -174,9 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
 // 언어에 따라 텍스트 교체 및 복원
 function correctWords() {
   // const docName = document.querySelector(".doctor-info-wrap .doctor-info-text-wrap .doctor-name");
@@ -190,10 +237,7 @@ function correctWords() {
       el.style.maxWidth = "405px";
     });
 
-    replaceTextInPage(
-      ["the Council of Ministers of Briere"],
-      "the Briller"
-    );
+    replaceTextInPage(["the Council of Ministers of Briere"], "the Briller");
     replaceTextInPage(
       ["The Three Principles of the Council of Ministers of Brillerre"],
       "Three Principles of the Briller"
@@ -212,7 +256,7 @@ function correctWords() {
     );
     replaceTextInPage(["브리에", "Brie"], "Briller");
     replaceTextInPage(["Brillerr"], "Briller");
-    replaceTextInPage(["布里亚医院"], "Briller");
+    // replaceTextInPage(["布里亚医院"], "Briller");
     replaceTextInPage(["injection"], "Injection");
     replaceTextInPage(["Wellthera"], "Ulthera");
     replaceTextInPage(["울쎄라", "cry", "well"], "Ulthera");
@@ -308,18 +352,12 @@ function correctWords() {
     replaceTextInPage(["Alex Stoneing"], "Alex Toning");
     replaceTextInPage(["American version of super voice knife"], "Ulthera");
     replaceTextInPage(["Korean version of Hot Margil"], "10Therma");
-    replaceTextInPage(["韩版超声刀宇宙版"], "Shurink Universe");
-    replaceTextInPage(
-      ["the Council of Ministers of Brillere"],
-      "the Briller"
-    );
+    // replaceTextInPage(["韩版超声刀宇宙版"], "Shurink Universe");
+    replaceTextInPage(["the Council of Ministers of Brillere"], "the Briller");
     replaceTextInPage(["Ulthera, Ulthera"], "Ulthera");
     replaceTextInPage(["Dr. Briller"], "Briller");
     replaceTextInPage(["Brier"], "Briller");
     replaceTextInPage(["announcement"], "Announcement");
-    
-
-    
   } else if (currentLang === "zhCN") {
     replaceTextInPage(["Brie Clinic"], "布里亚医院");
     replaceTextInPage(["Brie"], "布里亚医院");
@@ -328,6 +366,7 @@ function correctWords() {
     replaceTextInPage(["我的天啊"], "美版超声刀");
     replaceTextInPage(["超级大剑"], "美版超声刀");
     replaceTextInPage(["Ulthera"], "美版超声刀");
+    
     replaceTextInPage(["텐써마"], "韩版热玛吉");
     replaceTextInPage(["韩国人"], "韩版热玛吉");
     replaceTextInPage(["滕西马"], "韩版热玛吉");
@@ -374,8 +413,14 @@ function correctWords() {
     replaceTextInPage(["前"], "前任");
     replaceTextInPage(["制造部"], "布里亚医院");
     replaceTextInPage(["Clariti Pro"], "Clarity Pro");
+    replaceTextInPage(["超声刀"], "美版超声刀");
+    replaceTextInPage(["美版美版超声刀"], "美版超声刀");
+    replaceTextInPage(["点痣激光"], "去痣激光");
+    replaceTextInPage(["SONO超声管理"], "超声管理");
+    replaceTextInPage(["Clarity色素激光"], "深层色斑激光");
+    replaceTextInPage(["去痣激光"], "点痣激光");
   } else if (currentLang === "ko") {
-    // replaceTextInPage(["Briller"], "브리에");
+    replaceTextInPage(["Briller"], "브리에");
     replaceTextInPage(["Ulthera"], "울쎄라");
     replaceTextInPage(["Cha Jungyoon"], "차정윤");
     replaceTextInPage(["SONO Ultrasonic Management"], "SONO 초음파관리");
@@ -514,124 +559,126 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 // });
 
+// const btns = document.querySelectorAll(".menu .language-wrap .lang-wrap");
 
+// btns.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     console.log("btn click");
 
+//     const language = localStorage.getItem("selectedLang");
+//     const breakSpace = document.querySelectorAll(".en");
 
+//     if (language === "en") {
+//       breakSpace.forEach((bs) => {
+//         bs.style.display = "block";
+//       });
+//     } else {
+//       breakSpace.forEach((bs) => {
+//         bs.style.display = "none";
+//       });
+//     }
+//   });
+// });
 
-  // const btns = document.querySelectorAll(".menu .language-wrap .lang-wrap");
+// window.addEventListener("load", () => {
+//   const language = localStorage.getItem("selectedLang");
+//   const breakSpace = document.querySelectorAll(".en");
 
-  // btns.forEach((el) => {
-  //   el.addEventListener("click", () => {
-  //     console.log("btn click");
+//   if (language === "en") {
+//     breakSpace.forEach((bs) => {
+//       bs.style.display = "block";
+//     });
+//   } else {
+//     breakSpace.forEach((bs) => {
+//       bs.style.display = "none";
+//     });
+//   }
+// });
 
-  //     const language = localStorage.getItem("selectedLang");
-  //     const breakSpace = document.querySelectorAll(".en");
+//     const language = localStorage.getItem("selectedLang");
+// const breakSpace = document.querySelectorAll(".en");
 
-  //     if (language === "en") {
-  //       breakSpace.forEach((bs) => {
-  //         bs.style.display = "block";
-  //       });
-  //     } else {
-  //       breakSpace.forEach((bs) => {
-  //         bs.style.display = "none";
-  //       });
-  //     }
-  //   });
-  // });
+// if (language === "en") {
+//   breakSpace.forEach((bs) => {
+//     bs.style.display = "block";
+//   });
+// } else {
+//   breakSpace.forEach((bs) => {
+//     bs.style.display = "none";
+//   });
+// }
 
+window.addEventListener("load", () => {
+  const getLang = localStorage.getItem("selectedLang");
+  const timeWrap = document.querySelector(
+    ".location-time-wrap .wrap .time-wrap"
+  );
 
-  // window.addEventListener("load", () => {
-  //   const language = localStorage.getItem("selectedLang");
-  //   const breakSpace = document.querySelectorAll(".en");
-
-  //   if (language === "en") {
-  //     breakSpace.forEach((bs) => {
-  //       bs.style.display = "block";
-  //     });
-  //   } else {
-  //     breakSpace.forEach((bs) => {
-  //       bs.style.display = "none";
-  //     });
-  //   }
-  // });
-
-
-  //     const language = localStorage.getItem("selectedLang");
-  // const breakSpace = document.querySelectorAll(".en");
-
-  // if (language === "en") {
-  //   breakSpace.forEach((bs) => {
-  //     bs.style.display = "block";
-  //   });
-  // } else {
-  //   breakSpace.forEach((bs) => {
-  //     bs.style.display = "none";
-  //   });
-  // }
-
-
-  window.addEventListener("load", () => {
-    const getLang = localStorage.getItem("selectedLang");
-    const timeWrap = document.querySelector(".location-time-wrap .wrap .time-wrap");
-  
-    if (timeWrap) {
-      const rootStyle = document.documentElement.style;
-      if (getLang === "en" && window.innerWidth > 767) {
-        rootStyle.setProperty("--hour-bar-left", "95px");
-      } else if (getLang === "en" && window.innerWidth <= 767) {
-        rootStyle.setProperty("--hour-bar-left", "70px");
-      } 
-      else {
-        rootStyle.setProperty("--hour-bar-left", "78px");
-      }
+  if (timeWrap) {
+    const rootStyle = document.documentElement.style;
+    if (getLang === "en" && window.innerWidth > 767) {
+      rootStyle.setProperty("--hour-bar-left", "95px");
+    } else if (getLang === "en" && window.innerWidth <= 767) {
+      rootStyle.setProperty("--hour-bar-left", "70px");
     } else {
-      console.error("The '.time-wrap' element was not found.");
-    }
-  });
-  window.addEventListener("resize", () => {
-    const getLang = localStorage.getItem("selectedLang");
-    const timeWrap = document.querySelector(".location-time-wrap .wrap .time-wrap");
-  
-    if (timeWrap) {
-      const rootStyle = document.documentElement.style;
-      if (getLang === "en" && window.innerWidth > 767) {
-        rootStyle.setProperty("--hour-bar-left", "95px");
-      } else if (getLang === "en" && window.innerWidth <= 767) {
-        rootStyle.setProperty("--hour-bar-left", "70px");
-      } 
-      else {
-        rootStyle.setProperty("--hour-bar-left", "");
-      }
-    } else {
-      console.error("The '.time-wrap' element was not found.");
-    }
-  });
-
-
-  window.addEventListener("storage", (event) => {
-    if (event.key === "selectedLang") {
-      console.log(`Language changed to: ${event.newValue}`);
-      handleLanguageChange(event.newValue);
-    }
-  });
-  
-  function handleLanguageChange(newLang) {
-    const getLang = localStorage.getItem("selectedLang");
-    const timeWrap = document.querySelector(".location-time-wrap .wrap .time-wrap");
-  
-    if (timeWrap) {
-      const rootStyle = document.documentElement.style;
-      if (getLang === "en" && window.innerWidth > 767) {
-        rootStyle.setProperty("--hour-bar-left", "95px");
-      } else if (getLang === "en" && window.innerWidth <= 767) {
-        rootStyle.setProperty("--hour-bar-left", "70px");
-      } 
-      else {
-        rootStyle.setProperty("--hour-bar-left", "");
-      }
-    } else {
-      console.error("The '.time-wrap' element was not found.");
+      rootStyle.setProperty("--hour-bar-left", "78px");
     }
   }
+});
+window.addEventListener("resize", () => {
+  const getLang = localStorage.getItem("selectedLang");
+  const timeWrap = document.querySelector(
+    ".location-time-wrap .wrap .time-wrap"
+  );
 
+  if (timeWrap) {
+    const rootStyle = document.documentElement.style;
+    if (getLang === "en" && window.innerWidth > 767) {
+      rootStyle.setProperty("--hour-bar-left", "95px");
+    } else if (getLang === "en" && window.innerWidth <= 767) {
+      rootStyle.setProperty("--hour-bar-left", "70px");
+    } else {
+      rootStyle.setProperty("--hour-bar-left", "");
+    }
+  } else {
+    console.error("The '.time-wrap' element was not found.");
+  }
+});
 
+window.addEventListener("storage", (event) => {
+  if (event.key === "selectedLang") {
+    console.log(`Language changed to: ${event.newValue}`);
+    handleLanguageChange(event.newValue);
+  }
+});
+
+function handleLanguageChange(newLang) {
+  const getLang = localStorage.getItem("selectedLang");
+  const timeWrap = document.querySelector(
+    ".location-time-wrap .wrap .time-wrap"
+  );
+
+  if (timeWrap) {
+    const rootStyle = document.documentElement.style;
+    if (getLang === "en" && window.innerWidth > 767) {
+      rootStyle.setProperty("--hour-bar-left", "95px");
+    } else if (getLang === "en" && window.innerWidth <= 767) {
+      rootStyle.setProperty("--hour-bar-left", "70px");
+    } else {
+      rootStyle.setProperty("--hour-bar-left", "");
+    }
+  }
+}
+  // const hamMenuBtn = document.querySelector("#header .menu .ham-menu-img-wrap");
+  // const hamMenuIcon = document.querySelector(
+  //   "#header .menu .ham-menu-img-wrap i"
+  // );
+  // const quickFormOpenBtn = document.querySelector(".quick-form-wrap");
+
+  // hamMenuBtn.addEventListener("click", () => {
+  //   if (hamMenuIcon.className === "xi-bars") {
+  //     quickFormOpenBtn.classList.remove("none"); // 버튼 숨기기
+  //   } else {
+  //     quickFormOpenBtn.classList.add("none");
+  //   }
+  // });

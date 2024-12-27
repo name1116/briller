@@ -4,11 +4,11 @@
       <div class="title-wrap">
         <h3 class="title font-ir" translate="no">Briller</h3>
         <button class="option-btn">
-          <i class="xi-angle-up"></i>
+          <i class="xi-angle-down"></i>
         </button>
       </div>
 
-      <div class="btn-wrap">
+      <div class="btn-wrap disable">
         <button>
           <a href="../about_sub01.html" class="font-pl"> 브리에의원</a>
         </button>
@@ -134,16 +134,16 @@
     </div>
 
     <div class="ham-menu">
-        <div class="title-wrap">
-          <h3 class="title font-ir" translate="no">Promotion</h3>
-          <button class="option-btn">
-            <i class="xi-angle-down"></i>
-          </button>
-        </div>
+      <div class="title-wrap">
+        <h3 class="title font-ir" translate="no">Promotion</h3>
+        <button class="option-btn">
+          <i class="xi-angle-down"></i>
+        </button>
+      </div>
 
       <div class="btn-wrap disable">
         <button>
-          <a href="../promotion.html" class="font-pl"> Promotion </a>
+          <a href="../promotion.html" class="font-pl"> 프로모션 </a>
         </button>
       </div>
     </div>
@@ -460,7 +460,6 @@
     >
       PROMOTION
     </a>
-
   </div>
 </nav>
 
@@ -1141,8 +1140,15 @@
       !(
         location.pathname.endsWith("index.html") || location.pathname === "/"
       ) &&
-      window.scrollY === 0 && !(location.pathname.endsWith("promotion.html") || location.pathname.endsWith("promotion_detail.html"))
-      && !(location.pathname.endsWith("notice.html") || location.pathname.endsWith("notice_detail.html"))
+      window.scrollY === 0 &&
+      !(
+        location.pathname.endsWith("promotion.html") ||
+        location.pathname.endsWith("promotion_detail.html")
+      ) &&
+      !(
+        location.pathname.endsWith("notice.html") ||
+        location.pathname.endsWith("notice_detail.html")
+      )
     ) {
       // 스크롤이 0인 경우
       fHeader.style.backgroundColor = "transparent";
@@ -1153,7 +1159,9 @@
       menu.style.color = "#FFF";
       moLangText.style.color = "#FFF";
       moLangArrow.style.color = "#FFF";
-    } else if (location.pathname.endsWith("promotion.html") || location.pathname,endsWith("promotion_detail.html")) {
+    } else if (
+      (location.pathname.endsWith("promotion.html") || location.pathname.endsWith("promotion_detail.html"))
+    ) {
       fHeader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
     }
   }
