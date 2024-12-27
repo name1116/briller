@@ -13,12 +13,21 @@ $(document).ready(function () {
 function updateMobileVisibility() {
   const lang = localStorage.getItem("selectedLang");
   const mBr = document.querySelectorAll(".only-mobile");
+  const sBr = document.querySelectorAll(".about-briller-clinic .swiper .swiper-wrapper .swiper-slide .text-wrap .text br");
 
   mBr.forEach(el => {
     if (lang === "en" || window.innerWidth >767) {
       el.style.display = "none";
     } else if(!(lang === "en") && window.innerWidth <=767) {
-      el.style.display = "block";
+      el.style.display = "";
+    }
+  });
+
+  sBr.forEach(el => {
+    if (lang === "en") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "";
     }
   });
 }

@@ -1919,6 +1919,8 @@ body {
   line-height: 1.5;
   color: #777;
   margin-top: 34px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .about-briller-clinic .flex-content-wrap {
   margin-top: 56px;
@@ -17842,6 +17844,9 @@ span.only-pc {
     background-color: #fcf9f6;
     position: relative;
     margin-top: 40px;
+  }
+  .co2-wrap .co2-process-flex-wrap .process .wrap {
+    text-align: center;
   }
   .co2-wrap .co2-info-wrap .co2-process-flex-wrap::after {
     position: absolute;
