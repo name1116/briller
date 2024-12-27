@@ -32,12 +32,52 @@ function getCurrentLanguage() {
 }
 
 // 텍스트 복원 (한국어 선택 시 원래 상태로)
-function restoreOriginalText() {
-  const elements = document.querySelectorAll("[data-original]");
-  elements.forEach((el) => {
-    el.textContent = el.getAttribute("data-original");
-  });
-}
+// function restoreOriginalText() {
+//   const elements = document.querySelectorAll("[data-original]");
+//   elements.forEach((el) => {
+//     el.textContent = el.getAttribute("data-original");
+//   });
+// }
+
+// function replaceTextInPage(searchWords, replacement) {
+//   const walker = document.createTreeWalker(
+//     document.body,
+//     NodeFilter.SHOW_TEXT,
+//     (node) => {
+//       if (
+//         node.parentNode &&
+//         node.parentNode.hasAttribute("translate") &&
+//         node.parentNode.getAttribute("translate") === "no"
+//       ) {
+//         return NodeFilter.FILTER_REJECT;
+//       }
+//       return NodeFilter.FILTER_ACCEPT;
+//     },
+//     false
+//   );
+
+//   const boundaryRegex = new RegExp(
+//     `\\b(${searchWords
+//       .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+//       .join("|")})\\b`,
+//     "gi"
+//   );
+
+//   let node;
+//   while ((node = walker.nextNode())) {
+//     const originalText = node.nodeValue;
+
+//     // 변환된 텍스트인지 확인
+//     if (originalText.includes(replacement)) {
+//       continue; // 이미 변환된 경우 스킵
+//     }
+
+//     const updatedText = originalText.replace(boundaryRegex, replacement);
+//     if (updatedText !== originalText) {
+//       node.nodeValue = updatedText;
+//     }
+//   }
+// }
 
 function replaceTextInPage(searchWords, replacement) {
   const walker = document.createTreeWalker(
@@ -67,17 +107,36 @@ function replaceTextInPage(searchWords, replacement) {
   while ((node = walker.nextNode())) {
     const originalText = node.nodeValue;
 
-    // 변환된 텍스트인지 확인
-    if (originalText.includes(replacement)) {
-      continue; // 이미 변환된 경우 스킵
-    }
-
+    // 변환된 텍스트 탐지 로직 제거
     const updatedText = originalText.replace(boundaryRegex, replacement);
     if (updatedText !== originalText) {
       node.nodeValue = updatedText;
     }
   }
 }
+
+// 언어 변경에 따라 동작하도록 연결
+function handleLanguageChange() {
+  const currentLang = getCurrentLanguage();
+
+  if (currentLang === "en") {
+    replaceTextInPage(["Ulthera, Ulthera"], "Ulthera");
+  } else {
+    restoreOriginalText();
+  }
+}
+
+// 초기화 및 이벤트 연결
+document.addEventListener("DOMContentLoaded", () => {
+  handleLanguageChange();
+
+  window.addEventListener("storage", (event) => {
+    if (event.key === "selectedLang") {
+      handleLanguageChange();
+    }
+  });
+});
+
 
 
 
@@ -118,11 +177,15 @@ function correctWords() {
     replaceTextInPage(["Brillerr"], "Briller");
     replaceTextInPage(["布里亚医院"], "Briller");
     replaceTextInPage(["injection"], "Injection");
+    replaceTextInPage(["Wellthera"], "Ulthera");
     replaceTextInPage(["울쎄라", "cry", "well"], "Ulthera");
+    replaceTextInPage(["울쎄라"], "Ulthera");
+    replaceTextInPage(["Briller, Ulthera"], "Briller Ulthera");
     replaceTextInPage(
       ["차정윤", "Cha Jeong- yoon", "Cha Jeong-yoon"],
       "Cha Jungyoon"
     );
+    replaceTextInPage(["Rep. Briller"], "About BRILLER");
     replaceTextInPage(["Representative Briller"], "About BRILLER");
     replaceTextInPage(["Introduction of the medical staff"], "Doctor");
     replaceTextInPage(["Directions"], "Direction & Hour");
@@ -213,6 +276,13 @@ function correctWords() {
       ["the Council of Ministers of Brillere"],
       "the Briller"
     );
+    replaceTextInPage(["Ulthera, Ulthera"], "Ulthera");
+    replaceTextInPage(["Dr. Briller"], "Briller");
+    replaceTextInPage(["Brier"], "Briller");
+    replaceTextInPage(["announcement"], "Announcement");
+    
+
+    
   } else if (currentLang === "zhCN") {
     replaceTextInPage(["Brie Clinic"], "布里亚医院");
     replaceTextInPage(["Brie"], "布里亚医院");
@@ -268,7 +338,7 @@ function correctWords() {
     replaceTextInPage(["制造部"], "布里亚医院");
     replaceTextInPage(["Clariti Pro"], "Clarity Pro");
   } else if (currentLang === "ko") {
-    replaceTextInPage(["Briller"], "브리에");
+    // replaceTextInPage(["Briller"], "브리에");
     replaceTextInPage(["Ulthera"], "울쎄라");
     replaceTextInPage(["Cha Jungyoon"], "차정윤");
     replaceTextInPage(["SONO Ultrasonic Management"], "SONO 초음파관리");
@@ -345,66 +415,184 @@ document.addEventListener("DOMContentLoaded", () => {
 // import { GSAPInfoBar } from "https://codepen.io/GreenSock/pen/vYqpyLg.js"
 // new GSAPInfoBar({ link: "https://gsap.com/docs/v3/Plugins/ScrollSmoother/"});
 
-document.addEventListener("DOMContentLoaded", () => {
-  // 현재 언어를 localStorage에서 가져오는 함수
-  function getCurrentLanguage() {
-    return localStorage.getItem("selectedLang") || "ko";
-  }
+// document.addEventListener("DOMContentLoaded", () => {
+//   // 현재 언어를 localStorage에서 가져오는 함수
+//   function getCurrentLanguage() {
+//     return localStorage.getItem("selectedLang") || "ko";
+//   }
 
-  // 모든 <br> 태그 제거
-  function removeAllBrTags() {
-    const elements = document.querySelectorAll("p");
-    elements.forEach((el) => {
-      const originalText = el.getAttribute("data-original-text");
-      if (originalText) {
-        el.innerHTML = originalText; // 초기 텍스트로 복원
+//   // 모든 <br> 태그 제거
+//   function removeAllBrTags() {
+//     const elements = document.querySelectorAll("p");
+//     elements.forEach((el) => {
+//       const originalText = el.getAttribute("data-original-text");
+//       if (originalText) {
+//         el.innerHTML = originalText; // 초기 텍스트로 복원
+//       }
+//     });
+//   }
+
+//   // 50자마다 <br> 삽입
+//   function addBrEvery50Characters() {
+//     const elements = document.querySelectorAll("p");
+//     elements.forEach((el) => {
+//       const originalText =
+//         el.getAttribute("data-original-text") || el.textContent.trim();
+//       if (!el.hasAttribute("data-original-text")) {
+//         el.setAttribute("data-original-text", originalText); // 초기 텍스트 저장
+//       }
+
+//       if (originalText.length > 2) {
+//         const updatedText = originalText.replace(/(.{50})/g, "$1<br>");
+//         el.innerHTML = updatedText; // 텍스트를 <br> 추가된 HTML로 설정
+//       }
+//     });
+//   }
+
+//   // 언어에 따른 동작 처리
+//   function applyLanguageSpecificRules() {
+//     const currentLang = getCurrentLanguage();
+
+//     if (currentLang === "en") {
+//       removeAllBrTags(); // 기존 <br> 태그 제거
+//       addBrEvery50Characters(); // 50자마다 <br> 삽입
+//     } else {
+//       removeAllBrTags(); // 다른 언어는 초기 상태로 복원
+//     }
+//   }
+
+//   // 초기 실행
+//   applyLanguageSpecificRules();
+
+//   // 언어 변경 시 동작
+//   const languageButtons = document.querySelectorAll("[data-lang]");
+//   languageButtons.forEach((button) => {
+//     button.addEventListener("click", (event) => {
+//       const selectedLang = event.target.getAttribute("data-lang");
+//       if (selectedLang) {
+//         localStorage.setItem("selectedLang", selectedLang);
+//         applyLanguageSpecificRules(); // 새로고침 없이 즉시 규칙 적용
+//       }
+//     });
+//   });
+// });
+
+
+
+
+
+  // const btns = document.querySelectorAll(".menu .language-wrap .lang-wrap");
+
+  // btns.forEach((el) => {
+  //   el.addEventListener("click", () => {
+  //     console.log("btn click");
+
+  //     const language = localStorage.getItem("selectedLang");
+  //     const breakSpace = document.querySelectorAll(".en");
+
+  //     if (language === "en") {
+  //       breakSpace.forEach((bs) => {
+  //         bs.style.display = "block";
+  //       });
+  //     } else {
+  //       breakSpace.forEach((bs) => {
+  //         bs.style.display = "none";
+  //       });
+  //     }
+  //   });
+  // });
+
+
+  // window.addEventListener("load", () => {
+  //   const language = localStorage.getItem("selectedLang");
+  //   const breakSpace = document.querySelectorAll(".en");
+
+  //   if (language === "en") {
+  //     breakSpace.forEach((bs) => {
+  //       bs.style.display = "block";
+  //     });
+  //   } else {
+  //     breakSpace.forEach((bs) => {
+  //       bs.style.display = "none";
+  //     });
+  //   }
+  // });
+
+
+  //     const language = localStorage.getItem("selectedLang");
+  // const breakSpace = document.querySelectorAll(".en");
+
+  // if (language === "en") {
+  //   breakSpace.forEach((bs) => {
+  //     bs.style.display = "block";
+  //   });
+  // } else {
+  //   breakSpace.forEach((bs) => {
+  //     bs.style.display = "none";
+  //   });
+  // }
+
+
+  window.addEventListener("load", () => {
+    const getLang = localStorage.getItem("selectedLang");
+    const timeWrap = document.querySelector(".location-time-wrap .wrap .time-wrap");
+  
+    if (timeWrap) {
+      const rootStyle = document.documentElement.style;
+      if (getLang === "en" && window.innerWidth > 767) {
+        rootStyle.setProperty("--hour-bar-left", "95px");
+      } else if (getLang === "en" && window.innerWidth <= 767) {
+        rootStyle.setProperty("--hour-bar-left", "70px");
+      } 
+      else {
+        rootStyle.setProperty("--hour-bar-left", "78px");
       }
-    });
-  }
-
-  // 50자마다 <br> 삽입
-  function addBrEvery50Characters() {
-    const elements = document.querySelectorAll("p");
-    elements.forEach((el) => {
-      const originalText =
-        el.getAttribute("data-original-text") || el.textContent.trim();
-      if (!el.hasAttribute("data-original-text")) {
-        el.setAttribute("data-original-text", originalText); // 초기 텍스트 저장
-      }
-
-      if (originalText.length > 2) {
-        const updatedText = originalText.replace(/(.{50})/g, "$1<br>");
-        el.innerHTML = updatedText; // 텍스트를 <br> 추가된 HTML로 설정
-      }
-    });
-  }
-
-  // 언어에 따른 동작 처리
-  function applyLanguageSpecificRules() {
-    const currentLang = getCurrentLanguage();
-
-    if (currentLang === "en") {
-      removeAllBrTags(); // 기존 <br> 태그 제거
-      addBrEvery50Characters(); // 50자마다 <br> 삽입
     } else {
-      removeAllBrTags(); // 다른 언어는 초기 상태로 복원
+      console.error("The '.time-wrap' element was not found.");
+    }
+  });
+  window.addEventListener("resize", () => {
+    const getLang = localStorage.getItem("selectedLang");
+    const timeWrap = document.querySelector(".location-time-wrap .wrap .time-wrap");
+  
+    if (timeWrap) {
+      const rootStyle = document.documentElement.style;
+      if (getLang === "en" && window.innerWidth > 767) {
+        rootStyle.setProperty("--hour-bar-left", "95px");
+      } else if (getLang === "en" && window.innerWidth <= 767) {
+        rootStyle.setProperty("--hour-bar-left", "70px");
+      } 
+      else {
+        rootStyle.setProperty("--hour-bar-left", "");
+      }
+    } else {
+      console.error("The '.time-wrap' element was not found.");
+    }
+  });
+
+
+  window.addEventListener("storage", (event) => {
+    if (event.key === "selectedLang") {
+      console.log(`Language changed to: ${event.newValue}`);
+      handleLanguageChange(event.newValue);
+    }
+  });
+  
+  function handleLanguageChange(newLang) {
+    const getLang = localStorage.getItem("selectedLang");
+    const timeWrap = document.querySelector(".location-time-wrap .wrap .time-wrap");
+  
+    if (timeWrap) {
+      const rootStyle = document.documentElement.style;
+      if (getLang === "en" && window.innerWidth > 767) {
+        rootStyle.setProperty("--hour-bar-left", "95px");
+      } else if (getLang === "en" && window.innerWidth <= 767) {
+        rootStyle.setProperty("--hour-bar-left", "70px");
+      } 
+      else {
+        rootStyle.setProperty("--hour-bar-left", "");
+      }
+    } else {
+      console.error("The '.time-wrap' element was not found.");
     }
   }
-
-  // 초기 실행
-  applyLanguageSpecificRules();
-
-  // 언어 변경 시 동작
-  const languageButtons = document.querySelectorAll("[data-lang]");
-  languageButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const selectedLang = event.target.getAttribute("data-lang");
-      if (selectedLang) {
-        localStorage.setItem("selectedLang", selectedLang);
-        applyLanguageSpecificRules(); // 새로고침 없이 즉시 규칙 적용
-      }
-    });
-  });
-});
-
-

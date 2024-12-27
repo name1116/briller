@@ -115,7 +115,14 @@
     if (window.innerWidth <= 767) {
         toggleBtn.style.bottom = "128px";
       } else {
-        toggleBtn.style.bottom = "112px";
+        toggleBtn.style.bottom = "180px";
+      }
+  })
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 767) {
+        toggleBtn.style.bottom = "128px";
+      } else {
+        toggleBtn.style.bottom = "180px";
       }
   })
 
@@ -124,7 +131,7 @@
       if (window.innerWidth <= 767) {
         toggleBtn.style.bottom = "448px";
       } else {
-        toggleBtn.style.bottom = "432px";
+        toggleBtn.style.bottom = "500px";
       }
 
       toggleBtnIcon.className = "xi-close";
@@ -132,7 +139,7 @@
       if (window.innerWidth <= 767) {
         toggleBtn.style.bottom = "128px";
       } else {
-        toggleBtn.style.bottom = "112px";
+        toggleBtn.style.bottom = "180px";
       }
       toggleBtnIcon.className = "xi-bars";
 
