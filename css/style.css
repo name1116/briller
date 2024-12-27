@@ -1475,6 +1475,12 @@ body {
   padding-left: 300px;
 }
 
+@media screen and (max-width:1700px) {
+  .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .text {
+    padding-left: 50px;
+  }
+}
+
 @media screen and (max-width:1280px) {
   .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .text {
     padding-left: 0px;
@@ -11164,7 +11170,7 @@ span.only-pc {
   }
   .briller-info-section .briller-filler .briller-filler-text-wrap .title {
     font-size: 24px;
-    line-height: 3.33;
+    line-height: 1.5;
   }
   .briller-info-section .briller-filler .briller-filler-text-wrap .sub-title {
     font-size: 18px;
@@ -11191,7 +11197,7 @@ span.only-pc {
     .briller-museline-text-wrap
     .signature-title {
     font-size: 18px;
-    line-height: 4.44;
+    line-height: 3.33;
   }
   .briller-info-section
     .briller-museline
@@ -11199,11 +11205,11 @@ span.only-pc {
     .signature-title
     span {
     font-size: 24px;
-    line-height: 4.44;
+    line-height: 3.33;
   }
   .briller-info-section .briller-museline .briller-museline-text-wrap .title {
     font-size: 24px;
-    line-height: 3.33;
+    line-height: 1.5;
   }
   .briller-info-section
     .briller-museline
@@ -11267,7 +11273,7 @@ span.only-pc {
     .briller-ulthera-text-wrap
     .signature-title {
     font-size: 18px;
-    line-height: 4.44;
+    line-height: 3.33;
   }
   .briller-info-section
     .briller-ulthera
@@ -11275,11 +11281,11 @@ span.only-pc {
     .signature-title
     span {
     font-size: 24px;
-    line-height: 4.44;
+    line-height: 3.33;
   }
   .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .title {
     font-size: 24px;
-    line-height: 3.33;
+    line-height: 1.5;
   }
   .briller-info-section .briller-ulthera .briller-ulthera-text-wrap .sub-title {
     margin-top: 0px;
@@ -12282,7 +12288,7 @@ span.only-pc {
     height: 280px;
   }
   #repeat .principle-wrap .principle-flex-wrap .principle .principle-title {
-    margin-top: 32px;
+    margin-top: 20px;
     font-size: 22px;
     line-height: 1.45;
   }
