@@ -10204,8 +10204,13 @@ td {
   margin-right: 19px;
 }
 .promotion-detail-wrap .btn-wrap .prev-btn a .btn-title {
+  width: 100px;
   font-size: 16px;
   color: #cac2b9;
+
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
 
 .promotion-detail-wrap .btn-wrap .next-btn a i {
@@ -10221,8 +10226,13 @@ td {
   margin-left: 19px;
 }
 .promotion-detail-wrap .btn-wrap .next-btn a .btn-title {
+  width: 100px;
   font-size: 16px;
   color: #cac2b9;
+
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
 .promotion-detail-wrap .btn-wrap .index-btn {
   width: 56px;

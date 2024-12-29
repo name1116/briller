@@ -72,89 +72,6 @@ function getCurrentLanguage() {
   return selectedLang || "ko"; // 기본값 "ko"
 }
 
-// 텍스트 복원 (한국어 선택 시 원래 상태로)
-// function restoreOriginalText() {
-//   const elements = document.querySelectorAll("[data-original]");
-//   elements.forEach((el) => {
-//     el.textContent = el.getAttribute("data-original");
-//   });
-// }
-
-// function replaceTextInPage(searchWords, replacement) {
-//   const walker = document.createTreeWalker(
-//     document.body,
-//     NodeFilter.SHOW_TEXT,
-//     (node) => {
-//       if (
-//         node.parentNode &&
-//         node.parentNode.hasAttribute("translate") &&
-//         node.parentNode.getAttribute("translate") === "no"
-//       ) {
-//         return NodeFilter.FILTER_REJECT;
-//       }
-//       return NodeFilter.FILTER_ACCEPT;
-//     },
-//     false
-//   );
-
-//   const boundaryRegex = new RegExp(
-//     `\\b(${searchWords
-//       .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-//       .join("|")})\\b`,
-//     "gi"
-//   );
-
-//   let node;
-//   while ((node = walker.nextNode())) {
-//     const originalText = node.nodeValue;
-
-//     // 변환된 텍스트인지 확인
-//     if (originalText.includes(replacement)) {
-//       continue; // 이미 변환된 경우 스킵
-//     }
-
-//     const updatedText = originalText.replace(boundaryRegex, replacement);
-//     if (updatedText !== originalText) {
-//       node.nodeValue = updatedText;
-//     }
-//   }
-// }
-// 222222
-// function replaceTextInPage(searchWords, replacement) {
-//   const walker = document.createTreeWalker(
-//     document.body,
-//     NodeFilter.SHOW_TEXT,
-//     (node) => {
-//       if (
-//         node.parentNode &&
-//         node.parentNode.hasAttribute("translate") &&
-//         node.parentNode.getAttribute("translate") === "no"
-//       ) {
-//         return NodeFilter.FILTER_REJECT;
-//       }
-//       return NodeFilter.FILTER_ACCEPT;
-//     },
-//     false
-//   );
-
-//   const boundaryRegex = new RegExp(
-//     `(${searchWords
-//       .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-//       .join("|")})`,
-//     "gi"
-//   );
-
-//   let node;
-//   while ((node = walker.nextNode())) {
-//     const originalText = node.nodeValue;
-
-//     // 변환된 텍스트 탐지 로직 제거
-//     const updatedText = originalText.replace(boundaryRegex, replacement);
-//     if (updatedText !== originalText) {
-//       node.nodeValue = updatedText;
-//     }
-//   }
-// }
 
 function replaceTextInPage(searchWords, replacement) {
   const walker = document.createTreeWalker(
@@ -184,23 +101,18 @@ function replaceTextInPage(searchWords, replacement) {
   while ((node = walker.nextNode())) {
     const originalText = node.nodeValue;
 
-    // 이미 번역된 텍스트인지 확인
-    if (node.parentNode && node.parentNode.dataset.original) {
-      continue; // 이미 번역된 경우 스킵
+    // 이미 중복된 텍스트가 있는지 확인
+    if (originalText.includes(replacement)) {
+      continue; // 중복된 경우 변경하지 않음
     }
 
     const updatedText = originalText.replace(boundaryRegex, replacement);
-
     if (updatedText !== originalText) {
-      // 원본 텍스트를 data-original 속성에 저장
-      if (!node.parentNode.dataset.original) {
-        node.parentNode.dataset.original = originalText;
-      }
-
-      node.nodeValue = updatedText; // 텍스트 업데이트
+      node.nodeValue = updatedText;
     }
   }
 }
+
 
 // 언어 변경에 따라 동작하도록 연결
 function handleLanguageChange() {
