@@ -331,6 +331,9 @@ function correctWords() {
     replaceTextInPage(["SONO超声管理"], "超声管理");
     replaceTextInPage(["Clarity色素激光"], "深层色斑激光");
     replaceTextInPage(["去痣激光"], "点痣激光");
+    replaceTextInPage(["Fabrication Co., Ltd."], "布里亚医院");
+    replaceTextInPage(["制造及制造中心"], "布里亚医院");
+
   } else if (currentLang === "ko") {
     replaceTextInPage(["Briller"], "브리에");
     replaceTextInPage(["Ulthera"], "울쎄라");
@@ -533,7 +536,7 @@ window.addEventListener("load", () => {
     } else if (getLang === "en" && window.innerWidth <= 767) {
       rootStyle.setProperty("--hour-bar-left", "70px");
     } else {
-      rootStyle.setProperty("--hour-bar-left", "78px");
+      rootStyle.setProperty("--hour-bar-left", "50px");
     }
   }
 });

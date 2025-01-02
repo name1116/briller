@@ -799,105 +799,29 @@
     );
   }
 
-  window.addEventListener("load", () => {
-    // 클릭된 버튼에서 언어 코드 가져오기
-    const langCode = localStorage.getItem("selectedLang");
-    console.log(langCode);
-    const timeLine = document.querySelectorAll(
-      ".directions .directions-text-wrap .time-wrap"
-    );
-    const locText = document.querySelectorAll(".wrap .location.two");
-    const timeText = document.querySelectorAll(".wrap .time.two");
-    const contactBtn = document.querySelectorAll(
-      ".contact-btn-wrap .contact-btn"
-    );
-
-    if (langCode === "en") {
-      // replaceTranslatedWords();
-      timeLine.forEach((el) => el.classList.add("english"));
-      principles.forEach((el) => {
-        el.style.width = "400px";
-        el.style.textAlign = "center";
-      });
-    } else {
-      timeLine.forEach((el) => el.classList.remove("english"));
-    }
-
-    if (langCode === "ko") {
-      contactBtn.forEach((el) => (el.style.width = "168px"));
-      locText.forEach((el) => (el.style.letterSpacing = ""));
-      timeText.forEach((el) => (el.style.letterSpacing = ""));
-    } else {
-      contactBtn.forEach((el) => (el.style.width = "auto"));
-      locText.forEach((el) => (el.style.letterSpacing = "normal"));
-      timeText.forEach((el) => (el.style.letterSpacing = "normal"));
-
-      // 다른 언어일 경우: Google Translate 드롭다운에서 언어 변경
-      const translateSelect = document.querySelector(".goog-te-combo");
-      if (translateSelect) {
-        translateSelect.value = langCode; // 언어 선택
-        translateSelect.dispatchEvent(new Event("change")); // 변경 이벤트 트리거
-      } else {
-        console.error("Google Translate combobox not found!");
-      }
-    }
-  });
-
-  document.querySelectorAll(".lang-wrap").forEach((btn) => {
-    btn.addEventListener("click", function () {
-      // 클릭된 버튼에서 언어 코드 가져오기
-      const langCode = this.querySelector("img").dataset.lang;
-      const timeLine = document.querySelectorAll(
-        ".directions .directions-text-wrap .time-wrap"
-      );
-      const locText = document.querySelectorAll(".wrap .location.two");
-      const timeText = document.querySelectorAll(".wrap .time.two");
-      const contactBtn = document.querySelectorAll(
-        ".contact-btn-wrap .contact-btn"
-      );
-
-      if (langCode === "zh-CN") {
-        localStorage.setItem("selectedLang", "zhCN");
-      } else {
-        localStorage.setItem("selectedLang", langCode);
-      }
-
-      if (langCode === "en") {
-        timeLine.forEach((el) => el.classList.add("english"));
-      } else {
-        timeLine.forEach((el) => el.classList.remove("english"));
-      }
-
-      if (langCode === "ko") {
-        // 한국어일 경우: Google Translate 세션을 초기화하고 원본으로 복원
-        resetGoogleTranslate();
-        restoreOriginalText();
-
-        contactBtn.forEach((el) => (el.style.width = "168px"));
-        locText.forEach((el) => (el.style.letterSpacing = ""));
-        timeText.forEach((el) => (el.style.letterSpacing = ""));
-      } else {
-        contactBtn.forEach((el) => (el.style.width = "auto"));
-        locText.forEach((el) => (el.style.letterSpacing = "normal"));
-        timeText.forEach((el) => (el.style.letterSpacing = "normal"));
-
-        // 다른 언어일 경우: Google Translate 드롭다운에서 언어 변경
-        const translateSelect = document.querySelector(".goog-te-combo");
-        if (translateSelect) {
-          translateSelect.value = langCode; // 언어 선택
-          translateSelect.dispatchEvent(new Event("change")); // 변경 이벤트 트리거
-        } else {
-          console.error("Google Translate combobox not found!");
+  function waitForObjectToLoad() {
+    return new Promise((resolve) => {
+      const interval = setInterval(() => {
+        let combo = document.querySelector(".goog-te-combo");
+        if (combo) {
+          clearInterval(interval);
+          resolve(combo);
         }
-      }
+      }, 500);
     });
-  });
+  }
 
-  document.querySelectorAll(".m-lang-wrap").forEach((btn) => {
-    btn.addEventListener("click", function () {
+  var translateSelect = null;
+
+  window.addEventListener("load", () => {
+    (async () => {
+      googleTranslateElementInit();
+
+      translateSelect = await waitForObjectToLoad();
+
       // 클릭된 버튼에서 언어 코드 가져오기
       const langSelected = document.querySelector(".mobile-lang-btn .btn-text");
-      const langCode = this.querySelector("p").dataset.lang;
+      var langCode = localStorage.getItem("selectedLang");
       const timeLine = document.querySelectorAll(
         ".directions .directions-text-wrap .time-wrap"
       );
@@ -907,18 +831,21 @@
         ".contact-btn-wrap .contact-btn"
       );
 
-      if (langCode === "zh-CN") {
-        localStorage.setItem("selectedLang", "zhCN");
-        langSelected.innerHTML = "CN";
-      } else {
-        localStorage.setItem("selectedLang", langCode);
-      }
-
       if (langCode === "en") {
-        timeLine.forEach((el) => el.classList.add("english"));
         langSelected.innerHTML = "US";
+
+        timeLine.forEach((el) => el.classList.add("english"));
+        principles.forEach((el) => {
+          el.style.width = "400px";
+          el.style.textAlign = "center";
+        });
       } else {
         timeLine.forEach((el) => el.classList.remove("english"));
+      }
+
+      if (langCode === "zhCN") {
+        langCode = "zh-CN";
+        langSelected.innerHTML = "CN";
       }
 
       if (langCode === "ja") {
@@ -926,9 +853,10 @@
       }
 
       if (langCode === "ko") {
-        // 한국어일 경우: Google Translate 세션을 초기화하고 원본으로 복원
-        resetGoogleTranslate();
         langSelected.innerHTML = "KR";
+
+        resetGoogleTranslate();
+
         contactBtn.forEach((el) => (el.style.width = "168px"));
         locText.forEach((el) => (el.style.letterSpacing = ""));
         timeText.forEach((el) => (el.style.letterSpacing = ""));
@@ -937,15 +865,39 @@
         locText.forEach((el) => (el.style.letterSpacing = "normal"));
         timeText.forEach((el) => (el.style.letterSpacing = "normal"));
 
-        // 다른 언어일 경우: Google Translate 드롭다운에서 언어 변경
-        const translateSelect = document.querySelector(".goog-te-combo");
-        if (translateSelect) {
-          translateSelect.value = langCode; // 언어 선택
-          translateSelect.dispatchEvent(new Event("change")); // 변경 이벤트 트리거
-        } else {
-          console.error("Google Translate combobox not found!");
-        }
+        translateSelect.value = langCode; // 언어 선택
+        translateSelect.dispatchEvent(new Event("change")); // 변경 이벤트 트리거
       }
+    })();
+  });
+
+  document.querySelectorAll(".lang-wrap").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // 클릭된 버튼에서 언어 코드 가져오기
+      const langCode = this.querySelector("img").dataset.lang;
+
+      if (langCode === "zh-CN") {
+        localStorage.setItem("selectedLang", "zhCN");
+      } else {
+        localStorage.setItem("selectedLang", langCode);
+      }
+
+      location.reload(true);
+    });
+  });
+
+  document.querySelectorAll(".m-lang-wrap").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // 클릭된 버튼에서 언어 코드 가져오기
+      const langCode = this.querySelector("p").dataset.lang;
+
+      if (langCode === "zh-CN") {
+        localStorage.setItem("selectedLang", "zhCN");
+      } else {
+        localStorage.setItem("selectedLang", langCode);
+      }
+
+      location.reload(true);
     });
   });
 
@@ -1160,7 +1112,8 @@
       moLangText.style.color = "#FFF";
       moLangArrow.style.color = "#FFF";
     } else if (
-      (location.pathname.endsWith("promotion.html") || location.pathname.endsWith("promotion_detail.html"))
+      location.pathname.endsWith("promotion.html") ||
+      location.pathname.endsWith("promotion_detail.html")
     ) {
       fHeader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
     }
@@ -1194,4 +1147,3 @@
     }
   };
 </script>
-

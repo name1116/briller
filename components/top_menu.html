@@ -1,8 +1,8 @@
 <button class="sns-open">
-  <i class="xi-bars"></i>
+  <i class="xi-close"></i>
 </button>
 
-<div id="sns-btn-wrap" class="sns-btn-wrap disable">
+<div id="sns-btn-wrap" class="sns-btn-wrap active">
   <a href="https://pf.kakao.com/_SxoqXG" target="_blank">
     <button class="sns-btn">
       <img src="../images/kakao.png" alt="카카오톡 문의" />
@@ -113,17 +113,23 @@
 
   window.addEventListener("load", () => {
     if (window.innerWidth <= 767) {
-        toggleBtn.style.bottom = "128px";
+        toggleBtn.style.bottom = "448px";
       } else {
-        toggleBtn.style.bottom = "180px";
+        toggleBtn.style.bottom = "500px";
       }
   })
   window.addEventListener("resize", () => {
-    if (window.innerWidth <= 767) {
-        toggleBtn.style.bottom = "128px";
-      } else {
-        toggleBtn.style.bottom = "180px";
-      }
+
+
+      if (window.innerWidth <= 767 && toggleBtnIcon.className === "xi-close") {
+      toggleBtn.style.bottom = "448px";
+    } else if (window.innerWidth > 767 && toggleBtnIcon.className === "xi-close") {
+      toggleBtn.style.bottom = "500px";
+    } else if (window.innerWidth <= 767 && toggleBtnIcon.className === "xi-bars") {
+      toggleBtn.style.bottom = "128px";
+    } else if (window.innerWidth > 767 && toggleBtnIcon.className === "xi-bars") {
+      toggleBtn.style.bottom = "180px";
+    }
   })
 
   toggleBtn.addEventListener("click", () => {
