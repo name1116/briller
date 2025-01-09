@@ -33,6 +33,9 @@
     </button>
   </a>
 
+
+  <div class="qr-background"></div>
+
   <div class="we-qr-img">
     <div class="title font-pb">WeChat 연결하기</div>
 
@@ -46,13 +49,16 @@
         카메라로 QR코드를 인식하면<br />
         위챗으로 연결 됩니다.
       </p>
+      <p class="text font-pr" translate="no">
+        WeChat ID : Briller_Clinic
+      </p>
     </div>
 
     <button class="we-close font-pm">확인</button>
   </div>
 
   <div class="line-qr-img">
-    <div class="title font-pb">Line 연결하기</div>
+    <div class="title font-pb">LINE 연결하기</div>
 
     <div class="img-wrap">
       <img src="./images/qr/line.png" alt="line qr" />
@@ -63,6 +69,9 @@
       <p class="text font-pr">
         카메라로 QR코드를 인식하면<br />
         위챗으로 연결 됩니다.
+      </p>
+      <p class="text font-pr" translate="no">
+        LINE ID : briller_clinic
       </p>
     </div>
 
@@ -84,53 +93,65 @@
   const linePop = document.querySelector(".line-qr-img");
   const lineCloseBtn = document.querySelector(".line-close");
 
-  const bg = document.querySelector(".qr-background");
+  const bg3 = document.querySelector(".qr-background");
 
   weChatBtn.addEventListener("click", () => {
     weChatPop.style.display = "block";
     linePop.style.display = "none";
-    bg.style.display = "block";
+    bg3.style.display = "block";
   });
 
   weChatCloseBtn.addEventListener("click", () => {
     weChatPop.style.display = "none";
-    bg.style.display = "none";
+    bg3.style.display = "none";
   });
 
   lineBtn.addEventListener("click", () => {
     linePop.style.display = "block";
     weChatPop.style.display = "none";
-    bg.style.display = "block";
+    bg3.style.display = "block";
   });
 
   lineCloseBtn.addEventListener("click", () => {
     linePop.style.display = "none";
-    bg.style.display = "none";
+    bg3.style.display = "none";
   });
+</script>
+
+<script>
+
 
   const toggleBtn = document.querySelector(".sns-open");
   const toggleBtnIcon = document.querySelector(".sns-open i");
+  const bg4 = document.querySelector(".qr-background");
 
   window.addEventListener("load", () => {
     if (window.innerWidth <= 767) {
-        toggleBtn.style.bottom = "448px";
-      } else {
-        toggleBtn.style.bottom = "500px";
-      }
-  })
-  window.addEventListener("resize", () => {
-
-
-      if (window.innerWidth <= 767 && toggleBtnIcon.className === "xi-close") {
       toggleBtn.style.bottom = "448px";
-    } else if (window.innerWidth > 767 && toggleBtnIcon.className === "xi-close") {
+    } else {
       toggleBtn.style.bottom = "500px";
-    } else if (window.innerWidth <= 767 && toggleBtnIcon.className === "xi-bars") {
+    }
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 767 && toggleBtnIcon.className === "xi-close") {
+      toggleBtn.style.bottom = "448px";
+    } else if (
+      window.innerWidth > 767 &&
+      toggleBtnIcon.className === "xi-close"
+    ) {
+      toggleBtn.style.bottom = "500px";
+    } else if (
+      window.innerWidth <= 767 &&
+      toggleBtnIcon.className === "xi-bars"
+    ) {
       toggleBtn.style.bottom = "128px";
-    } else if (window.innerWidth > 767 && toggleBtnIcon.className === "xi-bars") {
+    } else if (
+      window.innerWidth > 767 &&
+      toggleBtnIcon.className === "xi-bars"
+    ) {
       toggleBtn.style.bottom = "180px";
     }
-  })
+  });
 
   toggleBtn.addEventListener("click", () => {
     if (toggleBtnIcon.className === "xi-bars") {
@@ -151,7 +172,7 @@
 
       weChatPop.style.display = "none";
       linePop.style.display = "none";
-      bg.style.display = "none";
+      bg4.style.display = "none";
     }
 
     const btns = document.querySelector(".sns-btn-wrap");

@@ -261,7 +261,7 @@ body {
   justify-content: center;
   opacity: 1;
   transition: 0.3s;
-  z-index: 50;
+  z-index: 1;
 }
 @media screen and (max-width: 767px) {
   .sns-open {
@@ -288,7 +288,7 @@ body {
   justify-content: center;
   opacity: 0;
   transition: 0.3s;
-  z-index: 50;
+  z-index: 1;
 }
 @media screen and (max-width: 767px) {
   .Top_Scroll_btn {
@@ -338,7 +338,7 @@ body {
   position: fixed;
   bottom: 180px;
   right: 48px;
-  z-index: 2;
+  z-index: 99;
 }
 
 @media screen and (max-width: 767px) {
@@ -431,7 +431,7 @@ body {
   top: 0px;
   padding-top: 12px;
   padding-bottom: 12px;
-  backdrop-filter: blur(7px) !important;
+  /* backdrop-filter: blur(7px) !important; */
 }
 
 /* #header .header-main-nav {
@@ -447,7 +447,7 @@ body {
 
 #header .sub-logo-img-wrap {
   margin-left: 32px;
-  width: 118px;
+  width: 200px;
   height: 64px;
   transition: filter 0.3s;
 }
@@ -892,6 +892,7 @@ body {
   margin-left: auto;
   background-color: #75624d;
   border-radius: 8px 8px 0 0;
+
 
   display: flex;
   align-items: center;
@@ -1353,6 +1354,13 @@ body {
   font-weight: 300;
   line-height: 1.6;
   color: #202020;
+
+  padding-right: 20%;
+}
+@media screen and (max-width:1280px) {
+  .briller-info-section .briller-museline .briller-museline-text-wrap .text {
+    padding-right: 0px;
+  }
 }
 
 .briller-info-section
@@ -1625,7 +1633,7 @@ body {
 .briller-info-section .directions .directions-text-wrap .direction-wrap::after {
   position: absolute;
   top: 0px;
-  left: 78px;
+  left: var(--hour-bar-left, 78px);
   display: block;
   content: "";
   clear: both;
@@ -1681,7 +1689,7 @@ body {
 .briller-info-section .directions .directions-text-wrap .time-wrap::after {
   position: absolute;
   top: 0px;
-  left: 78px;
+  left: var(--hour-bar-left, 78px);
   display: block;
   content: "";
   clear: both;
@@ -2099,7 +2107,7 @@ body {
 .directions .directions-text-wrap .direction-wrap::after {
   position: absolute;
   top: 0px;
-  left: 78px;
+  left: var(--hour-bar-left, 78px);
   display: block;
   content: "";
   clear: both;
@@ -2143,7 +2151,8 @@ body {
 .directions .directions-text-wrap .time-wrap::after {
   position: absolute;
   top: 0px;
-  left: 78px;
+  /* left: 78px; */
+  left: var(--hour-bar-left, 78px);
   display: block;
   content: "";
   clear: both;
@@ -2421,7 +2430,7 @@ body {
 .location-time-wrap .wrap .direction-wrap::after {
   position: absolute;
   top: 0px;
-  left: 88px;
+  left: var(--hour-bar-left, 88px);
   display: block;
   content: "";
   clear: both;
@@ -4193,7 +4202,7 @@ body {
 .ulthera-wrap .ulthera-detail-wrap .ulthera-detail-flex-wrap .detail {
   max-width: 460px;
   width: 100%;
-  height: 516px;
+  min-height: 516px;
   padding-left: 30px;
   padding-right: 30px;
   border: solid 1px #cac2b9;
@@ -4274,7 +4283,7 @@ body {
   margin-top: 72px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 73px;
 }
 .ulthera-wrap
@@ -4529,8 +4538,8 @@ body {
   font-size: 18px;
   line-height: 1.44;
   color: #202020;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 .tentherma-wrap .tentherma-info-wrap .tentherma-flex-wrap {
   margin-top: 56px;
@@ -4631,12 +4640,12 @@ body {
   font-size: 18px;
   line-height: 1.44;
   color: #202020;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 .tentherma-wrap .tentherma-detail-process .tentherma-detail-process-title-wrap .text {
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 @media  screen and (max-width:1300px) {
   .tentherma-wrap .tentherma-info-wrap .tentherma-title-wrap .text {
@@ -4771,6 +4780,7 @@ body {
   .tentherma-detail-process-flex-wrap
   .process-flex {
     max-width: 405px;
+    height: 581px;
   text-align: left;
   position: relative;
 }
@@ -4808,6 +4818,7 @@ body {
   line-height: 1.44;
   color: #202020;
 }
+
 .tentherma-wrap
   .tentherma-detail-process
   .tentherma-detail-process-flex-wrap
@@ -4817,7 +4828,7 @@ body {
   max-height: 400px;
   width: 100%;
   height: 100%;
-
+    
   margin-top: 34px;
 }
 .tentherma-wrap
@@ -5890,8 +5901,8 @@ td {
   font-size: 18px;
   line-height: 1.44;
   color: #202020;
-  padding-right: 200px;
-  padding-left: 200px;
+  padding-right: 20%;
+  padding-left: 20%;
 }
 
 .botox-wrap .botox-info-wrap .botox-flex-wrap {
@@ -6878,8 +6889,8 @@ td {
   font-size: 18px;
   line-height: 1.44;
   color: #202020;
-  padding-right: 300px;
-  padding-left: 300px;
+  padding-right: 25%;
+  padding-left: 25%;
 }
 @media screen and (max-width:1300px) {
   .face-contouring-wrap .face-contouring-type-wrap .text-wrap .text {
@@ -10312,7 +10323,7 @@ white-space: nowrap;
 
   width: 100vw;
   height: 100vh;
-  z-index: 500;
+  z-index: 98;
 }
 
 .contact-btn-wrap .wechat-qr-img {
@@ -10519,14 +10530,14 @@ white-space: nowrap;
   color: #fff;
 }
 
-.directions .directions-text-wrap .time-wrap.english::after {
+/* .directions .directions-text-wrap .time-wrap.english::after {
   left: 95px;
-}
-@media screen and (max-width: 767px) {
+} */
+/* @media screen and (max-width: 767px) {
   .directions .directions-text-wrap .time-wrap.english::after {
     left: 65px !important;
   }
-}
+} */
 
 .principle-flex-wrap .principle {
   max-width: 400px;
@@ -10807,13 +10818,17 @@ span.only-pc {
   }
 }
 
+@media screen and (max-width:1550px) {
+  #header .header-main-nav {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   #header .logo-img-wrap {
     display: none !important;
   }
-  #header .header-main-nav {
-    display: none !important;
-  }
+
   #header .follow-header {
     display: block !important;
   }
@@ -10895,7 +10910,7 @@ span.only-pc {
   }
 
   #header .sub-logo-img-wrap {
-    width: 83px;
+    width: 154px;
     height: 44px;
   }
   #header .follow-header {
@@ -11384,7 +11399,7 @@ span.only-pc {
     .directions
     .directions-text-wrap
     .direction-wrap::after {
-    left: 55px;
+      left: var(--hour-bar-left, 55px);
   }
   .briller-info-section
     .directions
@@ -11426,7 +11441,7 @@ span.only-pc {
     letter-spacing: 14px;
   }
   .briller-info-section .directions .directions-text-wrap .time-wrap::after {
-    left: 55px;
+    left: var(--hour-bar-left, 55px);
   }
 
   .briller-info-section
@@ -11795,7 +11810,7 @@ span.only-pc {
   }
 
   .directions .directions-text-wrap .direction-wrap::after {
-    left: 55px;
+    left: var(--hour-bar-left, 55px);
   }
 
   .directions .directions-text-wrap .direction-wrap .wrap .location {
@@ -11821,7 +11836,7 @@ span.only-pc {
     letter-spacing: 14px;
   }
   .directions .directions-text-wrap .time-wrap::after {
-    left: 55px;
+    left: var(--hour-bar-left, 55px);
   }
 
   .directions .directions-text-wrap .time-wrap .wrap .time-detail {
@@ -11852,7 +11867,7 @@ span.only-pc {
   }
 
   .directions .directions-text-wrap .contact-btn-wrap .contact-btn {
-    width: 109px !important;
+    width: 105px !important;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -11993,7 +12008,7 @@ span.only-pc {
     line-height: 1.2;
   }
   .location-time-wrap .wrap .direction-wrap::after {
-    left: 62px;
+    left: var(--hour-bar-left, 65px);
   }
   .location-time-wrap .wrap .telephone-wrap {
     margin-top: 24px;
@@ -12630,10 +12645,17 @@ span.only-pc {
     padding-right: 20px; */
   }
   .eye-filler .babyface-filler-info .text-wrap .text {
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+}
+@media screen and (max-width:1200px) {
+  .eye-filler .babyface-filler-info .text-wrap .text {
     padding-right: 20px;
     padding-left: 20px;
   }
 }
+
 
 @media screen and (max-width: 1300px) {
   .eye-filler .filler-process-wrap .process-flex {
@@ -12765,6 +12787,12 @@ span.only-pc {
     /* padding-left: 20px;
     padding-right: 20px; */
   }
+  .museline-injection .babyface-filler-info .text-wrap .text {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+@media screen and (max-width:1200px) {
   .museline-injection .babyface-filler-info .text-wrap .text {
     padding-left: 20px;
     padding-right: 20px;
@@ -13408,7 +13436,8 @@ span.only-pc {
 
   .ulthera-wrap .ulthera-detail-wrap .ulthera-detail-flex-wrap .detail {
     max-width: 335px;
-    height: 378px;
+    min-height: auto;
+    height: 400px;
     padding-left: 20px;
     padding-right: 20px;
   }

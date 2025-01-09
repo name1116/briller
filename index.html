@@ -23,7 +23,7 @@
   <meta property="og:image" content="/images/sns-thumbnail.png" />
   <meta property="og:url" content="https://brillerclinic.com/" />
 
-  <title translate="no">브리에의원</title>
+  <title>브리에의원</title>
 </head>
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
   <link
@@ -38,7 +38,7 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css" />
 
   <style>
-    #header {
+    /* #header {
       position: absolute;
       pointer-events: none;
       top: 0px;
@@ -100,7 +100,7 @@
         padding-top: 8px;
         padding-bottom: 8px;
       }
-    }
+    } */
   </style>
 
   <body>
@@ -108,7 +108,7 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img class="slide-01" src="./images/main_01.png" />
+          <img class="slide-01" src="./images/main_01.jpg" />
           <div class="text-wrap">
             <h3 class="clinic-title font-pb" translate="no">
               BRILLER <span class="font-pl">CLINIC</span>
@@ -125,7 +125,7 @@
           </div>
         </div>
         <div class="swiper-slide two">
-          <img class="slide-02" src="./images/main_02.png" />
+          <img class="slide-02" src="./images/main_04.jpg" />
           <div class="text-wrap">
             <h3 class="clinic-title font-pb" translate="no">
               BRILLER <span class="font-pl">CLINIC</span>
@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="swiper-slide">
-          <img class="slide-03" src="./images/main_03.jpg" />
+          <img class="slide-03" src="./images/main_02.jpg" />
           <div class="text-wrap">
             <h3 class="clinic-title font-pb" translate="no">
               BRILLER <span class="font-pl">CLINIC</span>
@@ -159,7 +159,7 @@
           </div>
         </div>
         <div class="swiper-slide last">
-          <img class="slide-04" src="./images/main_04.jpg" />
+          <img class="slide-04" src="./images/main_03.jpg" />
           <div class="text-wrap">
             <h3 class="clinic-title font-pb" translate="no">
               BRILLER <span class="font-pl">CLINIC</span>
@@ -307,11 +307,11 @@
           <h4 class="sub-title font-pm">브리에 뮤즈라인주사</h4>
           <p class="text font-pl">
             얼굴/바디라인 정리에 탁월한 지방분해주사입니다.
-            <br class="only-1280" />
+            <br class="only-1280 not-en" />
             스테로이드를 함유하지 않은 채, 지방세포의 수와 크기를
-            <br class="only-1280" />
+            <br class="only-1280 not-en" />
             효과적으로 줄이고 배출하며, 스테로이드의 부작용으로부터
-            <br class="only-1280" />
+            <br class="only-1280 not-en" />
             안전합니다.
           </p>
           <button class="briller-museline-viewmore font-pl">
@@ -329,13 +329,13 @@
           <h4 class="sub-title font-pm">브리에 울쎄라</h4>
           <p class="text font-pl">
             개별에 맞는 디자인, 샷수, 그리고 강도를 통해 효과적인<br
-              class="only-1280"
+              class="only-1280 not-en"
             />
             리프팅 결과를 기대할 수 있습니다. 얼굴의 처짐과 주름을<br
-              class="only-1280"
+              class="only-1280 not-en"
             />
             근본적으로 개선하고, 지방층 정리와 콜라겐 생성을 유도해<br
-              class="only-1280"
+              class="only-1280 not-en"
             />
             탄력 있는 얼굴과 피부를 선사합니다.
           </p>
@@ -458,6 +458,9 @@
                 <p class="text font-pr">
                   카메라로 QR코드를 인식하면<br />
                   위챗으로 연결 됩니다.
+                </p>
+                <p class="text font-pr" translate="no">
+                  WeChat ID : Briller_Clinic
                 </p>
               </div>
 
@@ -741,17 +744,17 @@
       function imageUpdate() {
         if (window.innerWidth <= 767) {
           background01.src = "./images/mo_main_01.png";
-          background02.src = "./images/mo_main_02.png";
-          background03.src = "./images/mo_main_03.png";
-          background04.src = "./images/mo_main_04.png";
+          background02.src = "./images/mo_main_04.png";
+          background03.src = "./images/mo_main_02.png";
+          background04.src = "./images/mo_main_03.png";
           sig1.src = "./images/mo_briller_filler.png";
           sig2.src = "./images/mo_briller_museline.png";
           sig3.src = "./images/mo_briller_ulthera.png";
         } else {
           background01.src = "./images/main_01.png";
-          background02.src = "./images/main_02.png";
-          background03.src = "./images/main_03.jpg";
-          background04.src = "./images/main_04.jpg";
+          background02.src = "./images/main_04.jpg";
+          background03.src = "./images/main_02.png";
+          background04.src = "./images/main_03.jpg";
           sig1.src = "./images/briller_filler.png";
           sig2.src = "./images/briller_museline.png";
           sig3.src = "./images/briller_ulthera.png";

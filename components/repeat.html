@@ -6,8 +6,8 @@
     브리에의원의 <span class="font-nb">3가지 원칙</span>
   </h3>
   <p class="text">
-    가족과 친구에게도 권할 수 있는 시술 퀄리티를 위해<br class="only-mobile"> 브리에의원이 3가지 원칙을
-    약속합니다.
+    가족과 친구에게도 권할 수 있는 시술 퀄리티를 위해<br class="only-mobile" />
+    브리에의원이 3가지 원칙을 약속합니다.
   </p>
 
   <div class="principle-flex-wrap">
@@ -15,7 +15,7 @@
       <div class="img-wrap">
         <img src="./images/CEO.jpg" alt="차정윤 원장의 정직한 진료" />
       </div>
-      <h4 class="principle-title font-pb" >
+      <h4 class="principle-title font-pb">
         <div class="principle-title font-pb">차정윤 원장의</div>
         <div class="principle-title-sub font-pb">정직한 진료</div>
       </h4>
@@ -28,8 +28,8 @@
                   꼼꼼한 시술"
         />
       </div>
-      <h4 class="principle-title font-pb" >
-        1:1 맞춤 디자인과<br>
+      <h4 class="principle-title font-pb">
+        1:1 맞춤 디자인과<br />
         꼼꼼한 시술
       </h4>
     </div>
@@ -43,8 +43,8 @@
       </div>
       <h4 class="principle-title font-pb">
         <!-- 정품/정량/정확 원칙으로<br>최선의 결과 추구 -->
-         <div class="principle-title font-pb">정품/정량/정확 원칙으로</div>
-         <div class="principle-title-sub font-pb">최선의 결과 추구</div>
+        <div class="principle-title font-pb">정품/정량/정확 원칙으로</div>
+        <div class="principle-title-sub font-pb">최선의 결과 추구</div>
       </h4>
     </div>
   </div>
@@ -71,9 +71,7 @@
       </div>
       <div class="wrap">
         <p class="location two font-pm">주차</p>
-        <p class="location-detail font-pm">
-          건물 1층 써브웨이 옆 발렛 부스
-        </p>
+        <p class="location-detail font-pm">건물 1층 써브웨이 옆 발렛 부스</p>
       </div>
     </div>
 
@@ -124,19 +122,41 @@
           <p class="btn-text font-pm">카카오문의</p>
         </a>
       </button>
-      <button class="contact-btn">
-        <a href="#">
-          <img src="./images/wechat_color.png" alt="WeChat" />
-          <p class="btn-text font-pm">WeChat</p>
-        </a>
+      <button class="contact-btn wechat">
+        <!-- <a href="#"> -->
+        <img src="./images/wechat_color.png" alt="WeChat" />
+        <p class="btn-text font-pm">WeChat</p>
+        <!-- </a> -->
       </button>
+
+      <div class="qr-background"></div>
+      <div class="wechat-qr-img">
+        <div class="title font-pb">WeChat 연결하기</div>
+
+        <div class="img-wrap">
+          <img src="./images/qr/wechat.png" alt="wechat qr" />
+        </div>
+
+        <div class="text-wrap">
+          <h4 class="text-title font-pb">BRILLER CLINIC</h4>
+          <p class="text font-pr">
+            카메라로 QR코드를 인식하면<br />
+            위챗으로 연결 됩니다.
+          </p>
+          <p class="text font-pr" translate="no">
+            WeChat ID : Briller_Clinic
+          </p>
+        </div>
+
+        <button class="wechat-close font-pm">확인</button>
+      </div>
     </div>
   </div>
   <div class="directions-map-wrap">
     <div
       id="daumRoughmapContainer1732176981627"
       class="root_daum_roughmap root_daum_roughmap_landing"
-      style=" width: 100%;"
+      style="width: 100%"
     ></div>
   </div>
 </div>
@@ -152,4 +172,23 @@
     key: "2maur",
     mapHeight: "661",
   }).render();
+</script>
+
+<script>
+  const weChatBtn1 = document.querySelector(".contact-btn.wechat");
+  const weChatPop1 = document.querySelector(".wechat-qr-img");
+  const weChatCloseBtn1 = document.querySelector(".wechat-close");
+  const bg1 = document.querySelector(".qr-background");
+
+  weChatBtn1.addEventListener("click", () => {
+    console.log("click");
+
+    weChatPop1.style.display = "block";
+    bg1.style.display = "block";
+  });
+
+  weChatCloseBtn1.addEventListener("click", () => {
+    weChatPop1.style.display = "none";
+    bg1.style.display = "none";
+  });
 </script>

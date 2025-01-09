@@ -74,6 +74,22 @@ function getCurrentLanguage() {
 
 
 function replaceTextInPage(searchWords, replacement) {
+
+  if (document.title) {
+    const boundaryRegex = new RegExp(
+      `(${searchWords
+        .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+        .join("|")})`,
+      "gi"
+    );
+
+    const updatedTitle = document.title.replace(boundaryRegex, replacement);
+    if (updatedTitle !== document.title) {
+      document.title = updatedTitle;
+    }
+  }
+
+
   const walker = document.createTreeWalker(
     document.body,
     NodeFilter.SHOW_TEXT,
@@ -141,6 +157,10 @@ function correctWords() {
   // const docName = document.querySelector(".doctor-info-wrap .doctor-info-text-wrap .doctor-name");
   const currentLang = getCurrentLanguage();
   if (currentLang === "en") {
+    
+    document.querySelectorAll(".not-en").forEach((el) => {
+      el.style.display = "none";
+    })
     const flex = document.querySelectorAll(
       ".tentherma-wrap .tentherma-detail-process .tentherma-detail-process-flex-wrap .process-flex"
     );
@@ -149,22 +169,38 @@ function correctWords() {
       el.style.maxWidth = "405px";
     });
 
+    document.querySelectorAll(".location-time-wrap .wrap .direction-wrap .wrap").forEach((el) => {
+      el.style.gap = "30px";
+    })
+
+    document.querySelectorAll(".location-time-wrap .wrap .time-wrap .wrap").forEach((el) => {
+      el.style.gap = "30px";
+    })
+
+    document.querySelectorAll(".directions .directions-text-wrap .direction-wrap .wrap").forEach((el) => {
+      el.style.gap = "30px";
+    })
+    document.querySelectorAll(".directions .directions-text-wrap .time-wrap .wrap").forEach((el) => {
+      el.style.gap = "30px";
+    })
+
+    
     replaceTextInPage(["the Council of Ministers of Briere"], "the Briller");
     replaceTextInPage(
       ["The Three Principles of the Council of Ministers of Brillerre"],
-      "Three Principles of the Briller"
+      "Three Principles of the Briller Clinic"
     );
     replaceTextInPage(
       ["Rep. Briller's Three Principles"],
-      "Three Principles of the Briller"
+      "Three Principles of the Briller Clinic"
     );
     replaceTextInPage(
       ["브리에의원의 3가지 원칙"],
-      "Three Principles of the Briller"
+      "Three Principles of the Briller Clinic"
     );
     replaceTextInPage(
       ["Briller의원의 3가지 원칙"],
-      "Three Principles of the Briller"
+      "Three Principles of the Briller Clinic"
     );
     replaceTextInPage(["브리에", "Brie"], "Briller");
     replaceTextInPage(["Brillerr"], "Briller");
@@ -270,11 +306,24 @@ function correctWords() {
     replaceTextInPage(["Dr. Briller"], "Briller");
     replaceTextInPage(["Brier"], "Briller");
     replaceTextInPage(["announcement"], "Announcement");
+    replaceTextInPage(["예약/상담 신청"], "Reservation/Consultation");
+    replaceTextInPage(["Introducing the interior of Rep. Bree's office."], "Introducing the interior of Briller Clinic.");
+    replaceTextInPage(["Doctor Cha Jungyoon"], "Doctor Cha Jungyoon’s");
+    replaceTextInPage(["the Briller"], "the Briller Clinic");
+    replaceTextInPage(["Scars that have been a concern for a long time can Now"], "Scars that have been a concern for a long time can now");
+    replaceTextInPage(["Not kNowing how to manage them"], "not knowing how to manage them");
+    replaceTextInPage(["sebaDr.us cysts, liver spots,"], "sebaceous hyperplasia, milium, age spots,");
+    replaceTextInPage(["sebaDr.us hyperplasia,"], "sebaceous hyperplasia");
   } else if (currentLang === "zhCN") {
+    document.querySelectorAll(".not-en").forEach((el) => {
+      el.style.display = "";
+    })
+    
     replaceTextInPage(["Brie Clinic"], "布里亚医院");
     replaceTextInPage(["Brie"], "布里亚医院");
     replaceTextInPage(["브리에의원"], "布里亚医院");
     replaceTextInPage(["Briller"], "布里亚医院");
+    // replaceTextInPage(["布里诊所"], "布里亚医院");
     replaceTextInPage(["我的天啊"], "美版超声刀");
     replaceTextInPage(["超级大剑"], "美版超声刀");
     replaceTextInPage(["Ulthera"], "美版超声刀");
@@ -333,8 +382,22 @@ function correctWords() {
     replaceTextInPage(["去痣激光"], "点痣激光");
     replaceTextInPage(["Fabrication Co., Ltd."], "布里亚医院");
     replaceTextInPage(["制造及制造中心"], "布里亚医院");
+    replaceTextInPage(["예약/상담 신청"], "预约/商谈 申请");
+    replaceTextInPage(["预约/商人申请"], "预约/商谈 申请");
+    replaceTextInPage(["为您介绍织物加工中心"], "为您介绍布里亚医院");
+    replaceTextInPage(["布料制造的"], "布里亚医院的");
+    replaceTextInPage(["车正润导演"], "车正润院长");
+    replaceTextInPage(["诚实对待"], "真诚施术");
+    replaceTextInPage(["韩版美版超声刀宇宙版"], "韩版超声刀宇宙版");
+    replaceTextInPage(["填充物同时"], "童颜玻尿酸填充");
+    replaceTextInPage(["Muse线注射"], "女神溶脂针");
+    replaceTextInPage(["首尔特别市江南区宣陵路806号金刚大厦6楼"], "首尔江南区清潭洞86 六楼");
+    
 
   } else if (currentLang === "ko") {
+    document.querySelectorAll(".not-en").forEach((el) => {
+      el.style.display = "";
+    })
     replaceTextInPage(["Briller"], "브리에");
     replaceTextInPage(["Ulthera"], "울쎄라");
     replaceTextInPage(["Cha Jungyoon"], "차정윤");
@@ -353,6 +416,12 @@ function correctWords() {
     flex.forEach((el) => {
       el.style.maxWidth = "";
     });
+  }
+  else if (currentLang === "ja") {
+    document.querySelectorAll(".not-en").forEach((el) => {
+      el.style.display = "";
+    })
+    replaceTextInPage(["予約/相談申請"], "予約/相談申し込み");
   }
 }
 
@@ -525,39 +594,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
   const getLang = localStorage.getItem("selectedLang");
-  const timeWrap = document.querySelector(
-    ".location-time-wrap .wrap .time-wrap"
-  );
+  // const timeWrap = document.querySelector(
+  //   ".location-time-wrap .wrap .time-wrap"
+  // );
 
-  if (timeWrap) {
+
+  // if (timeWrap) {
     const rootStyle = document.documentElement.style;
     if (getLang === "en" && window.innerWidth > 767) {
-      rootStyle.setProperty("--hour-bar-left", "95px");
+      rootStyle.setProperty("--hour-bar-left", "110px");
     } else if (getLang === "en" && window.innerWidth <= 767) {
-      rootStyle.setProperty("--hour-bar-left", "70px");
-    } else {
-      rootStyle.setProperty("--hour-bar-left", "50px");
-    }
-  }
-});
-window.addEventListener("resize", () => {
-  const getLang = localStorage.getItem("selectedLang");
-  const timeWrap = document.querySelector(
-    ".location-time-wrap .wrap .time-wrap"
-  );
-
-  if (timeWrap) {
-    const rootStyle = document.documentElement.style;
-    if (getLang === "en" && window.innerWidth > 767) {
-      rootStyle.setProperty("--hour-bar-left", "95px");
-    } else if (getLang === "en" && window.innerWidth <= 767) {
-      rootStyle.setProperty("--hour-bar-left", "70px");
+      rootStyle.setProperty("--hour-bar-left", "75px");
     } else {
       rootStyle.setProperty("--hour-bar-left", "");
     }
-  } else {
-    console.error("The '.time-wrap' element was not found.");
-  }
+  // }
+});
+window.addEventListener("resize", () => {
+  const getLang = localStorage.getItem("selectedLang");
+  // const timeWrap = document.querySelector(
+  //   ".location-time-wrap .wrap .time-wrap"
+  // );
+
+  // if (timeWrap) {
+    const rootStyle = document.documentElement.style;
+    if (getLang === "en" && window.innerWidth > 767) {
+      rootStyle.setProperty("--hour-bar-left", "110px");
+    } else if (getLang === "en" && window.innerWidth <= 767) {
+      rootStyle.setProperty("--hour-bar-left", "75px");
+    } else {
+      rootStyle.setProperty("--hour-bar-left", "");
+    }
+  // } 
 });
 
 window.addEventListener("storage", (event) => {
@@ -567,23 +635,29 @@ window.addEventListener("storage", (event) => {
   }
 });
 
+// left: var(--hour-bar-left, 88px);
+
 function handleLanguageChange(newLang) {
   const getLang = localStorage.getItem("selectedLang");
-  const timeWrap = document.querySelector(
-    ".location-time-wrap .wrap .time-wrap"
-  );
+  // const timeWrap = document.querySelector(
+  //   ".location-time-wrap .wrap .time-wrap"
+  // );
 
-  if (timeWrap) {
+  // if (timeWrap) {
     const rootStyle = document.documentElement.style;
     if (getLang === "en" && window.innerWidth > 767) {
-      rootStyle.setProperty("--hour-bar-left", "95px");
+      rootStyle.setProperty("--hour-bar-left", "110px");
     } else if (getLang === "en" && window.innerWidth <= 767) {
-      rootStyle.setProperty("--hour-bar-left", "70px");
+      rootStyle.setProperty("--hour-bar-left", "75px");
     } else {
       rootStyle.setProperty("--hour-bar-left", "");
     }
-  }
+  // }
 }
+
+
+
+
   // const hamMenuBtn = document.querySelector("#header .menu .ham-menu-img-wrap");
   // const hamMenuIcon = document.querySelector(
   //   "#header .menu .ham-menu-img-wrap i"

@@ -463,7 +463,7 @@
   </div>
 </nav>
 
-<script>
+<!-- <script>
   if (location.pathname.endsWith("index.html") || location.pathname === "/") {
     const header = document.querySelector("#header");
     const mainLogo = document.querySelector("#header .logo-img-wrap");
@@ -749,7 +749,7 @@
 
   window.addEventListener("scroll", toggleFollowHeader);
   window.addEventListener("load", toggleFollowHeader);
-</script>
+</script> -->
 
 <script>
   const hamMenu = document.querySelector(".ham-menu-wrap");
@@ -1074,13 +1074,10 @@
 
   function scrollTest() {
     if (
-      !(
-        location.pathname.endsWith("index.html") || location.pathname === "/"
-      ) &&
-      window.scrollY !== 0
+      location.pathname.endsWith("promotion.html") || location.pathname.endsWith("promotion_detail.html") || location.pathname.endsWith("private_check.html")
     ) {
-      // "index.html"이 아니고, "/"가 아니고, 스크롤이 0이 아닌 경우
       fHeader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+      fHeader.style.backdropFilter = "blur(7px)";
       logo.style.filter = "";
       nav.forEach((el) => {
         el.style.color = "";
@@ -1089,21 +1086,34 @@
       moLangText.style.color = "";
       moLangArrow.style.color = "";
     } else if (
-      !(
-        location.pathname.endsWith("index.html") || location.pathname === "/"
-      ) &&
+      window.scrollY !== 0
+    ) {
+      fHeader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+      fHeader.style.backdropFilter = "blur(7px)";
+      logo.style.filter = "";
+      nav.forEach((el) => {
+        el.style.color = "";
+      });
+      menu.style.color = "";
+      moLangText.style.color = "";
+      moLangArrow.style.color = "";
+    } else if (
       window.scrollY === 0 &&
       !(
         location.pathname.endsWith("promotion.html") ||
-        location.pathname.endsWith("promotion_detail.html")
+        location.pathname.endsWith("promotion_detail.html") 
       ) &&
       !(
         location.pathname.endsWith("notice.html") ||
         location.pathname.endsWith("notice_detail.html")
+      ) &&
+      !(
+        location.pathname.endsWith("private_check.html")
       )
     ) {
       // 스크롤이 0인 경우
       fHeader.style.backgroundColor = "transparent";
+      fHeader.style.backdropFilter = "none";
       logo.style.filter = "none";
       nav.forEach((el) => {
         el.style.color = "#FFF";
@@ -1111,11 +1121,6 @@
       menu.style.color = "#FFF";
       moLangText.style.color = "#FFF";
       moLangArrow.style.color = "#FFF";
-    } else if (
-      location.pathname.endsWith("promotion.html") ||
-      location.pathname.endsWith("promotion_detail.html")
-    ) {
-      fHeader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
     }
   }
 
