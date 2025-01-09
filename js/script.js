@@ -307,13 +307,14 @@ function correctWords() {
     replaceTextInPage(["Brier"], "Briller");
     replaceTextInPage(["announcement"], "Announcement");
     replaceTextInPage(["예약/상담 신청"], "Reservation/Consultation");
-    replaceTextInPage(["Introducing the interior of Rep. Bree's office."], "Introducing the interior of Briller Clinic.");
+    replaceTextInPage(["Introducing the interior of Rep. Bree's office."], "Introducing the interior of Briller Clinic");
     replaceTextInPage(["Doctor Cha Jungyoon"], "Doctor Cha Jungyoon’s");
     replaceTextInPage(["the Briller"], "the Briller Clinic");
     replaceTextInPage(["Scars that have been a concern for a long time can Now"], "Scars that have been a concern for a long time can now");
     replaceTextInPage(["Not kNowing how to manage them"], "not knowing how to manage them");
-    replaceTextInPage(["sebaDr.us cysts, liver spots,"], "sebaceous hyperplasia, milium, age spots,");
-    replaceTextInPage(["sebaDr.us hyperplasia,"], "sebaceous hyperplasia");
+    replaceTextInPage(["sebaDr.us hyperplasia,"], "sebaceous hyperplasia,");
+    replaceTextInPage(["sebaDr.us cysts,"], "milium,");
+    replaceTextInPage(["liver spots,"], "age spots,");
   } else if (currentLang === "zhCN") {
     document.querySelectorAll(".not-en").forEach((el) => {
       el.style.display = "";
